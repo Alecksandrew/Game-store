@@ -1,6 +1,14 @@
-@charset "URF-8"
+@charset "UTF-8";
 
 * {
     margin: 0px;
     padding: 0px;
+}
+
+:root {
+    --PaletaCor01: #3B44F6;      
+    --PaletaCor03: #d8dafd;  /* Shapes and icons' background */
+    --PaletaCor04: #FFFFFF;   /* Texts */
+    --PaletaCor05: #181818;   /* Page's Background and Texts */
+    --PaletaCor06: #F5F4F9;   /* Page's Background */
 }
