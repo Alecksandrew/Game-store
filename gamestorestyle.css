@@ -7,8 +7,12 @@
 
 :root {
     --PaletaCor01: #3B44F6;      
-    --PaletaCor03: #d8dafd;  /* Shapes and icons' background */
-    --PaletaCor04: #FFFFFF;   /* Texts */
-    --PaletaCor05: #181818;   /* Page's Background and Texts */
-    --PaletaCor06: #F5F4F9;   /* Page's Background */
+    --PaletaCor02: #d8dafd;  /* Shapes and icons' background */
+    --PaletaCor03: #FFFFFF;   /* Texts */
+    --PaletaCor04: #181818;   /* Page's Background and Texts */
+    --PaletaCor05: #F5F4F9;   /* Page's Background */
+}
+
+body {
+    background-color: var(--PaletaCor05)
 }
