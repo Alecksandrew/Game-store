@@ -6,14 +6,27 @@ body {
 
 }
 
-img#logooficial {
-    margin: auto;
-    display: block;
-    padding: 10px;
-    margin-bottom: 5vh;
+
+#fulllogo {
+    font-family: var(--Font01);
+    font-weight: 600;
+    font-size: 1.4em;
+    text-align: center;
+    margin: 8px 0px 10vh 0px;
+    text-shadow: 0.5px 1px 3px rgba(0, 0, 0, 0.199);
 }
+
+#logopart1 {
+    color: var(--PaletaCor01);
+}
+
+#logopart2 {
+    color: var(--PaletaCor03);
+}
+
 form {
     text-align: center;
+    font-family: var(--Font01);
 }
 
 #field1 {
@@ -22,6 +35,8 @@ form {
     border-left: none;
     border-right: none; 
     border-bottom: none;
+
+    /* APRENDER FLEXBOX PARA CONSEGUIR FAZER DETALHE DA LINHA */
 
 }
 
@@ -58,13 +73,27 @@ input {
     color: var(--PaletaCor02);
 }
 
+#inp3:hover {
+    filter: brightness(1.4);
+}
+
 aside {
     font-size: 0.7em;
     display: block;
     margin: auto;
     
+    
   
 }
+
+aside a {
+    color: var(--PaletaCor01);
+}
+
+#alternativeor {
+    font-weight: 600;
+}
+
 
 #password {
     margin-right: 18vw;
@@ -75,25 +104,25 @@ aside {
 
 #Noaccount {
     margin-left: 18vw;
+}
 
 #field2 {
-    border-top: 2px solid var(--PaletaCor01);
-    border-top-width: 30px;
-    border-left: none;
-    border-right: none; 
-    border-bottom: none;
-
+    border: none;
+    margin-top: 15px;
 }
 
-}
+
 ul img {
     height: 8vh;
     width: 20vw;
     object-fit: cover;
+    margin-right: 8px;
+    border-radius: 5px;
+
 }
 
 ul {
-
+    padding-top: 10px;
     list-style-type: none;
 }
 

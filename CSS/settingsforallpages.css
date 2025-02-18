@@ -21,4 +21,25 @@ body {
 }
 
 
+/*Css abaixo é para logotipo e deve ser utilizado o seguinte html
+
+<p id="fulllogo"><span id="logopart1">eX</span><span id="logopart2">Store</span></p>
+
+---*/
+
+#fulllogo {
+    font-family: var(--Font01);
+    font-weight: 600;
+    font-size: 1.8em
+}
+
+#logopart1 {
+    color: var(--PaletaCor01);
+}
+
+#logopart2 {
+    color: var(--PaletaCor03);
+}
+
+
 /*------------------------ General settings ------------------------*/
