@@ -1,0 +1,27 @@
+
+
+header {
+    background: linear-gradient( to bottom, var(--PaletaCor06), transparent);
+    padding: 20px;
+
+    
+}
+
+Header ul {
+    list-style: none;
+}
+
+header nav, header ul, header li {
+    display: inline-block;
+}
+
+header > nav {
+    text-align: center;
+
+
+}
+
+
+/* ESTUDAR FLEX BOX PRIMEIRO!!!!! */
+
+/*------------------------ Header ------------------------*/

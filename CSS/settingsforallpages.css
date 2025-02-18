@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+:root {
+    --PaletaCor01: #3B44F6;      
+    --PaletaCor02: #d8dafd;  /* Shapes and icons' background */
+    --PaletaCor03: #FFFFFF;   /* Texts */
+    --PaletaCor04: #181818;   /* Page's Background and Texts */
+    --PaletaCor05: #F5F4F9;   /* Page's Background */
+    --PaletaCor06: #18181891; /* Page's Background and Texts - Less opacity */
+    --Font01: 'Lexend', sans-serif; /* Titles */
+    --Font02: 'Roboto', sans-serif; /* Paragraphs */
+}
+
+body {
+    background-color: var(--PaletaCor05)
+}
+
+
+/*------------------------ General settings ------------------------*/

@@ -1,0 +1,102 @@
+
+
+body {
+    background-color: var(--PaletaCor02);
+    font-family: var(--Font01);
+
+}
+
+img#logooficial {
+    margin: auto;
+    display: block;
+    padding: 10px;
+    margin-bottom: 5vh;
+}
+form {
+    text-align: center;
+}
+
+#field1 {
+    padding: 20px;
+    border-top: 2px solid var(--PaletaCor01);
+    border-left: none;
+    border-right: none; 
+    border-bottom: none;
+
+}
+
+legend {
+    font-size: 1.5em;
+    font-weight: bold
+
+}
+
+input {
+    display: block;
+    margin: auto;
+    border: none;
+    padding: 6px;
+    border-radius: 4px;
+    font-size: 0.9em;    
+}
+
+#inp1 {
+    margin-bottom: 5px;
+}
+
+#inp1, #inp2 {
+    background-color: var(--PaletaCor05);
+}
+
+#inp2 {
+    margin-bottom: 10px;
+}
+
+#inp3 {
+    background-color: var(--PaletaCor01);
+    margin-bottom: 20px;
+    color: var(--PaletaCor02);
+}
+
+aside {
+    font-size: 0.7em;
+    display: block;
+    margin: auto;
+    
+  
+}
+
+#password {
+    margin-right: 18vw;
+    
+
+
+}
+
+#Noaccount {
+    margin-left: 18vw;
+
+#field2 {
+    border-top: 2px solid var(--PaletaCor01);
+    border-top-width: 30px;
+    border-left: none;
+    border-right: none; 
+    border-bottom: none;
+
+}
+
+}
+ul img {
+    height: 8vh;
+    width: 20vw;
+    object-fit: cover;
+}
+
+ul {
+
+    list-style-type: none;
+}
+
+ul li {
+    display: inline-block;
+}
