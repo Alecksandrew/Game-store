@@ -35,10 +35,17 @@ form {
     border-left: none;
     border-right: none; 
     border-bottom: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+  flex: auto;
+}
 
     /* APRENDER FLEXBOX PARA CONSEGUIR FAZER DETALHE DA LINHA */
 
-}
+
 
 legend {
     font-size: 1.5em;
@@ -79,8 +86,9 @@ input {
 
 aside {
     font-size: 0.7em;
-    display: block;
+    display: inline-block;
     margin: auto;
+
     
     
   
@@ -96,14 +104,14 @@ aside a {
 
 
 #password {
-    margin-right: 18vw;
+
     
 
 
 }
 
 #Noaccount {
-    margin-left: 18vw;
+
 }
 
 #field2 {
