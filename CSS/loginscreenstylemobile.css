@@ -3,6 +3,7 @@
 body {
     background-color: var(--PaletaCor02);
     font-family: var(--Font01);
+    height: 100vh;
 
 }
 
@@ -12,7 +13,7 @@ body {
     font-weight: 600;
     font-size: 1.4em;
     text-align: center;
-    margin: 8px 0px 10vh 0px;
+    padding: 12px 0px 12vh 0px;
     text-shadow: 0.5px 1px 3px rgba(0, 0, 0, 0.199);
 }
 
@@ -31,10 +32,6 @@ form {
 
 #field1 {
     padding: 20px;
-    border-top: 2px solid var(--PaletaCor01);
-    border-left: none;
-    border-right: none; 
-    border-bottom: none;
     display: flex;
     flex-direction: column;
 }
@@ -48,18 +45,18 @@ form {
 
 
 legend {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-weight: bold
 
 }
 
 input {
-    display: block;
-    margin: auto;
+    display: auto;
+
     border: none;
     padding: 6px;
     border-radius: 4px;
-    font-size: 0.9em;    
+    font-size: 0.9rem;    
 }
 
 #inp1 {
@@ -85,13 +82,7 @@ input {
 }
 
 aside {
-    font-size: 0.7em;
-    display: inline-block;
-    margin: auto;
-
-    
-    
-  
+    font-size: 0.7rem;
 }
 
 aside a {
@@ -115,25 +106,35 @@ aside a {
 }
 
 #field2 {
-    border: none;
     margin-top: 15px;
 }
 
 
 ul img {
-    height: 8vh;
-    width: 20vw;
+    width: 18vw;
+    height: 7vh;
+    max-width: 96px;
+    max-height: 60px ;
     object-fit: cover;
-    margin-right: 8px;
-    border-radius: 5px;
+    transform: scale(1.1);
+    
 
+}
+
+#imgface {
+    transform: scale(1.4);
 }
 
 ul {
     padding-top: 10px;
     list-style-type: none;
+    display: flex;
+    flex-flow: row nowrap ;
+
+
 }
 
 ul li {
-    display: inline-block;
+    overflow: hidden;
+    border-radius: 5px;
 }
