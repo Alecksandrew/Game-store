@@ -33,12 +33,11 @@ form {
 #field1 {
     padding: 20px;
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
+    align-items: center;
+
 }
 
-.item {
-  flex: auto;
-}
 
     /* APRENDER FLEXBOX PARA CONSEGUIR FAZER DETALHE DA LINHA */
 
@@ -51,12 +50,11 @@ legend {
 }
 
 input {
-    display: auto;
-
     border: none;
     padding: 6px;
     border-radius: 4px;
-    font-size: 0.9rem;    
+
+    flex-basis: 200px;    
 }
 
 #inp1 {
