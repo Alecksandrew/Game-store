@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        
+        #display1 {
+            background-color: aqua;
+            height: 300px;
+            display: flex;
+        }
+
+        #display2 {
+            background-color: blueviolet;
+            height: 200px;
+            display: flex;
+            flex: 1 1 100px;
+        }
+
+        .filhosfinais {
+            background-color: brown;
+            height: 50px;
+            flex: 1 1 100px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="display1">
+        <div id="display2">
+            <div class="filhosfinais">1</div>
+            <div class="filhosfinais">2</div>
+            <div class="filhosfinais">3</div>
+        </div>
+    </div>
+    
+</body>
+</html>
