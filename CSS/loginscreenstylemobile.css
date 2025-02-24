@@ -2,47 +2,72 @@
 
 body {
     background-color: var(--PaletaCor02);
-    font-family: var(--Font01);
-    height: 100vh;
 
 }
 
 
 #fulllogo {
-    font-family: var(--Font01);
-    font-weight: 600;
-    font-size: 1.4em;
     text-align: center;
     padding: 12px 0px 12vh 0px;
     text-shadow: 0.5px 1px 3px rgba(0, 0, 0, 0.199);
 }
 
-#logopart1 {
-    color: var(--PaletaCor01);
+
+
+
+
+
+
+
+/*------------------------LOGIN ALTERNATIVO-------------------*/
+
+
+#alternative {
+    text-align: center;
 }
 
-#logopart2 {
-    color: var(--PaletaCor03);
+#alternativeor {
+    position: relative;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+#alternativeor::before, #alternativeor::after {
+    position: absolute;
+    content: '';
+    height: 1.8px;
+    width: 30vw;
+    background-color: var(--PaletaCor01);
+    bottom: 50%;
+
+}
+
+#alternativeor::before {
+    right: 35px;
+}
+#alternativeor::after{
+    left: 35px;
 }
 
 #socialmedia {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 15px;
 
 }
 
 a {
-    flex: auto;
-    max-width: 16vw;
-    max-height: 9vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 
 }
 
 img {
-    width: 100%;
+    width: 15vw;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 6px;
 }
