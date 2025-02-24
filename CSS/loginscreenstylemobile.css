@@ -8,45 +8,147 @@ body {
 
 #fulllogo {
     text-align: center;
-    padding: 12px 0px 12vh 0px;
     text-shadow: 0.5px 1px 3px rgba(0, 0, 0, 0.199);
+    margin-bottom: 15px;
+
+
 }
 
 
 
+body {
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+
+
+}
+
+main {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+fieldset {
+    border: none;
+}
+
+
+#field1 {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-align: left;
+    position: relative;
+
+
+}
 
 
 
+legend {
+    margin-left: 15%;
+    margin-bottom: 2vh;
+    font-weight: 600;
+    color: var(--PaletaCor04);
+    font-size: 1.2rem;
+}
 
+input {
+    padding: 5px;    
+}
 
+#inp1 {
+    margin-bottom: 0.5vh;
+    
+}
+
+#inp2 {
+    margin-bottom: 2vh;
+}
+
+#inp3 {
+    background-color: var(--PaletaCor01);
+    color: var(--PaletaCor03);
+    font-weight: 600;
+    margin-bottom: 2vh;
+    border: none;
+}
+
+#inp1, #inp2 {
+    border: 1px solid var(--PaletaCor01);
+}
+
+.child1 {
+    width: 70%;
+    max-width: 300px;
+    
+}
+
+aside {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-bottom: 4vh;
+    
+
+}
+
+aside a {
+    font-size: 0.75rem;
+    text-decoration: none;
+    color: var(--PaletaCor01);
+}
+
+#password {
+   
+}
+
+#Noaccount {
+   
+}
+
+#password, #Noaccount {
+
+}
 /*------------------------LOGIN ALTERNATIVO-------------------*/
 
+#field2 {
+    margin: auto;
+
+}
 
 #alternative {
     text-align: center;
+    color: var(--PaletaCor04);
+    margin-bottom: 1vh;
+    
 }
 
 #alternativeor {
     position: relative;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 #alternativeor::before, #alternativeor::after {
     position: absolute;
     content: '';
     height: 1.8px;
-    width: 30vw;
+    width: 31vw;
     background-color: var(--PaletaCor01);
     bottom: 50%;
+    max-width: 135px;
 
 }
 
 #alternativeor::before {
-    right: 35px;
+    right: 30px;
 }
+
 #alternativeor::after{
-    left: 35px;
+    left: 30px;
 }
 
 #socialmedia {
@@ -66,8 +168,9 @@ a {
 }
 
 img {
+    max-width: 70px;
     width: 15vw;
     height: 100%;
     object-fit: cover;
-    border-radius: 6px;
+    border-radius: 10%;
 }
