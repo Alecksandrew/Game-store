@@ -45,15 +45,10 @@ fieldset {
 
 }
 
-
-
-legend {
-    margin-left: 15%;
-    margin-bottom: 2vh;
-    font-weight: 600;
-    color: var(--PaletaCor04);
-    font-size: 1.2rem;
+h1 {
+   align-self: flex-start;
 }
+
 
 input {
     padding: 5px;    
