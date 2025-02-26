@@ -4,6 +4,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: var(--Font02);
 }
 
 :root {
@@ -20,7 +21,7 @@
 body {
     background-color: var(--PaletaCor05);
     height: 100vh;
-    font-family: var(--Font02);
+
 }
 
 
