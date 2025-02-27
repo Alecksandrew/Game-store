@@ -103,6 +103,7 @@ input {
 
 #inp3:hover {
     cursor: pointer;
+    opacity: 0.9;
 }
 
 #password-account {
@@ -168,7 +169,7 @@ input {
 }
 
 #social-login a:hover {
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 #social-login > a > svg {
