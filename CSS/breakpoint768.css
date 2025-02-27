@@ -1,0 +1,53 @@
+body {
+    flex-flow: row nowrap;
+}
+
+#game1{
+    display: none;
+
+}
+
+#game2 {
+    display: block;
+}
+
+#gameimg {
+    height: 100vh;
+    width: 50vw;
+}
+
+#gameimg img {
+    object-position: center center;
+    border-radius: 0;
+
+
+}
+
+main {
+    width: 50vw;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    width: 80%;
+}
+
+#alternativetext::before {
+ 
+    left: 65%;
+    
+}
+
+#alternativetext::after {
+
+    right: 65%;
+}
+
+#alternativetext::before, #alternativetext::after {
+    width: 35%;
+}
+
+footer {
+    display: none;
+}

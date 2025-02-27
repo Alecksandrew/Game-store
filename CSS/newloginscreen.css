@@ -13,8 +13,13 @@ body {
 #gameimg {
     width: 80vw;
     height: 25vh;
+    
 
 
+}
+
+#game2 {
+    display: none;
 }
 
 #gameimg img {
@@ -22,11 +27,13 @@ body {
     height: 100%;
     border-radius: 0px 0px 10px 10px;
     object-fit: cover;
+    object-position: left center;
 }
 
 main {
     width: 80vw;
     margin-bottom: 40px;
+    max-width: 500px;
 
     /*----FLEXBOX 2 -----*/
     display: flex;
@@ -126,13 +133,13 @@ input {
 
 #alternativetext::before {
     bottom: 50%;
-    left: 190px;
+    left: 75%;
     
 }
 
 #alternativetext::after {
     top: 50%;
-    right: 190px;
+    right: 75%;
 }
 
 #alternativetext::before, #alternativetext::after {
@@ -151,7 +158,7 @@ input {
 }
 
 #social-login a {
-    flex: 1 0 100px;
+    flex: 1 0 50px;
     height: 35px;
     border-radius: 4px;
 
@@ -164,31 +171,23 @@ input {
     opacity: 0.9;
 }
 
-#social-login > a > img {
-   height: 80%;
+#social-login > a > svg {
+   height: 60%;
    flex: auto;
+   fill: var(--PaletaCor01);
 
 }
 
-#link1 {
-    background-color: white;
+
+#social-login > a {
+    background-color: var(--PaletaCor02);
 }
 
-#link2 {
-    background-color: #7289DA;
-}
-
-#link3 {
-    background-color: #1877F2;
-}
-
-#link4{
-    background-color: #0A0A0A;
-}
 
 footer {
     margin-bottom: 15px;
-    text-shadow: 1px 1px 1px#0a0a0acc;
+    text-shadow: 1px 1px 1px#0a0a0ac0;
     font-size: 0.8rem;
 
 }
+
