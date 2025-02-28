@@ -3,25 +3,154 @@
 header {
     background: linear-gradient( to bottom, var(--PaletaCor06), transparent);
     padding: 20px;
+    font: normal 400 1rem var(--Font01);
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+   
+    position: absolute;
+    z-index: 10;
+
+    width: 100%;
+
+
+
+    
 
     
 }
 
+.header_children {
+    z-index: 10;
+}
 Header ul {
     list-style: none;
 }
 
-header nav, header ul, header li {
-    display: inline-block;
+Header a {
+    text-decoration: none;
+    color: var(--PaletaCor03);
+}
+ header ul {
+   display: flex;
+   flex-wrap: row nowrap;
+   justify-content: space-between;
+   gap: 50px;
 }
 
-header > nav {
-    text-align: center;
-
-
+header a {
+    padding: 5px;
 }
 
+header a:hover{
+    background-color: var(--PaletaCor01);
+    border-radius: 4px;
+    padding: 5px;
+    transition: ease-in-out 0.5s;
+}
+
+#nav2 {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 10px ;
+    align-items: center;
+    
+}
+
+#nav2 button {
+    padding: 0.4rem;
+    border: none;
+    border-radius: 4px;
+
+    font: normal 500 0.8rem var(--Font01);
+}
+
+#nav2 #btn1 {
+    background-color: var(--PaletaCor01);
+    color: var(--PaletaCor03);
+}
+
+#nav2 #btn2 {
+    background-color: var(--PaletaCor03);
+    outline: 1px solid var(--PaletaCor01);
+    color: var(--PaletaCor01);
+}
 
 /* ESTUDAR FLEX BOX PRIMEIRO!!!!! */
 
 /*------------------------ Header ------------------------*/
+
+main {
+    position: relative;
+    
+    width: 100vw;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+
+#gradient {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.555) 20%, transparent );
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+#title_sec1 {
+    flex: 0 1 30%;
+    font-size: 1.2rem;
+}
+
+#sec1 {
+    height: 80vh;
+    width: 100%;
+
+    
+
+    background-color: black;
+    background-image: url(../Images/Games/red_dead_redemption_2___wallpaper_v_2_by_3demerzel_ddhljyu-fullview.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: start;
+
+}
+
+#sec1 h1, #sec1 p, #sec1 button {
+    margin-left: 20px;
+}
+
+#sec1 h1, #sec1 p {
+    color: var(--PaletaCor03);
+    margin-bottom: 0.5rem;
+}
+
+#sec1 h1 {
+    margin-bottom: 0.2rem;
+    font-size: 2rem;
+}
+
+#sec1 p {
+    margin-bottom: 2rem;
+    font-family: var(--Font02);
+    font-size: 1rem;
+}
+#btn3 {
+    background-color: var(--PaletaCor01);
+    color: var(--PaletaCor03);
+    padding: 0.6rem;
+    border: none;
+    border-radius: 4px;
+
+    font: normal 500 0.9rem var(--Font01);
+}
