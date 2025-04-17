@@ -13,6 +13,7 @@ body {
 #gameimg {
     width: 80vw;
     height: 25vh;
+    position: relative;
     
 
 
@@ -28,6 +29,23 @@ body {
     border-radius: 0px 0px 10px 10px;
     object-fit: cover;
     object-position: left center;
+}
+
+#container-bolinha {
+    position: absolute;
+    bottom: 4%;
+    left: 50%;
+    columns: 3;
+    gap: 8px;
+    transform: translateX(-50%);
+}
+
+.bolinhas {
+    background-color: var(--PaletaCor02);
+    height: 8px;
+    width: 8px;
+    border-radius: 50% 50%;
+
 }
 
 main {
