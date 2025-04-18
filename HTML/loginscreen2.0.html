@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in </title>
+    
+    <!-------------------------------CSS-------------------------------------------------->
     <link rel="stylesheet" href="../CSS/settingsforallpages.css">
     <link rel="stylesheet" href="../CSS/newloginscreen.css" media="all">
     <link rel="stylesheet" href="../CSS/breakpoint481.css" media="screen and (min-width:481px)">
@@ -11,6 +13,7 @@
     <link rel="stylesheet" href="../CSS/breakpoint1024.css" media="screen and (min-width:1024px)">
     <link rel="stylesheet" href="../CSS/breakpoint1200.css" media="screen and (min-width:1200px)">
 
+    <!-------------------------------FONTS-------------------------------------------------->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
@@ -19,14 +22,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    
+    <!-------------------------------JS-------------------------------------------------->
+    <script src="../JS/loginscreenMOBILE.js" defer ></script>
+    <script src="../JS/loginscreenDESKTOP.js" defer></script>
 </head>
 <body>
     <div id="gameimg">
         <img id="game1" src="../Images/Games/BannerRDR2.jpg" alt="Imagem do Red Dead Redemption 2">
-        <img id="game2" src="../Images/Games/red_dead_redemption_2___wallpaper_v_2_by_3demerzel_ddhljyu-fullview.jpg" alt="Imagem do Red Dead Redemption 2">
+        <img id="game2" src="../Images/Games/rdr2portrait.jpg" alt="Imagem do Red Dead Redemption 2">
         <div id="container-bolinha">
-            <div class="bolinhas"></div>
+            <div class="bolinhas" id="firstbolinha"></div>
             <div class="bolinhas"></div>
             <div class="bolinhas"></div>
         </div>
@@ -82,6 +87,6 @@
         <p id="fulllogo"><span id="logopart1">eX</span><span id="logopart2">Store</span></p>
     </footer>
 
-    <script src="../JS/loginscreenMOBILE.js"></script>
+
 </body>
 </html>

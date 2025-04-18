@@ -48,6 +48,10 @@ body {
 
 }
 
+#firstbolinha {
+    background-color: var(--PaletaCor01);
+}
+
 main {
     width: 80vw;
     margin-bottom: 40px;
