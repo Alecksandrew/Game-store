@@ -28,7 +28,11 @@
     <header>
         <p id="fulllogo" class="header_children"><span id="logopart1">eX</span><span id="logopart2">Store</span></p>
 
-        <img id="hamburguer"  src="../Images/Ícones e logos/menu-de-hamburguer.svg" alt="">
+        <svg id="menuhamburguer" viewBox="0 0 100 80" width="30" height="30">
+            <rect width="100" height="7"></rect>
+            <rect y="30" width="100" height="7"></rect>
+            <rect y="60" width="100" height="7"></rect>
+        </svg>
 
         <nav id="nav2" class="header_children">
             <button id="btn1">Sing up</button>
@@ -51,83 +55,111 @@
                 <div id="title_sec1">
                     <h1>Red Dead Redemption 2</h1>
                     <p>Short description of the game. Short description of the game. Short description of the game</p>
-                    <button id="btn3">Get it now!</button>
+                    <div id="buywishlist">
+                        <button id="btn3">Get it now!</button>
+                        <button id="btn4">Wishlist!</button>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section>
-            <h1>Why us?</h1>
-            <p>The reason here</p>
-            <h2>Feature One</h2>
-            <h2>Feature Two</h2>
-            <h2>Feature Three </h2>
+        <section id="sec2">
+            <div>
+                <h2>Why us?</h2>
+                <p>We are the official Xbox partner in Indonesia that provides official video games.</p>
+            </div>
+            <div class="mainreasons">
+                <img src="../Images/Ícones e logos/bxs_badge-check.svg" alt="">
+                <p>Trusted by 100.000+ customers</p>
+            </div>
+            <div class="mainreasons">
+                <img src="../Images/Ícones e logos/fa6-brands_xbox.svg" alt="">
+                <p>Available for all Xbox consoles</p>
+            </div>
+            <div class="mainreasons">
+                <img src="../Images/Ícones e logos/fluent_xbox-controller-32-filled.svg" alt="">
+                <p>5000+ video games available</p>
+            </div>
         </section>
 
-        <section>
-            <h1>Games Category</h1>
-            <img src="" alt="Category One">
-            <img src="" alt="Category Two">
-            <img src="" alt="Category Three">
-            <img src="" alt="Category Four">
-            <img src="" alt="Category Five">
-            <img src="" alt="Category Six">
+        <section id="sec3">
+            <h2>Games Genres</h2>
+            <ul>
+                <li>RPG</li>
+                <li>Strategy</li>
+                <li>FPS</li>
+                <li>Role </li>
+                <li>Sports</li>
+            </ul>
+            <!--<img src="../Images/Games/Cyberpunk_2077_box_art.jpg" alt="Category RPG">
+            <img src="../Images/Games/farcry.jpg" alt="Category Two">
+            <img src="../Images/Games/stray.jpg" alt="Category Three">
+            <img src="../Images/Games/stardewvalley.jpg" alt="Category Four">
+            <img src="../Images/Games/" alt="Category Five">--->
         </section>
 
-        <section>
-            <h1>Best Seller Games</h1>
+        <section id="sec4">
+            <h2>Best Seller Games</h2>
             <ul>
                 <li>
-                    <img src="" alt="Game One">
-                    <h2>Games Name</h2>
+                    <div class="square-container">
+                        <img src="../Images/Games/minecraft.jpg" alt="Game One">
+                    </div>
+                    <h3>Games Name</h3>
                     <p>Price</p>
                 </li>
                 <li>
-                    <img src="" alt="Game Two">
-                    <h2>Games Name</h2>
+                    <div class="square-container">
+                        <img src="../Images/Games/God_of_War_Ragnarök_capa.jpg" alt="Game One">
+                    </div>
+                    <h3>Games Name</h3>
                     <p>Price</p>
                 </li>
                 <li>
-                    <img src="" alt="Game Three">
-                    <h2>Games Name</h2>
+                    <div class="square-container">
+                        <img src="../Images/Games/minecraft.jpg" alt="Game One">
+                    </div>
+                    <h3>Games Name</h3>
                     <p>Price</p>
                 </li>
                 <li>
-                    <img src="" alt="Game Four">
-                    <h2>Games Name</h2>
+                    <div class="square-container">
+                        <img src="../Images/Games/minecraft.jpg" alt="Game One">
+                    </div>
+                    <h3>Games Name</h3>
                     <p>Price</p>
                 </li>
             </ul>
         </section>
 
         <section>
-            <h1>Popular Games</h1>
+            <h2>Popular Games</h2>
             <ul>
                 <li>
                     <img src="" alt="Game One">
-                    <h2>Games Name</h2>
+                    <h3>Games Name</h3>
                     <p>Price</p>
                 </li>
                 <li>
                     <img src="" alt="Game Two">
-                    <h2>Games Name</h2>
+                    <h3>Games Name</h3>
                     <p>Price</p>
                 </li>
                 <li>
                     <img src="" alt="Game Three">
-                    <h2>Games Name</h2>
+                    <h3>Games Name</3>
                     <p>Price</p>
                 </li>
                 <li>
                     <img src="" alt="Game Four">
-                    <h2>Games Name</h2>
+                    <h3>Games Name</h3>
                     <p>Price</p>
                 </li>
             </ul>
         </section>
 
         <section>
-            <h1>Coming Soon</h1>
+            <h2>Coming Soon</h1>
             <img src="" alt="Pre-Order One">
             <button></button>
             <img src="" alt="Pre-Order Two">
@@ -141,13 +173,13 @@
         </section>
 
         <section>
-            <h1>12.000+ gamers satisfied</h1>
+            <h2>12.000+ gamers satisfied</h1>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est sit debitis iure quasi veritatis recusandae.</p>
-            <h2>Username One</h2>
+            <h3>Username One</h3>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt officia assumenda ratione? Pariatur, suscipit nihil?</p>
-            <h2>Username Two</h2>
+            <h3>Username Two</h3>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt officia assumenda ratione? Pariatur, suscipit nihil?</p>
-            <h2>Username Two</h2>
+            <h3>Username Two</h3>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt officia assumenda ratione? Pariatur, suscipit nihil?</p>
         </section>
     </main> 
@@ -156,14 +188,14 @@
         <img src="" alt="Game store logo">
         <img src="" alt="Social media logos">
         <Nav>
-            <h2>Menu</h2>
+            <h3>Menu</h3>
             <ul>
                 <li><a href="#">Menu 1</a></li>
                 <li><a href="#">Menu 2</a></li>
                 <li><a href="#">Menu 3</a></li>
                 <li><a href="#">Menu 4</a></li>
             </ul>
-            <h2>Menu</h2>
+            <h3>Menu</h3>
             <ul>
                 <li><a href="#">Menu 1</a></li>
                 <li><a href="#">Menu 2</a></li>
