@@ -1,12 +1,12 @@
 
 
 header {
-    background: linear-gradient( to bottom, var(--PaletaCor06), transparent);
-    padding: 20px;
-    font: normal 400 1rem var(--Font01);
+    background-color: var(--PaletaCor01);
+
+    font: normal 600 1rem var(--Font01);
 
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
    
@@ -14,41 +14,68 @@ header {
     z-index: 10;
 
     width: 100%;
-
-
-
-    
-
     
 }
+
+#hamburguer{
+    background-color: var(--PaletaCor02);
+    width: 10%;
+}
+
+#fulllogo {
+    display: none;
+}
+
+#logopart1 {
+    color: var(--PaletaCor02);
+}
+
 
 .header_children {
     z-index: 10;
+    padding: 10px;
 }
+
+
 Header ul {
     list-style: none;
 }
 
 Header a {
     text-decoration: none;
-    color: var(--PaletaCor03);
+    color: var(--PaletaCor01);
 }
+
  header ul {
    display: flex;
    flex-wrap: row nowrap;
-   justify-content: space-between;
-   gap: 50px;
+   justify-content: space-around;
+   padding: 10px;
+   
 }
 
 header a {
-    padding: 5px;
+ 
 }
 
 header a:hover{
     background-color: var(--PaletaCor01);
-    border-radius: 4px;
-    padding: 5px;
-    transition: ease-in-out 0.5s;
+    color: var(--PaletaCor02);
+    border-radius: 3px;
+    padding: 3px;
+    transition: background-color ease-in-out 0.5s, color ease-in-out 0.2s;
+
+}
+
+#nav1 {
+    background-color: var(--PaletaCor02);
+    width: 100%;
+    padding: 0;
+}
+
+.responsiveness {
+    display: none;
+    
 }
 
 #nav2 {
