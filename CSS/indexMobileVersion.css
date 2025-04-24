@@ -230,6 +230,10 @@ main {
     width: 90%;
 }
 
+#sec2 h2 {
+    margin-bottom: 5px;
+}
+
 #sec2 img {
     width: 20%;
     margin-bottom: 5px;
@@ -247,7 +251,7 @@ main {
 }
 
 #sec3 h2 {
-    margin: 10px 0px 10px 0px;
+    margin: 15px 0px 15px 0px;
 
 }
 
@@ -288,16 +292,20 @@ main {
 }
 
 #sec4 h2 {
-    margin: 10px 0px 10px 0px;
+    margin: 15px 0px 15px 0px;
 }
 
 #sec4 ul {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
-    background-color: ;
+    justify-content: ;
     align-items: center;
     list-style: none;
+
+
+    gap: 20px;
+    
+    
 }
 
 
@@ -308,28 +316,32 @@ main {
     padding: 15px;
     border-radius: 5px;
     box-shadow: 1px 6px 10px rgba(0, 0, 0, 0.24);
+    flex: 0 0 auto;
+    width: 262px;
+   height: 350px;
 
-    /*width: 270px;*/
 
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
     gap: 10px;
 
-    transform: scale(0.9);
+
+    
 }
 
 .eachgame h3 {
-    font-size: 1.7rem;
+    font-size: clamp(18px, 140%, 27px);
     text-align: left;
     font-weight: 600;
 }
 
 .square-container {
-    width: 240px;
-    height: 240px;
+    flex: 0 0 70%;
+    height: 100%;
     overflow: hidden;
     border-radius: 5px;
+
 }
 
 .pricediscount {
@@ -372,24 +384,226 @@ main {
 }
 
 .first {
-    font-size: 0.8rem;
+    font-size: 0.8em;
     text-decoration: line-through;
     color: var(--PaletaCor04);
 
 }
 
 .second {
-    font-size: 1.4rem;
+    font-size: 1.4em;
     font-weight: 600;
     color: var(--PaletaCor01);
 }
 
-#sec4 img {
+#sec4 img, #sec5 img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 100%;           
     object-position: center;
+    object-fit: cover;
+
+    
  
 }
 
 /*----SEC4 ( PRECISO ARRUMAR TAMNAHO DO NOME DOS JOGOS PARA NAO BUGAR SE FOR MUITO GRANDE) ------------*/
+
+#sec5 {
+    width: 100%;
+    text-align: center;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 15px;
+}
+
+#sec5 h2 {
+    margin: 10px 0px 10px 0px;
+}
+
+#sec5 ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+    
+    overflow-x: auto;
+    gap: 20px;
+    
+
+   
+}
+
+#sec5 ul::-webkit-scrollbar {
+    display: none;
+    
+}
+
+#sec5 img {
+    width: 100%;
+    height: 100%;           
+    object-position: center;
+    object-fit: cover;
+ 
+}
+
+#sec5 .eachgame {
+    width: calc(262px*0.8);
+    height: calc(350px*0.8);
+
+}
+
+#sec5 .pricediscount {
+    height: 40px;
+    margin-top: -5px;
+    font-size: 0.8em;
+}
+
+/*------------SEC5-----------------*/
+
+#sec6 {
+    background-color: var(--PaletaCor01);
+    width: 100%;
+    text-align: center;
+   
+}
+
+#sec6 h2 {
+    margin: 10px 0px 10px 0px;
+    color: var(--PaletaCor03);
+}
+
+#sec6 ul {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+    
+    
+
+   
+}
+
+
+
+
+#sec6 img {
+    width: 100%;
+    height: 100%;           
+    object-position: center;
+    object-fit: cover;
+ 
+}
+
+#sec6 .eachgame {
+    box-shadow: 1px 6px 14px rgba(0, 0, 0, 0.459);
+    margin-bottom: 20px;
+
+
+
+    background-color: var(--PaletaCor04);
+
+}
+
+#sec6 h3, #sec6 .first {
+    color: var(--PaletaCor03);
+}
+
+#sec6 .pricediscount {
+    height: 40px;
+    margin-top: -5px;
+    font-size: 0.8em;
+
+    
+
+
+}
+
+/*--------------SEC6----------------*/
+
+#sec7 {
+    text-align: center;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+
+}
+
+#maininfos {
+    width: 80%;
+}
+#allreviews {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 25px;
+    width: 100%;
+
+    overflow-x: auto;
+
+    margin-bottom: 30px;
+}
+
+#allreviews::-webkit-scrollbar {
+    display: none ;
+}
+
+.reviews  {
+    background-color: var(--PaletaCor03);
+    flex: 0 0 300px;
+
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.329);
+    border-radius: 8px;
+    padding: 10px;
+    
+}
+
+.peopleimg {
+    border-radius: 50%;
+    width: 20vw;
+    height: 20vw;
+    object-fit: cover;
+    object-position: right top;
+}
+
+.stars {
+    height: 7vw;
+    margin-bottom: 10px;
+
+}
+
+/*---------------------SEC7-------------------------*/
+
+footer {
+    background-color: var(--PaletaCor04);
+    color: var(--PaletaCor03);
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--PaletaCor03);
+}
+
+footer a:visited {
+    color: var(--PaletaCor05);
+}
+
+footer li {
+    list-style-type: none;
+    margin-bottom: 8px;
+}
+
+footer h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+footer nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
