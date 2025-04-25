@@ -142,13 +142,15 @@ main {
 }
 
 #title_sec1 {
-    flex: 1 1;
-    max-width: 80%;
+    flex: 0 0 80%;
+    max-width: 700px;
     margin-bottom: 15px;
 
     display: flex;
     flex-flow: column nowrap;
-    align-items: center;
+    align-items: left;
+
+    
 
 }
 
@@ -188,9 +190,12 @@ main {
 }
 
 #sec1 p {
-    margin-bottom: 2rem;
+    margin-bottom: 1.3rem;
     font-family: var(--Font02);
-    font-size: 0.95rem;
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+    font-weight: 300;
+    
     
 }
 
@@ -238,6 +243,7 @@ main {
 
 #container-bolinha {
    flex: 1 1;
+   align-self: center;
    gap: 10px;
    display: flex;
 }
@@ -276,11 +282,20 @@ main {
 
 #sec2 img {
     width: 20%;
+    max-width: 80px;
     margin-bottom: 5px;
 }
 
 .mainreasons p {
     font-weight: 600;
+}
+
+#container_reasons {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 25px;
+    
 }
 
 /*------------SEC2----------------*/
@@ -436,7 +451,7 @@ main {
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
-    gap: 10px;
+    
 
 
     
@@ -446,6 +461,8 @@ main {
     font-size: clamp(18px, 140%, 27px);
     text-align: left;
     font-weight: 600;
+    margin-top:10px;
+    margin-bottom: 5px;
 }
 
 .square-container {
@@ -657,7 +674,7 @@ main {
     flex-flow: row nowrap;
     gap: 25px;
     width: 100%;
-    padding: 15px;
+    padding: 15px 0px 15px 0px;
 
     overflow-x: auto;
 

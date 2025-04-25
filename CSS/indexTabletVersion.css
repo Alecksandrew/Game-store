@@ -1,0 +1,68 @@
+/*FOR MEDIUM WIDTHS*/
+
+#title_sec1 h1  {
+    font-size: 2rem;
+}
+
+#title_sec1 p {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    
+}
+
+/*---------SEC1-----------*/
+
+#container_reasons {
+    flex-flow: row nowrap;
+}
+
+#text_sec2  {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+}
+
+#text_sec2 p {
+    max-width: 400px;
+}
+
+/*----------SEC2---------*/
+
+
+#sec3 ul {
+    justify-content: center;
+}
+
+#sec3 li {
+    min-width: 150px ;
+    min-height: 150px;
+}
+
+/*------SEC3------*/
+
+#sec4 ul {
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#sec4 .eachgame {
+    width: 400px;
+    height: 533.59px;
+    /*width: 220px;
+    height: 275.19px;*/
+}
+
+#sec4 .pricediscount {
+    height: 40px;
+}
+
+#sec4 .price {
+    font-size: 0.8rem;
+}
+
+/*--------SEC3-----------*/
+
+#sec5 ul {
+    justify-content: center;
+}
