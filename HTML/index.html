@@ -57,10 +57,21 @@
                     <p>Short description of the game. Short description of the game. Short description of the game</p>
                     <div id="buywishlist">
                         <button id="btn3">Get it now!</button>
-                        <button id="btn4">Wishlist!</button>
+                        <button id="btn4">
+                            <svg class="starwishlist" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                        </button>
+                          
+                    </div>
+                    <div id="container-bolinha">
+                        <div class="bolinhas" id="firstbolinha"></div>
+                        <div class="bolinhas"></div>
+                        <div class="bolinhas"></div>
                     </div>
                 </div>
             </div>
+            
         </section>
 
         <section id="sec2">
@@ -85,11 +96,11 @@
         <section id="sec3">
             <h2>Games Genres</h2>
             <ul>
-                <li>RPG</li>
-                <li>Strategy</li>
-                <li>FPS</li>
-                <li>Role </li>
-                <li>Sports</li>
+                <li><span class="textahead">RPG</span></li>
+                <li><span class="textahead">Strategy</span></li>
+                <li><span class="textahead">FPS</span></li>
+                <li><span class="textahead">Role</span> </li> <!--ARRUMAR BUG CATEGORIA GRANDE-->
+                <li><span class="textahead">Sports</span></li>
             </ul>
             <!--<img src="../Images/Games/Cyberpunk_2077_box_art.jpg" alt="Category RPG">
             <img src="../Images/Games/farcry.jpg" alt="Category Two">
@@ -103,14 +114,14 @@
             <ul>
                 <li class="eachgame">
                     <div class="square-container">
-                        <img src="../Images/Games/minecraft.jpg" alt="Game One">
+                        <img src="../Images/Games/minecraft.jpg" alt="Minecraft">
                     </div>
                     <h3>Minecraft</h3>
                     <div class="pricediscount">
                         <p class="discount">-50%</p>
                         <div class="price">
-                            <p class="first">$50</p>
-                            <p class="second">$25</p>
+                            <p class="first">$20</p>
+                            <p class="second">$10</p>
                         </div>
                     </div>
                 </li>
@@ -120,10 +131,10 @@
                     </div>
                     <h3>GOW Ragnarok</h3>
                     <div class="pricediscount">
-                        <p class="discount">-50%</p>
+                        <p class="discount">-20%</p>
                         <div class="price">
-                            <p class="first">$50</p>
-                            <p class="second">$25</p>
+                            <p class="first">$60</p>
+                            <p class="second">$48</p>
                         </div>
                     </div>
                 </li>
@@ -133,10 +144,10 @@
                     </div>
                     <h3>The Witcher 3</h3>
                     <div class="pricediscount">
-                        <p class="discount">-50%</p>
+                        <p class="discount">-90%</p>
                         <div class="price">
-                            <p class="first">$50</p>
-                            <p class="second">$25</p>
+                            <p class="first">$20</p>
+                            <p class="second">$2</p>
                         </div>
                     </div>
                 </li>
@@ -146,10 +157,10 @@
                     </div>
                     <h3>RDR 2</h3>
                     <div class="pricediscount">
-                        <p class="discount">-50%</p>
+                        <p class="discount">-80%</p>
                         <div class="price">
                             <p class="first">$50</p>
-                            <p class="second">$25</p>
+                            <p class="second">$10</p>
                         </div>
                     </div>
                 </li>
@@ -163,9 +174,22 @@
             <ul>
                 <li class="eachgame">
                     <div class="square-container">
-                        <img src="../Images/Games/minecraft.jpg" alt="Game One">
+                        <img src="../Images/Games/Cyberpunk_2077_box_art.jpg" alt="Game One">
                     </div>
-                    <h3>Minecraft</h3>
+                    <h3>Cyberpunk 2077</h3>
+                    <div class="pricediscount">
+                        <p class="discount">-10%</p>
+                        <div class="price">
+                            <p class="first">$50</p>
+                            <p class="second">$45</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="eachgame">
+                    <div class="square-container">
+                        <img style="object-position: top;" src="../Images/Games/baldurst.jpg" alt="Game One">
+                    </div>
+                    <h3>Baldurs Gate 3</h3>
                     <div class="pricediscount">
                         <p class="discount">-50%</p>
                         <div class="price">
@@ -176,9 +200,9 @@
                 </li>
                 <li class="eachgame">
                     <div class="square-container">
-                        <img style="object-position: top;" src="../Images/Games/God_of_War_Ragnarök_capa.jpg" alt="Game One">
+                        <img src="../Images/Games/fifa.jpg" alt="Game One">
                     </div>
-                    <h3>GOW Ragnarok</h3>
+                    <h3>EA FC 2025</h3>
                     <div class="pricediscount">
                         <p class="discount">-50%</p>
                         <div class="price">
@@ -189,22 +213,9 @@
                 </li>
                 <li class="eachgame">
                     <div class="square-container">
-                        <img src="../Images/Games/theWitcherRetrato.jpeg" alt="Game One">
+                        <img src="../Images/Games/stardewvalley.jpg" alt="Game One">
                     </div>
-                    <h3>The Witcher 3</h3>
-                    <div class="pricediscount">
-                        <p class="discount">-50%</p>
-                        <div class="price">
-                            <p class="first">$50</p>
-                            <p class="second">$25</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="eachgame">
-                    <div class="square-container">
-                        <img src="../Images/Games/rdr2portrait.jpg" alt="Game One">
-                    </div>
-                    <h3>RDR 2</h3>
+                    <h3>Stardew Valley</h3>
                     <div class="pricediscount">
                         <p class="discount">-50%</p>
                         <div class="price">
@@ -220,9 +231,9 @@
             <ul>
                 <li class="eachgame">
                     <div class="square-container">
-                        <img src="../Images/Games/minecraft.jpg" alt="Game One">
+                        <img src="../Images/Games/theLastOfUsRetrato.jpg" alt="Game One">
                     </div>
-                    <h3>Minecraft</h3>
+                    <h3>The Last Of Us 2</h3>
                     <div class="pricediscount">
                         <p class="discount">-50%</p>
                         <div class="price">
@@ -233,9 +244,9 @@
                 </li>
                 <li class="eachgame">
                     <div class="square-container">
-                        <img style="object-position: top;" src="../Images/Games/God_of_War_Ragnarök_capa.jpg" alt="Game One">
+                        <img style="object-position: center center;" src="../Images/Games/gta.jpg" alt="Game One">
                     </div>
-                    <h3>GOW Ragnarok</h3>
+                    <h3>GTA 5</h3>
                     <div class="pricediscount">
                         <p class="discount">-50%</p>
                         <div class="price">
@@ -246,9 +257,9 @@
                 </li>
                 <li class="eachgame">
                     <div class="square-container">
-                        <img src="../Images/Games/theWitcherRetrato.jpeg" alt="Game One">
+                        <img src="../Images/Games/davediver.jpg" alt="Game One">
                     </div>
-                    <h3>The Witcher 3</h3>
+                    <h3>Dave The Diver</h3>
                     <div class="pricediscount">
                         <p class="discount">-50%</p>
                         <div class="price">
@@ -259,7 +270,7 @@
                 </li>
                 <li class="eachgame">
                     <div class="square-container">
-                        <img src="../Images/Games/rdr2portrait.jpg" alt="Game One">
+                        <img src="../Images/Games/stray.jpg" alt="Game One">
                     </div>
                     <h3>RDR 2</h3>
                     <div class="pricediscount">
@@ -280,49 +291,55 @@
             <ul>
                 <li class="eachgame">
                     <div class="square-container">
-                        <img src="../Images/Games/minecraft.jpg" alt="Game One">
+                        <img src="../Images/Games/gta6.jpg" alt="Game One">
                     </div>
-                    <h3>Minecraft</h3>
+                    <h3>GTA 6</h3>
                     <div class="pricediscount">
+                        <p class="discount wishlist">Wishlist!</p>
+                    </div>
+                    <div class="pricediscount" style="display: none;">
                         <p class="discount">-50%</p>
                         <div class="price">
                             <p class="first">$50</p>
                             <p class="second">$25</p>
+                        </div>.
+                    </div>
+                </li>
+                <li class="eachgame">
+                    <div class="square-container">
+                        <img  src="../Images/Games/yotei.jpg" alt="Game One">
+                    </div>
+                    <h3>Ghost Of Yotei</h3>
+                    <div class="pricediscount">
+                        <p class="discount" style="font-size: 1.4rem;">Pre Order</p>
+                        <div class="price">
+                            <p class="first" style="display: none;">$50</p>
+                            <p class="second" style="font-size: 1.3rem;">$25</p>
                         </div>
                     </div>
                 </li>
                 <li class="eachgame">
                     <div class="square-container">
-                        <img style="object-position: top;" src="../Images/Games/God_of_War_Ragnarök_capa.jpg" alt="Game One">
+                        <img src="../Images/Games/Hollow_Knight_Silksong_cover.jpeg" alt="Game One">
                     </div>
-                    <h3>GOW Ragnarok</h3>
+                    <h3 style="font-size: 1.39rem;">Hollow Knight Silksong</h3>
                     <div class="pricediscount">
-                        <p class="discount">-50%</p>
+                        <p class="discount" style="font-size: 1.4rem;">Pre Order</p>
                         <div class="price">
-                            <p class="first">$50</p>
-                            <p class="second">$25</p>
+                            <p class="first" style="display: none;">$50</p>
+                            <p class="second" style="font-size: 1.3rem;">$25</p>
                         </div>
                     </div>
                 </li>
                 <li class="eachgame">
                     <div class="square-container">
-                        <img src="../Images/Games/theWitcherRetrato.jpeg" alt="Game One">
+                        <img src="../Images/Games/deathstra2.jpg" alt="Game One">
                     </div>
-                    <h3>The Witcher 3</h3>
+                    <h3>Death Stranding 2</h3>
                     <div class="pricediscount">
-                        <p class="discount">-50%</p>
-                        <div class="price">
-                            <p class="first">$50</p>
-                            <p class="second">$25</p>
-                        </div>
+                        <p class="discount wishlist">Wishlist!</p>
                     </div>
-                </li>
-                <li class="eachgame">
-                    <div class="square-container">
-                        <img src="../Images/Games/rdr2portrait.jpg" alt="Game One">
-                    </div>
-                    <h3>RDR 2</h3>
-                    <div class="pricediscount">
+                    <div class="pricediscount" style="display: none;">
                         <p class="discount">-50%</p>
                         <div class="price">
                             <p class="first">$50</p>
@@ -361,6 +378,7 @@
                     <h3>Username One</h3>
                     <img class="stars" src="../Images/Details/stars.png" alt="">
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt officia assumenda ratione? Pariatur, suscipit nihil?</p>
+                
                 </div>
             </div>
         </section>
@@ -372,23 +390,23 @@
             <div id="menu">
                 <h3>Menu</h3>
                 <ul>
-                    <li><a href="#">Menu 1</a></li>
-                    <li><a href="#">Menu 2</a></li>
-                    <li><a href="#">Menu 3</a></li>
-                    <li><a href="#">Menu 4</a></li>
+                    <li><a href="#">Order Tracking</a></li>
+                    <li><a href="#">Store Location</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Support</a></li>
                 </ul>
             </div>
             <div id="resources">
                 <h3>Resources</h3>
                 <ul>
-                    <li><a href="#">Menu 1</a></li>
-                    <li><a href="#">Menu 2</a></li>
-                    <li><a href="#">Menu 3</a></li>
-                    <li><a href="#">Menu 4</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Guidelines</a></li>
                 </ul>
             </div>
         </Nav>
-        <img src="" alt="Game store logo">
+        <p id="fulllogo" style="display: block; text-align: center;"><span id="logopart1">eX</span><span id="logopart2">Store</span></p>
     </footer>
 </body>
 </html>

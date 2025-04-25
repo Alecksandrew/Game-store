@@ -1,5 +1,12 @@
 
 
+h2 {
+    font-size: 1.8rem;
+}
+
+
+/*-----------GLOBAL SETTINGS----------------*/
+
 header {
     background-color: var(--PaletaCor01);
 
@@ -30,7 +37,7 @@ rect {
 }
 
 #logopart1 {
-    color: var(--PaletaCor02);
+    color: var(--PaletaCor01);
 }
 
 
@@ -108,7 +115,6 @@ header a:hover{
     color: var(--PaletaCor01);
 }
 
-/* ESTUDAR FLEX BOX PRIMEIRO!!!!! */
 
 /*------------------------ Header ------------------------*/
 
@@ -120,7 +126,7 @@ main {
     flex-flow: column nowrap;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
+    gap: 40px;
 }
 
 
@@ -138,12 +144,16 @@ main {
 #title_sec1 {
     flex: 1 1;
     max-width: 80%;
-    margin-bottom: 1.5rem;
+    margin-bottom: 15px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
 
 }
 
 #sec1 {
-    height: 90vh;
+    height: 95vh;
     width: 100%;
 
     
@@ -194,20 +204,50 @@ main {
 }
 
 #btn3 {
-    width: 70%;
+    flex: 0 0 80%;
     background-color: var(--PaletaCor01);
     color: var(--PaletaCor03);
 }
 
 #btn4 {
     background-color: var(--PaletaCor03);
-    color: var(--PaletaCor01) ;
-    border: 1px solid var(--pa)
+    flex: 1 1;
+    padding: 0px;
+    
 }
 
 
 #buywishlist {
     width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 2px;
+    align-items: stretch;
+    height: 40px;
+
+    margin-bottom: 15px;
+}
+
+.starwishlist {
+    fill: none;
+    stroke: var(--PaletaCor01);
+    stroke-width: 2px;
+    height: 100%;
+
+}
+
+#container-bolinha {
+   flex: 1 1;
+   gap: 10px;
+   display: flex;
+}
+
+.bolinhas {
+    background-color: var(--PaletaCor02);
+    height: 8px;
+    width: 8px;
+    border-radius: 50% 50%;
+
 }
 
 /*-----SEC1------------------*/
@@ -255,18 +295,90 @@ main {
 
 }
 
+.textahead {
+    z-index: 2;
+    color: white;
+    font-weight: 500;
+}
+
 #sec3 li {
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     min-width: 120px ;
     min-height: 120px;
     list-style-type: none;
-    color: white;
+
+    border-radius: 5px;
+    border: 3px solid var(--PaletaCor01);
+    
 
 
     display: flex;
     justify-content: center;
     align-items: center;
 
+    position: relative;
+
+}
+
+#sec3 li:nth-child(1)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.15;
+    z-index: 0;
+    background:  url(../Images/Games/Cyberpunk_2077_box_art.jpg) center center /cover;
+    
+}
+
+#sec3 li:nth-child(2)::before {
+    background:  url(../Images/Games/stardewvalley.jpg) center top /cover;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+#sec3 li:nth-child(3)::before {
+    background:  url(../Images/Games/farcry.jpg) center center /cover;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+#sec3 li:nth-child(4)::before {
+    background:  url(../Images/Games/baldurst.jpg) center center /cover;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+#sec3 li:nth-child(5)::before {
+    background:  url(../Images/Games/fifa.jpg) center center /cover;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.15;
+    z-index: 0;
 }
 
 #sec3 ul {
@@ -276,7 +388,7 @@ main {
     width: 100%;
 
 
-    background-color: aqua;
+    
     
 }
 
@@ -337,7 +449,7 @@ main {
 }
 
 .square-container {
-    flex: 0 0 70%;
+    flex: 1 0 70%;
     height: 100%;
     overflow: hidden;
     border-radius: 5px;
@@ -356,7 +468,7 @@ main {
     font-weight: 500;
     background-color: var(--PaletaCor01);
     color: var(--PaletaCor03);
-    flex: 0 0 70%;
+    flex: 0 1 70%;
     
     display: flex;
     height: 100%;
@@ -414,11 +526,11 @@ main {
 
     display: flex;
     flex-flow: column nowrap;
-    gap: 15px;
+    gap:;
 }
 
 #sec5 h2 {
-    margin: 10px 0px 10px 0px;
+    margin: 15px 0px 0px 0px;
 }
 
 #sec5 ul {
@@ -430,6 +542,8 @@ main {
     
     overflow-x: auto;
     gap: 20px;
+
+    padding: 15px;
     
 
    
@@ -470,7 +584,7 @@ main {
 }
 
 #sec6 h2 {
-    margin: 10px 0px 10px 0px;
+    margin: 20px 0px 15px 0px;
     color: var(--PaletaCor03);
 }
 
@@ -481,8 +595,6 @@ main {
     align-items: center;
     list-style: none;
     
-    
-
    
 }
 
@@ -507,6 +619,12 @@ main {
 
 }
 
+.wishlist {
+    flex: 1 0 ;
+    border-radius: 5px;
+    font-size: 1.4rem;
+}
+
 #sec6 h3, #sec6 .first {
     color: var(--PaletaCor03);
 }
@@ -515,10 +633,6 @@ main {
     height: 40px;
     margin-top: -5px;
     font-size: 0.8em;
-
-    
-
-
 }
 
 /*--------------SEC6----------------*/
@@ -537,11 +651,13 @@ main {
 #maininfos {
     width: 80%;
 }
+
 #allreviews {
     display: flex;
     flex-flow: row nowrap;
     gap: 25px;
     width: 100%;
+    padding: 15px;
 
     overflow-x: auto;
 
@@ -581,11 +697,13 @@ main {
 footer {
     background-color: var(--PaletaCor04);
     color: var(--PaletaCor03);
+    padding: 30px 0px 15px 0px;
 }
 
 footer a {
     text-decoration: none;
     color: var(--PaletaCor03);
+    font-weight: 300;
 }
 
 footer a:visited {
@@ -598,7 +716,7 @@ footer li {
 }
 
 footer h3 {
-    margin-top: 20px;
+
     margin-bottom: 20px;
 }
 
@@ -606,4 +724,5 @@ footer nav {
     display: flex;
     width: 100%;
     justify-content: space-around;
+    margin-bottom: 40px;
 }
