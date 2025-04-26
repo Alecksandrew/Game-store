@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+#title_sec1 h1 {
+    font-size: 2.8rem;
+}
+
+#title_sec1 p {
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+}
+
+#container_reasons {
+    flex-flow: row nowrap;
+}
+
+#sec3 ul {
+    justify-content: center;
+}
+
+#sec4 ul {
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.eachgame {
+    width: 301px; /* 262 * 1.15 */
+    height: 402px; /* 350 * 1.15 */
+}
+
+#sec5 .eachgame {
+    width: calc(301px*0.8);
+    height: calc(402px*0.8); 
+}
+
+#sec6 ul {
+    flex-flow: row wrap;
+    justify-content: center;
+
+    margin-bottom: 0px;
+}
+
+/*---ARRUMAR REVIEWS, ROLAGEM LATERAL COM FOCO NA REVIEW CENTRAL-------------*/

@@ -8,12 +8,12 @@
 }
 
 :root {
-    --PaletaCor01: #3B44F6;      
-    --PaletaCor02: #d8dafd;  /* Shapes and icons' background */
-    --PaletaCor03: #FFFFFF;   /* Texts */
-    --PaletaCor04: #181818;   /* Page's Background and Texts */
-    --PaletaCor05: #F5F4F9;   /* Page's Background */
-    --PaletaCor06: #18181891; /* Page's Background and Texts - Less opacity */
+    --PaletaCor01: rgb(59, 68, 246);      
+    --PaletaCor02: rgb(216, 218, 253);  /* Shapes and icons' background */
+    --PaletaCor03: rgb(255, 255, 255);   /* Texts */
+    --PaletaCor04: rgb(24, 24, 24);   /* Page's Background and Texts */
+    --PaletaCor05: #f5f4f9;   /* Page's Background */
+    --PaletaCor06: rgba(24, 24, 24, 0.569); /* Page's Background and Texts - Less opacity */
     --Font01: 'Lexend', sans-serif; /* Titles */
     --Font02: 'Roboto', sans-serif; /* Paragraphs */
 }

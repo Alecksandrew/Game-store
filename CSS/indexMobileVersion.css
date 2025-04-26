@@ -4,6 +4,11 @@ h2 {
     font-size: 1.8rem;
 }
 
+section, main {
+    background-color: var(--PaletaCor05);
+}
+
+
 
 /*-----------GLOBAL SETTINGS----------------*/
 
@@ -17,9 +22,8 @@ header {
     justify-content: space-between;
     align-items: center;
    
-    position: absolute;
     z-index: 10;
-
+    height: 8vh;
     width: 100%;
     
 }
@@ -154,22 +158,54 @@ main {
 
 }
 
-#sec1 {
-    height: 95vh;
+#divsec1 {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    position: relative;
+    height: 92vh;
 
-    
+  
+}
 
-    background-color: black;
-    background-image: url(../Images/Games/red_dead_redemption_2___wallpaper_v_2_by_3demerzel_ddhljyu-fullview.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+#divsec1::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+    background: url(../Images/Games/red_dead_redemption_2___wallpaper_v_2_by_3demerzel_ddhljyu-fullview.jpg) center center / cover no-repeat;
+    filter: grayscale(100%);
+    opacity: 0.5;
 
+}
+
+#divsec1::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(to top, #f5f4f9 , transparent 40%);
+    position: absolute;
+    z-index: 1;
+}
+
+
+#sec1 {
+    height: 90vh;
+    width: 100%;
+    z-index: 2;
+    overflow: hidden;
+    background: black url(../Images/Games/red_dead_redemption_2___wallpaper_v_2_by_3demerzel_ddhljyu-fullview.jpg) center center / cover no-repeat;
+
+    position: relative;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: start;
+
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.404);
+
 
 }
 
@@ -255,6 +291,75 @@ main {
     border-radius: 50% 50%;
 
 }
+/*
+#allgames {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    height: 80%;
+    width: 15vw;
+    gap: 5px;
+
+    position: relative;
+}*/
+
+#allgames {
+    
+    grid-template-rows: repeat(4, 1fr);
+
+    height: 80%;
+    width: 15vw;
+    gap: 5px;
+    
+    position: relative;
+    display: none;
+    z-index: 2;
+}
+
+.imggames {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 10px;
+    border: 5px solid var(--PaletaCor03);
+    overflow: hidden;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.404);
+}
+
+.imggames:nth-child(1) {
+    background:  url(../Images/Games/red_dead_redemption_2___wallpaper_v_2_by_3demerzel_ddhljyu-fullview.jpg) center top / cover no-repeat;
+    border: 5px solid var(--PaletaCor01);
+}
+
+.imggames:nth-child(2) {
+    background:  url(../Images/Games/minecraft.jpg) center 10% / cover no-repeat;
+}
+
+.imggames:nth-child(3) {
+    background:  url(../Images/Games/theLastOfUsPaisagem.jpg) 20% center / cover no-repeat;
+}
+
+.imggames:nth-child(4) {
+    background:  url(../Images/Games/God_of_War_Ragnarök_capa.jpg) center 10% / cover no-repeat;
+}
+
+
+
+.imggames::after {
+    content: '';
+    position: absolute; 
+    background-color:  rgba(255, 255, 255, 0.432);
+    pointer-events: none;
+    inset: 0;
+}
+
+.imggames:nth-child(1):after {
+
+    opacity: 0;
+}
+
+
 
 /*-----SEC1------------------*/
 
@@ -272,6 +377,10 @@ main {
     width: 90%;
 }
 
+#text_sec2 {
+    max-width: 400px;
+}
+
 #sec2 h2 #sec2 p {
     width: 90%;
 }
@@ -281,8 +390,8 @@ main {
 }
 
 #sec2 img {
-    width: 20%;
-    max-width: 80px;
+    width: 30%;
+    max-width: 60px;
     margin-bottom: 5px;
 }
 
@@ -597,11 +706,12 @@ main {
     background-color: var(--PaletaCor01);
     width: 100%;
     text-align: center;
+    padding: 40px 0px 40px 0px;
    
 }
 
 #sec6 h2 {
-    margin: 20px 0px 15px 0px;
+    margin-bottom:15px;
     color: var(--PaletaCor03);
 }
 
@@ -611,7 +721,7 @@ main {
     justify-content: flex-start;
     align-items: center;
     list-style: none;
-    
+    gap: 20px;
    
 }
 
@@ -628,7 +738,8 @@ main {
 
 #sec6 .eachgame {
     box-shadow: 1px 6px 14px rgba(0, 0, 0, 0.459);
-    margin-bottom: 20px;
+ 
+
 
 
 
@@ -644,6 +755,11 @@ main {
 
 #sec6 h3, #sec6 .first {
     color: var(--PaletaCor03);
+}
+
+#sec6 h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #sec6 .pricediscount {
@@ -667,14 +783,16 @@ main {
 
 #maininfos {
     width: 80%;
+    max-width: 400px;
 }
 
 #allreviews {
     display: flex;
     flex-flow: row nowrap;
-    gap: 25px;
+    gap: 20px;
     width: 100%;
     padding: 15px 0px 15px 0px;
+    justify-content: center;
 
     overflow-x: auto;
 
@@ -691,20 +809,23 @@ main {
 
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.329);
     border-radius: 8px;
-    padding: 10px;
+    padding: 20px;
     
 }
 
 .peopleimg {
     border-radius: 50%;
     width: 20vw;
+    max-width: 100px;
     height: 20vw;
+    max-height: 100px;
     object-fit: cover;
     object-position: right top;
 }
 
 .stars {
     height: 7vw;
+    max-height: 35px;
     margin-bottom: 10px;
 
 }

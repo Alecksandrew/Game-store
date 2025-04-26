@@ -10,6 +10,24 @@
     
 }
 
+#divsec1 {
+    height: 90vh;
+    align-items: center;
+}
+
+#sec1 {
+  height: 80%;
+  width: 70%;
+  border-radius: 10px;
+  border: 5px solid var(--PaletaCor01);
+ 
+ 
+}
+
+#allgames {
+    display: grid;
+}
+
 /*---------SEC1-----------*/
 
 #container_reasons {
@@ -46,7 +64,7 @@
     justify-content: center;
 }
 
-#sec4 .eachgame {
+.eachgame {
     width: 400px;
     height: 533.59px;
     /*width: 220px;
@@ -61,8 +79,13 @@
     font-size: 0.8rem;
 }
 
-/*--------SEC3-----------*/
+/*--------SEC4-----------*/
 
 #sec5 ul {
     justify-content: center;
+}
+
+#sec .eachgame {
+    width: calc(400px*0.8);
+    height: calc(533.59px*0.8); 
 }

@@ -12,7 +12,9 @@
     <!--------------------------CSS---------------------------->
     <link rel="stylesheet" href="../CSS/settingsforallpages.css" media="all">
     <link rel="stylesheet" href="../CSS/indexMobileVersion.css" media="all">
-    <link rel="stylesheet" href="../CSS/indexTabletVersion.css" media="screen and (min-width: 1024px)">
+    <link rel="stylesheet" href="../CSS/indexmin768px.css" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="../CSS/indexMin1024px.css" media="screen and (min-width: 1024px)">
+
     
 
     <!--------------------------Fonts---------------------------->
@@ -53,26 +55,35 @@
     <main>
         <!---TESTAR UMA IDEIA DEPOIS -> colocar a imagem do game e no lugar das bolinhas colocar 3 imagens do jogo que irão se expandindo, quando terminar de mostrar as 3 ou 2 imagens, passa para o proximo jogo e a sequencia continua-->
         
-        <section id="sec1">
-            <div id="gradient">
-                <div id="title_sec1">
-                    <h1>Red Dead Redemption 2</h1>
-                    <p>Um fora da lei luta para sobreviver em um mundo em colapso, enfrentando traições e fugindo da justiça no fim do Velho Oeste.</p>
-                    <div id="buywishlist">
-                        <button id="btn3">Get it now!</button>
-                        <button id="btn4">
-                            <svg class="starwishlist" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
-                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-                            </svg>
-                        </button>
-                          
-                    </div>
-                    <div id="container-bolinha">
-                        <div class="bolinhas" id="firstbolinha"></div>
-                        <div class="bolinhas"></div>
-                        <div class="bolinhas"></div>
+        <section id="divsec1">
+            <div id="sec1">
+                <div id="gradient">
+                    <div id="title_sec1">
+                        <h1>Red Dead Redemption 2</h1>
+                        <p>Um fora da lei luta para sobreviver em um mundo em colapso, enfrentando traições e fugindo da justiça no fim do Velho Oeste.</p>
+                        <div id="buywishlist">
+                            <button id="btn3">Get it now!</button>
+                            <button id="btn4">
+                                <svg class="starwishlist" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                                </svg>
+                            </button>
+                
+                        </div>
+                        <div id="container-bolinha">
+                            <div class="bolinhas" id="firstbolinha"></div>
+                            <div class="bolinhas"></div>
+                            <div class="bolinhas"></div>
+                        </div>
                     </div>
                 </div>
+                
+            </div>
+            <div id="allgames">
+                <div class="imggames"></div>
+                <div class="imggames"></div>
+                <div class="imggames"></div>
+                <div class="imggames"></div>
             </div>
             
         </section>
@@ -310,32 +321,7 @@
                         </div>.
                     </div>
                 </li>
-                <li class="eachgame">
-                    <div class="square-container">
-                        <img  src="../Images/Games/yotei.jpg" alt="Game One">
-                    </div>
-                    <h3>Ghost Of Yotei</h3>
-                    <div class="pricediscount">
-                        <p class="discount" style="font-size: 1.4rem;">Pre Order</p>
-                        <div class="price">
-                            <p class="first" style="display: none;">$50</p>
-                            <p class="second" style="font-size: 1.3rem;">$25</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="eachgame">
-                    <div class="square-container">
-                        <img src="../Images/Games/Hollow_Knight_Silksong_cover.jpeg" alt="Game One">
-                    </div>
-                    <h3 style="font-size: 1.39rem;">Hollow Knight Silksong</h3>
-                    <div class="pricediscount">
-                        <p class="discount" style="font-size: 1.4rem;">Pre Order</p>
-                        <div class="price">
-                            <p class="first" style="display: none;">$50</p>
-                            <p class="second" style="font-size: 1.3rem;">$25</p>
-                        </div>
-                    </div>
-                </li>
+                
                 <li class="eachgame">
                     <div class="square-container">
                         <img src="../Images/Games/deathstra2.jpg" alt="Game One">
@@ -352,6 +338,36 @@
                         </div>
                     </div>
                 </li>
+
+                <li class="eachgame">
+                    <div class="square-container">
+                        <img  src="../Images/Games/yotei.jpg" alt="Game One">
+                    </div>
+                    <h3>Ghost Of Yotei</h3>
+                    <div class="pricediscount">
+                        <p class="discount" style="font-size: 1.4rem;">Pre Order</p>
+                        <div class="price">
+                            <p class="first" style="display: none;">$50</p>
+                            <p class="second" style="font-size: 1.3rem;">$25</p>
+                        </div>
+                    </div>
+                </li>
+                
+                
+                <li class="eachgame">
+                    <div class="square-container">
+                        <img src="../Images/Games/Hollow_Knight_Silksong_cover.jpeg" alt="Game One">
+                    </div>
+                    <h3 style="font-size: 1.39rem;">Hollow Knight Silksong</h3>
+                    <div class="pricediscount">
+                        <p class="discount" style="font-size: 1.4rem;">Pre Order</p>
+                        <div class="price">
+                            <p class="first" style="display: none;">$50</p>
+                            <p class="second" style="font-size: 1.3rem;">$25</p>
+                        </div>
+                    </div>
+                </li>
+                
                 
                 
             </ul>
