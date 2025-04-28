@@ -31,7 +31,7 @@ let changeBackgroundBolinhas = function() {
     bolinhas[indexBolinha].style['background-color'] = cor01;
     noColorBolinha = bolinhas[indexBolinha - 1] || bolinhas[bolinhas.length - 1];
     noColorBolinha.style['background-color'] = cor02;
-    indexBolinha = (indexBolinha + 1)%3 
+    indexBolinha = (indexBolinha + 1)%bolinhas.length;
 
 };
 

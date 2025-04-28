@@ -1,4 +1,8 @@
 
+:root {
+    --main-game-image: url(../Images/Games/red_dead_redemption_2_wallpaper.jpg) center center / cover no-repeat;
+}
+
 
 h2 {
     font-size: 1.8rem;
@@ -24,7 +28,9 @@ header {
    
     z-index: 10;
     height: 8vh;
+    max-height: 50px;
     width: 100%;
+    min-height: 50px;
     
 }
 
@@ -97,6 +103,7 @@ header a:hover{
     flex-flow: row nowrap;
     gap: 10px ;
     align-items: center;
+    height: 100%;
     
 }
 
@@ -111,12 +118,15 @@ header a:hover{
 #nav2 #btn1 {
     background-color: var(--PaletaCor01);
     color: var(--PaletaCor03);
+    outline: 2px solid var(--PaletaCor03);
+    height: 90%;
 }
 
 #nav2 #btn2 {
     background-color: var(--PaletaCor03);
-    outline: 1px solid var(--PaletaCor01);
+    height: 97%;
     color: var(--PaletaCor01);
+  
 }
 
 
@@ -135,7 +145,7 @@ main {
 
 
 #gradient {
-    background: linear-gradient(to top, rgb(0, 0, 0) 20%, transparent );
+    background: linear-gradient(to top, rgb(0, 0, 0) 15%, transparent 70% );
     width: 100%;
     height: 100%;
 
@@ -175,9 +185,9 @@ main {
     height: 100%;
     position: absolute;
     z-index: 0;
-    background: url(../Images/Games/red_dead_redemption_2___wallpaper_v_2_by_3demerzel_ddhljyu-fullview.jpg) center center / cover no-repeat;
-    filter: grayscale(100%);
+    background: var(--main-game-image);
     opacity: 0.5;
+    filter: grayscale(100%);
 
 }
 
@@ -196,7 +206,8 @@ main {
     width: 100%;
     z-index: 2;
     overflow: hidden;
-    background: black url(../Images/Games/red_dead_redemption_2___wallpaper_v_2_by_3demerzel_ddhljyu-fullview.jpg) center center / cover no-repeat;
+    background: var(--main-game-image);
+    background-color: black;
 
     position: relative;
     display: flex;
@@ -204,7 +215,6 @@ main {
     align-items: center;
     justify-content: start;
 
-    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.404);
 
 
 }
@@ -291,6 +301,11 @@ main {
     border-radius: 50% 50%;
 
 }
+
+#firstbolinha {
+    background-color: var(--PaletaCor01);
+}
+
 /*
 #allgames {
     display: flex;
@@ -328,7 +343,7 @@ main {
 }
 
 .imggames:nth-child(1) {
-    background:  url(../Images/Games/red_dead_redemption_2___wallpaper_v_2_by_3demerzel_ddhljyu-fullview.jpg) center top / cover no-repeat;
+    background:  url(../Images/Games/red_dead_redemption_2_wallpaper.jpg) center center / cover no-repeat;
     border: 5px solid var(--PaletaCor01);
 }
 

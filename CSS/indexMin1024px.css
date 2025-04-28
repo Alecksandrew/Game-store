@@ -13,6 +13,7 @@
 #divsec1 {
     height: 90vh;
     align-items: center;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.404);
 }
 
 #sec1 {
@@ -28,6 +29,9 @@
     display: grid;
 }
 
+#container-bolinha {
+    display: 
+}
 /*---------SEC1-----------*/
 
 #container_reasons {
