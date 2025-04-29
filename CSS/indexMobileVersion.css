@@ -57,45 +57,97 @@ rect {
 }
 
 
-Header ul {
-    list-style: none;
+#nav1 {
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60vw;
+    height: 100vh;
+    background-color: var(--PaletaCor02);
+    transform: translateX(-120%);
+    transition: transform 0.5s ease-in-out;
+    
 }
 
-Header a {
+#nav1 ul {
+    position: relative;
+    height: 100%;
+    
+}
+
+#nav1 li {
+    list-style: none;
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+    padding: 0.8rem 0rem 0.8rem 0.4rem ;
+}
+
+#nav1 li:first-child {
+
+}
+
+#nav1 li:hover {
+    background-color: var(--PaletaCor01);
+    transition: background-color 0.2s ease-in-out;
+}
+
+#nav1 li:hover a, #nav1 li:hover #closeMenu {
+    color: var(--PaletaCor03);
+    transition: color 0.2s ease-in-out;
+}
+
+
+#nav1 li a {
     text-decoration: none;
     color: var(--PaletaCor01);
-}
-
- header ul {
-   display: flex;
-   flex-wrap: row nowrap;
-   justify-content: space-around;
-   padding: 10px;
-   
-}
-
-header a {
- 
-}
-
-header a:hover{
-    background-color: var(--PaletaCor01);
-    color: var(--PaletaCor02);
-    border-radius: 3px;
-    padding: 3px;
-    transition: background-color ease-in-out 0.5s, color ease-in-out 0.2s;
 
 }
 
-#nav1 {
-    background-color: var(--PaletaCor02);
-    width: 100%;
-    padding: 0;
+.closeMenuDesign {
+    position: absolute;
+    z-index: 3;
+    height: 30px;
+    width: 30px;
+    top: 50%;
+    right: -4%;
+    transform: scale(1.2);
+
 }
 
-.responsiveness {
-    display: none;
+#closeMenu {
+    position: absolute;
+    width: 1.4rem;
+    height:1.4rem;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--PaletaCor03);
     
+}
+
+.circulo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#firstcirculo {
+    background-color: var(--PaletaCor01);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+#secondcirculo {
+    width: 120%;
+    height: 120%;
+    background-color: var(--PaletaCor02);
+    border-radius: 50%;
+
 }
 
 #nav2 {
@@ -440,8 +492,10 @@ main {
     font-weight: 500;
 }
 
-#sec3 li {
+#sec3 .slide {
     background-color: rgb(0, 0, 0);
+    flex: 0 0 35%;
+    max-width:;
     min-width: 120px ;
     min-height: 120px;
     list-style-type: none;
@@ -459,7 +513,7 @@ main {
 
 }
 
-#sec3 li:nth-child(1)::before {
+#sec3 .slide:nth-child(1)::before {
     content: "";
     position: absolute;
     top: 0;
@@ -472,7 +526,7 @@ main {
     
 }
 
-#sec3 li:nth-child(2)::before {
+#sec3 .slide:nth-child(2)::before {
     background:  url(../Images/Games/stardewvalley.jpg) center top /cover;
     content: "";
     position: absolute;
@@ -484,7 +538,7 @@ main {
     z-index: 0;
 }
 
-#sec3 li:nth-child(3)::before {
+#sec3 .slide:nth-child(3)::before {
     background:  url(../Images/Games/farcry.jpg) center center /cover;
     content: "";
     position: absolute;
@@ -496,7 +550,7 @@ main {
     z-index: 0;
 }
 
-#sec3 li:nth-child(4)::before {
+#sec3 .slide:nth-child(4)::before {
     background:  url(../Images/Games/baldurst.jpg) center center /cover;
     content: "";
     position: absolute;
@@ -508,7 +562,7 @@ main {
     z-index: 0;
 }
 
-#sec3 li:nth-child(5)::before {
+#sec3 .slide:nth-child(5)::before {
     background:  url(../Images/Games/fifa.jpg) center center /cover;
     content: "";
     position: absolute;
@@ -520,19 +574,15 @@ main {
     z-index: 0;
 }
 
-#sec3 ul {
+#sec3 .all-slides {
     display: flex;
     gap: 10px;
-    overflow-x: auto;
-    width: 100%;
 
-
-    
-    
 }
 
-#sec3 ul::-webkit-scrollbar {
-    display: none;
+
+#sec3 .container-slides {
+    overflow-x: auto; 
 }
 
 /*-------------SEC3----------------*/
@@ -555,7 +605,6 @@ main {
 
 
     gap: 20px;
-    
     
 }
 

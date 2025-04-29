@@ -47,11 +47,21 @@
             <button id="btn2">Login</button>          
         </nav>
 
-        <nav id="nav1" class="header_children responsiveness">
+        <nav id="nav1" >
             <ul>
                 <li><a href="#">Games</a></li>
                 <li><a href="#">Browse</a></li>
                 <li><a href="#">Store</a></li>
+
+                <div class="closeMenuDesign">
+                    <svg id="closeMenu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                    <div id="firstcirculo" class="circulo"></div>
+                    <div id="secondcirculo" class="circulo"></div>
+                </div>
+                  
             </ul>
         </nav>
 
@@ -117,13 +127,18 @@
 
         <section id="sec3">
             <h2>Games Genres</h2>
-            <ul>
-                <li><span class="textahead">RPG</span></li>
-                <li><span class="textahead">Strategy</span></li>
-                <li><span class="textahead">FPS</span></li>
-                <li><span class="textahead">Role</span> </li> <!--ARRUMAR BUG CATEGORIA GRANDE-->
-                <li><span class="textahead">Sports</span></li>
-            </ul>
+            <div class="container-slides"> 
+                <ul class="all-slides">
+                    <li class="slide"><span class="textahead">Sports</span></li>
+                    <li class="slide"><span class="textahead">RPG</span></li>
+                    <li class="slide"><span class="textahead">Strategy</span></li>
+                    <li class="slide"><span class="textahead">FPS</span></li>
+                    <li class="slide"><span class="textahead">Role</span> </li> <!--ARRUMAR BUG CATEGORIA GRANDE-->
+                    <li class="slide"><span class="textahead">Sports</span></li>
+                    <!---FIRST IMAGE FOR LOOP -->
+                    <li class="slide"><span class="textahead">RPG</span></li>
+                </ul>
+            </div>
             <!--<img src="../Images/Games/Cyberpunk_2077_box_art.jpg" alt="Category RPG">
             <img src="../Images/Games/farcry.jpg" alt="Category Two">
             <img src="../Images/Games/stray.jpg" alt="Category Three">
