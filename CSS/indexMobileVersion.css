@@ -297,7 +297,7 @@ main {
     
 }
 
-#btn3, #btn4 {
+#btn3, .star-conteiner {
 
     padding: 0.6rem;
     border: none;
@@ -312,7 +312,7 @@ main {
     color: var(--PaletaCor03);
 }
 
-#btn4 {
+.star-conteiner {
     background-color: var(--PaletaCor03);
     flex: 1 1;
     padding: 0px;
@@ -336,7 +336,13 @@ main {
     stroke: var(--PaletaCor01);
     stroke-width: 2px;
     height: 100%;
+ 
 
+}
+
+.starfilled {
+    fill: var(--PaletaCor01);
+    
 }
 
 #container-bolinha {
@@ -577,6 +583,8 @@ main {
 #sec3 .all-slides {
     display: flex;
     gap: 10px;
+    
+    user-select: none;
 
 }
 
@@ -874,6 +882,9 @@ main {
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.329);
     border-radius: 8px;
     padding: 20px;
+
+    user-select: none;
+    pointer-events: none;
     
 }
 

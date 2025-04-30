@@ -130,6 +130,8 @@ closeMenuDesign.addEventListener("click", () => {
 
 /*--------------------HEADER--------------------*/
 
+
+//Change main content
 let mainTitle = document.getElementById("maintitle"),
     mainParagraph = document.getElementById("mainparagraph"),
     mainContentCounter = 1,
@@ -191,6 +193,18 @@ setInterval( () => {
     changingMainContent()
 }, 5000);
 
+
+//Changing wishlist star
+
+const wishlistStarConteiner = document.querySelectorAll(".star-conteiner");
+const wishlistStar = document.querySelectorAll(".starwishlist");
+
+wishlistStarConteiner.forEach( (starConteiner, c) => {
+    starConteiner.addEventListener("click", () => {
+        wishlistStar[c].classList.toggle("starfilled");
+    } );
+
+});
 
 /*----------------------SEC1-------------------------------*/
 
