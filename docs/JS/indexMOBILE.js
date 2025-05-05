@@ -106,16 +106,16 @@ const menuHamburguer = document.getElementById("menuhamburguer"),
 menuHamburguer.addEventListener("click", () => {
     nav1.style.transform = "translateX(0)";
 
-})
+});
 
 const closeMenuDesign = document.querySelector(".closeMenuDesign");
 
 closeMenuDesign.addEventListener("click", () => {
     nav1.style.transform = "translateX(-120%)";
 
-})
+});
 
--
+
 
 
 
@@ -138,22 +138,22 @@ let mainTitle = document.getElementById("maintitle"),
     mainContentCounter = 1,
     arrayMainContent = [
     {
-      img: "url(Images/Games/red_dead_redemption_2_wallpaper.jpg) center center / cover no-repeat",
+      img: "url(../Images/Games/red_dead_redemption_2_wallpaper.jpg) center center / cover no-repeat",
       title: "Red Dead Redemption 2",
       paragraph: "Um fora da lei luta para sobreviver em um mundo em colapso, enfrentando traições e fugindo da justiça no fim do Velho Oeste"
     },
     {
-      img: "url(Images/Games/MinecraftRetrato.jpg) center center / cover no-repeat",
+      img: "url(../Images/Games/MinecraftRetrato.jpg) center center / cover no-repeat",
       title: "Minecraft",
       paragraph: "Explore, colete recursos e construa o que sua imaginação permitir em um mundo de blocos infinitos, onde cada descoberta e cada criação são únicas"
     },
     {
-      img: "url(Images/Games/TheLastOfUsRetratoNoText.png) 70% center / cover no-repeat",
+      img: "url(../Images/Games/TheLastOfUsRetratoNoText.png) 70% center / cover no-repeat",
       title: "The Last Of Us 2",
       paragraph: "Em um mundo pós-apocalíptico, Ellie parte em missão marcada pela bsca por justiça e enfrenta perigos e dilemas que testam sua coragem e humanidade."
     },
     {
-      img: "url(Images/Games/GodOfWar.jpg) center center / cover no-repeat",
+      img: "url(../Images/Games/GodOfWar.jpg) center center / cover no-repeat",
       title: "God of War Ragnarok",
       paragraph: "Mergulhe na mitologia nórdica ao lado de Kratos e Atreus, enfrentando deuses e monstros enquanto o fim dos mundos se aproxima e segredos antigos vêm à tona"
     }
@@ -187,7 +187,7 @@ function changingMainContent() {
 
     //General counter
     mainContentCounter = (mainContentCounter + 1)%arrayMainContent.length;
-}
+};
 
 
 setInterval( () => {
