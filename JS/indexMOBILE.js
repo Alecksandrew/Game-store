@@ -92,7 +92,7 @@ setInterval( () => {
 
 */
 
-
+//MENU HAMBURGUER
 const btn2 = document.getElementById("btn2");
 
 btn2.addEventListener("click", () => {
@@ -115,6 +115,10 @@ closeMenuDesign.addEventListener("click", () => {
 
 })
 
+
+const myAPIkey = dc9051c56aeb476bb3131334856215f4;
+
+fetch
 
 
 
@@ -214,10 +218,10 @@ const allSlides = document.querySelector("#sec3 .all-slides"),
       slideWidth = slides[0].offsetWidth;
 
 let isDragging = false,
-startX,
-currentX,      
-currentOffset = -slideWidth,     
-prevOffset = 0;
+    startX,
+    currentX,      
+    currentOffset = -slideWidth,     
+    prevOffset = 0;
 
 allSlides.style.transform = `translateX(${currentOffset}px)`;
 
@@ -239,3 +243,27 @@ allSlides.addEventListener("touchEnd", (e) => {
 
 
 /*------------SEC2 ( TERMINAR DE FAZER COM CALMA DEPOIS, ESTUDAR MAIS SOBRE DOM ) ----------------------*/
+
+
+
+const myAPIkey = "?key=dc9051c56aeb476bb3131334856215f4";
+const url = "https://api.rawg.io/api/games";
+let eachGame = document.getElementsByClassName("eachgame");
+let nameOfTheGame;
+
+
+eachGame.forEach((game) =>
+
+    game.addEventListener("click", () => {
+        nameOfTheGame = game.getElementsByClassName("nameOfTheGame");
+        const response = fetch(url + myAPIkey + nameOfTheGame);
+        const DataGame = response.json();
+        
+        window.href = 
+    }
+    )
+
+    )
+
+
+/*------------SEC4----------------------*/
