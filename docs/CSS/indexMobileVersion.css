@@ -1,6 +1,6 @@
 
 :root {
-    --main-game-image: url(../Images/Games/red_dead_redemption_2_wallpaper.jpg) center center / cover no-repeat;
+    --main-game-image: url(Images/Games/red_dead_redemption_2_wallpaper.jpg) center center / cover no-repeat;
 }
 
 
@@ -401,20 +401,20 @@ main {
 }
 
 .imggames:nth-child(1) {
-    background:  url(../Images/Games/red_dead_redemption_2_wallpaper.jpg) center center / cover no-repeat;
+    background:  url(Images/Games/red_dead_redemption_2_wallpaper.jpg) center center / cover no-repeat;
     border: 5px solid var(--PaletaCor01);
 }
 
 .imggames:nth-child(2) {
-    background:  url(../Images/Games/minecraft.jpg) center 10% / cover no-repeat;
+    background:  url(Images/Games/minecraft.jpg) center 10% / cover no-repeat;
 }
 
 .imggames:nth-child(3) {
-    background:  url(../Images/Games/theLastOfUsPaisagem.jpg) 20% center / cover no-repeat;
+    background:  url(Images/Games/theLastOfUsPaisagem.jpg) 20% center / cover no-repeat;
 }
 
 .imggames:nth-child(4) {
-    background:  url(../Images/Games/God_of_War_Ragnarök_capa.jpg) center 10% / cover no-repeat;
+    background:  url(Images/Games/God_of_War_Ragnarök_capa.jpg) center 10% / cover no-repeat;
 }
 
 
@@ -528,12 +528,12 @@ main {
     height: 100%;
     opacity: 0.15;
     z-index: 0;
-    background:  url(../Images/Games/Cyberpunk_2077_box_art.jpg) center center /cover;
+    background:  url(Images/Games/Cyberpunk_2077_box_art.jpg) center center /cover;
     
 }
 
 #sec3 .slide:nth-child(2)::before {
-    background:  url(../Images/Games/stardewvalley.jpg) center top /cover;
+    background:  url(Images/Games/stardewvalley.jpg) center top /cover;
     content: "";
     position: absolute;
     top: 0;
@@ -545,7 +545,7 @@ main {
 }
 
 #sec3 .slide:nth-child(3)::before {
-    background:  url(../Images/Games/farcry.jpg) center center /cover;
+    background:  url(Images/Games/farcry.jpg) center center /cover;
     content: "";
     position: absolute;
     top: 0;
@@ -557,7 +557,7 @@ main {
 }
 
 #sec3 .slide:nth-child(4)::before {
-    background:  url(../Images/Games/baldurst.jpg) center center /cover;
+    background:  url(Images/Games/baldurst.jpg) center center /cover;
     content: "";
     position: absolute;
     top: 0;
@@ -569,7 +569,7 @@ main {
 }
 
 #sec3 .slide:nth-child(5)::before {
-    background:  url(../Images/Games/fifa.jpg) center center /cover;
+    background:  url(Images/Games/fifa.jpg) center center /cover;
     content: "";
     position: absolute;
     top: 0;
