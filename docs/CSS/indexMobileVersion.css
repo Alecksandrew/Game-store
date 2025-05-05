@@ -528,12 +528,12 @@ main {
     height: 100%;
     opacity: 0.15;
     z-index: 0;
-    background:  url(Images/Games/Cyberpunk_2077_box_art.jpg) center center /cover;
+    background:  url(../Images/Games/Cyberpunk_2077_box_art.jpg) center center /cover;
     
 }
 
 #sec3 .slide:nth-child(2)::before {
-    background:  url(Images/Games/stardewvalley.jpg) center top /cover;
+    background:  url(../Images/Games/stardewvalley.jpg) center top /cover;
     content: "";
     position: absolute;
     top: 0;
@@ -545,7 +545,7 @@ main {
 }
 
 #sec3 .slide:nth-child(3)::before {
-    background:  url(Images/Games/farcry.jpg) center center /cover;
+    background:  url(../Images/Games/farcry.jpg) center center /cover;
     content: "";
     position: absolute;
     top: 0;
@@ -557,7 +557,7 @@ main {
 }
 
 #sec3 .slide:nth-child(4)::before {
-    background:  url(Images/Games/baldurst.jpg) center center /cover;
+    background:  url(../Images/Games/baldurst.jpg) center center /cover;
     content: "";
     position: absolute;
     top: 0;
@@ -569,7 +569,7 @@ main {
 }
 
 #sec3 .slide:nth-child(5)::before {
-    background:  url(Images/Games/fifa.jpg) center center /cover;
+    background:  url(../Images/Games/fifa.jpg) center center /cover;
     content: "";
     position: absolute;
     top: 0;
