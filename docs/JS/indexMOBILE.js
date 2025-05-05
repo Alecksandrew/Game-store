@@ -115,10 +115,7 @@ closeMenuDesign.addEventListener("click", () => {
 
 })
 
-
-const myAPIkey = dc9051c56aeb476bb3131334856215f4;
-
-fetch
+-
 
 
 
@@ -259,9 +256,9 @@ eachGame.forEach((game) =>
         const response = fetch(url + myAPIkey + nameOfTheGame);
         const DataGame = response.json();
         
-        window.href = 
+        
     }
-    )
+   )
 
     )
 
