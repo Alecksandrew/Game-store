@@ -96,7 +96,7 @@ setInterval( () => {
 const btn2 = document.getElementById("btn2");
 
 btn2.addEventListener("click", () => {
-    window.location.href = "loginscreen2.0.html";
+    window.location.href = "HTML/loginscreen2.0.html";
 });
 
 
