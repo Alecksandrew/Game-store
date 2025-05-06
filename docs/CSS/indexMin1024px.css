@@ -62,6 +62,9 @@
     min-height: 150px;
 }
 
+.all-slides {
+    justify-content: center;
+}
 /*------SEC3------*/
 
 #sec4 ul {

@@ -243,7 +243,7 @@ allSlides.addEventListener("touchEnd", (e) => {
 
 
 
-const myAPIkey = "?key=dc9051c56aeb476bb3131334856215f4";
+const myAPIkey = ;
 const url = "https://api.rawg.io/api/games";
 let eachGame = document.getElementsByClassName("eachgame");
 let nameOfTheGame;
