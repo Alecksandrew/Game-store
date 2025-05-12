@@ -1,32 +1,36 @@
 @charset "UTF-8";
 
+body {
+    background-color: var(--PaletaCor05);
+}
+
 
 
 /*!--------------MAIN------------------*/
 /**-----MAIN-GAME-CONTENT----*/
 
-.eachgame { /*-----EACH GAME GLOBAL SETTINGS----*/
+main {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+h1 {
+}
+
+.eachgame {
+  /*-----EACH GAME GLOBAL SETTINGS----*/
   background-color: white;
   border-radius: 5px;
   box-shadow: 1px 6px 10px rgba(0, 0, 0, 0.24);
-  flex: 0 0 auto;
-  aspect-ratio: 3/4;
-  width: 80%;
+
+  grid-area: 1/1/4/4;
 
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
   overflow: hidden;
-}
-
-
-
-.eachgame h3 {
-  font-size: clamp(18px, 140%, 27px);
-  text-align: left;
-  font-weight: 600;
-  margin-top: 10px;
-  margin-bottom: 5px;
 }
 
 .square-container {
@@ -35,7 +39,6 @@
   overflow: hidden;
   border-radius: 5px 5px 0px 0px;
 }
-
 
 .square-container img {
   width: 100%;
@@ -49,7 +52,6 @@
   flex-flow: row nowrap;
   align-items: center;
   height: 50px;
-
 }
 
 .discount {
@@ -78,8 +80,6 @@
   height: 100%;
   justify-content: center;
   align-items: center;
-
- 
 }
 
 .first {
@@ -95,24 +95,86 @@
 }
 
 .main-game-content {
-    display: grid;
-    width: 80vw;
-    height: 60vh;
-    gap: 20px;
-    background-color: black;
-    grid-template: repeat(7, 1fr) / repeat(3,1fr);
+  display: grid;
+  width: 85vw;
+  height: 65vh;
+  grid-template: repeat(3, 1fr) 60px / repeat(3, 1fr);
 }
 
 .container-secondary-images {
-    width: 100%;
-    
-    display: flex;
-   
+  grid-area: 4/1/5/4;
+  margin-top: 5px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .main-game-content .secondary-images {
-    background-color: black;
-    height: 100%;
-    
-    
+  background-color: black;
+  width: 32%;
+  border-radius: 5px;
+  border: 2px solid rgb(51, 0, 235);
+  height: ;
+}
+
+.container-action {
+  display: grid;
+  width: 85vw;
+  grid-template: 1.3fr 1fr 1fr / 1fr;
+  margin-top: 15px;
+  gap: 3px;
+}
+
+.action {
+  background-color: var(--PaletaCor02);
+  color: var(--PaletaCor01);
+  padding: 2.2vw;
+  border: 1px solid var(--PaletaCor01);
+  border-radius: 4px;
+  font: normal 500 0.9rem var(--Font01);
+}
+
+.action:first-child {
+    background-color: var(--PaletaCor01);
+  color: var(--PaletaCor03);
+  padding: 2.2vw;
+  border: none;
+  border-radius: 4px;
+  font: normal 500 0.9rem var(--Font01);
+}
+
+
+
+/*------------SECTION-DETAILS------------*/
+
+#details {
+    width: 85vw;
+    margin: 0 auto;
+    background-color: var(--PaletaCor04);
+    color: var(--PaletaCor03);
+    border: 2px solid var(--PaletaCor0);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 40px;
+}
+
+.more-infos {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    gap: 5px;
+    margin-top: 30px;
+}
+
+.more-infos li {
+    width: 100%;
+    list-style: none;
+
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.more-infos li p {
+    font-size: 0.8rem;
 }
