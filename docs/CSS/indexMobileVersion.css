@@ -1,367 +1,326 @@
-
 :root {
-    --main-game-image: url(../Images/Games/red_dead_redemption_2_wallpaper.jpg) center center / cover no-repeat;
+  --main-game-image: url(../Images/Games/red_dead_redemption_2_wallpaper.jpg)
+    center center / cover no-repeat;
 }
-
 
 h2 {
-    font-size: 1.8rem;
+  font-size: 1.8rem;
 }
 
-section, main {
-    background-color: var(--PaletaCor05);
+section,
+main {
+  background-color: var(--PaletaCor05);
 }
-
-
 
 /*-----------GLOBAL SETTINGS----------------*/
 
 header {
-    background-color: var(--PaletaCor01);
+  background-color: var(--PaletaCor01);
 
-    font: normal 600 1rem var(--Font01);
+  font: normal 600 1rem var(--Font01);
 
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-   
-    z-index: 10;
-    height: 8vh;
-    max-height: 50px;
-    width: 100%;
-    min-height: 50px;
-    
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 10;
+  height: 8vh;
+  max-height: 50px;
+  width: 100%;
+  min-height: 50px;
 }
 
 #menuhamburguer {
-    margin-left: 10px;
-    margin-top: 5px;
+  margin-left: 10px;
+  margin-top: 5px;
 }
 rect {
-    fill: var(--PaletaCor03);
+  fill: var(--PaletaCor03);
 }
 
 #fulllogo {
-    display: none;
+  display: none;
 }
 
 #logopart1 {
-    color: var(--PaletaCor01);
+  color: var(--PaletaCor01);
 }
-
 
 .header_children {
-    z-index: 10;
-    padding: 10px;
+  z-index: 10;
+  padding: 10px;
 }
 
-
 #nav1 {
-    z-index: 3;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 60vw;
-    height: 100vh;
-    background-color: var(--PaletaCor02);
-    transform: translateX(-120%);
-    transition: transform 0.5s ease-in-out;
-    
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60vw;
+  height: 100vh;
+  background-color: var(--PaletaCor02);
+  transform: translateX(-120%);
+  transition: transform 0.5s ease-in-out;
 }
 
 #nav1 ul {
-    position: relative;
-    height: 100%;
-    
+  position: relative;
+  height: 100%;
 }
 
 #nav1 li {
-    list-style: none;
-    font-size: 1.1rem;
-    margin-bottom: 0.4rem;
-    padding: 0.8rem 0rem 0.8rem 0.4rem ;
-}
-
-#nav1 li:first-child {
-
+  list-style: none;
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+  padding: 0.8rem 0rem 0.8rem 0.4rem;
 }
 
 #nav1 li:hover {
-    background-color: var(--PaletaCor01);
-    transition: background-color 0.2s ease-in-out;
+  background-color: var(--PaletaCor01);
+  transition: background-color 0.2s ease-in-out;
 }
 
-#nav1 li:hover a, #nav1 li:hover #closeMenu {
-    color: var(--PaletaCor03);
-    transition: color 0.2s ease-in-out;
+#nav1 li:hover a,
+#nav1 li:hover #closeMenu {
+  color: var(--PaletaCor03);
+  transition: color 0.2s ease-in-out;
 }
-
 
 #nav1 li a {
-    text-decoration: none;
-    color: var(--PaletaCor01);
-
+  text-decoration: none;
+  color: var(--PaletaCor01);
 }
 
 .closeMenuDesign {
-    position: absolute;
-    z-index: 3;
-    height: 30px;
-    width: 30px;
-    top: 50%;
-    right: -4%;
-    transform: scale(1.2);
-
+  position: absolute;
+  z-index: 3;
+  height: 30px;
+  width: 30px;
+  top: 50%;
+  right: -4%;
+  transform: scale(1.2);
 }
 
 #closeMenu {
-    position: absolute;
-    width: 1.4rem;
-    height:1.4rem;
-    z-index: 3;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: var(--PaletaCor03);
-    
+  position: absolute;
+  width: 1.4rem;
+  height: 1.4rem;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--PaletaCor03);
 }
 
 .circulo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #firstcirculo {
-    background-color: var(--PaletaCor01);
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    z-index: 2;
+  background-color: var(--PaletaCor01);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: 2;
 }
 
 #secondcirculo {
-    width: 120%;
-    height: 120%;
-    background-color: var(--PaletaCor02);
-    border-radius: 50%;
-
+  width: 120%;
+  height: 120%;
+  background-color: var(--PaletaCor02);
+  border-radius: 50%;
 }
 
 #nav2 {
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 10px ;
-    align-items: center;
-    height: 100%;
-    
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px;
+  align-items: center;
+  height: 100%;
 }
 
 #nav2 button {
-    padding: 0.4rem;
-    border: none;
-    border-radius: 4px;
+  padding: 0.4rem;
+  border: none;
+  border-radius: 4px;
 
-    font: normal 500 0.8rem var(--Font01);
+  font: normal 500 0.8rem var(--Font01);
 }
 
 #nav2 #btn1 {
-    background-color: var(--PaletaCor01);
-    color: var(--PaletaCor03);
-    outline: 2px solid var(--PaletaCor03);
-    height: 90%;
+  background-color: var(--PaletaCor01);
+  color: var(--PaletaCor03);
+  outline: 2px solid var(--PaletaCor03);
+  height: 90%;
 }
 
 #nav2 #btn2 {
-    background-color: var(--PaletaCor03);
-    height: 97%;
-    color: var(--PaletaCor01);
-  
+  background-color: var(--PaletaCor03);
+  height: 97%;
+  color: var(--PaletaCor01);
 }
-
 
 /*------------------------ Header ------------------------*/
 
 main {
-    position: relative;
-    
-    width: 100%;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
+  position: relative;
+
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
 }
 
-
 #gradient {
-    background: linear-gradient(to top, rgb(0, 0, 0) 15%, transparent 70% );
-    width: 100%;
-    height: 100%;
+  background: linear-gradient(to top, rgb(0, 0, 0) 15%, transparent 70%);
+  width: 100%;
+  height: 100%;
 
-    display: flex;
-    align-items: end;
-    justify-content: center;
-    flex-flow: row wrap;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  flex-flow: row wrap;
 }
 
 #title_sec1 {
-    flex: 0 0 80%;
-    max-width: 700px;
-    margin-bottom: 15px;
+  flex: 0 0 80%;
+  max-width: 700px;
+  margin-bottom: 15px;
 
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: left;
-
-    
-
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: left;
 }
 
 #divsec1 {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    position: relative;
-    height: 92vh;
-
-  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  position: relative;
+  height: 92vh;
 }
 
 #divsec1::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 0;
-    background: var(--main-game-image);
-    opacity: 0.5;
-    filter: grayscale(100%);
-
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  background: var(--main-game-image);
+  opacity: 0.5;
+  filter: grayscale(100%);
 }
 
 #divsec1::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background:linear-gradient(to top, #f5f4f9 , transparent 40%);
-    position: absolute;
-    z-index: 1;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #f5f4f9, transparent 40%);
+  position: absolute;
+  z-index: 1;
 }
-
 
 #sec1 {
-    height: 90vh;
-    width: 100%;
-    z-index: 2;
-    overflow: hidden;
-    background: var(--main-game-image);
-    background-color: black;
+  height: 90dvh;
+  width: 100%;
+  z-index: 2;
+  overflow: hidden;
+  background: var(--main-game-image);
+  background-color: black;
 
-    position: relative;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: start;
-
-
-
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: start;
 }
 
-#sec1 h1, #sec1 p, #sec1 button {
-
-}
-
-#sec1 h1, #sec1 p {
-    color: var(--PaletaCor03);
-    margin-bottom: 0.5rem;
+#sec1 h1,
+#sec1 p {
+  color: var(--PaletaCor03);
+  margin-bottom: 0.5rem;
 }
 
 #sec1 h1 {
-    margin-bottom: 0.2rem;
-    font-size: 1.8rem;
-    color: var(--PaletaCor01);
-
+  margin-bottom: 0.2rem;
+  font-size: 1.8rem;
+  color: var(--PaletaCor01);
 }
 
 #sec1 p {
-    margin-bottom: 1.3rem;
-    font-family: var(--Font02);
-    font-size: 0.8rem;
-    line-height: 1.1rem;
-    font-weight: 300;
-    
-    
+  margin-bottom: 1.3rem;
+  font-family: var(--Font02);
+  font-size: 0.8rem;
+  line-height: 1.1rem;
+  font-weight: 300;
 }
 
-#btn3, .star-conteiner {
+#btn3,
+.star-conteiner {
+  padding: 0.6rem;
+  border: none;
+  border-radius: 4px;
 
-    padding: 0.6rem;
-    border: none;
-    border-radius: 4px;
-
-    font: normal 500 0.9rem var(--Font01);
+  font: normal 500 0.9rem var(--Font01);
 }
 
 #btn3 {
-    flex: 0 0 80%;
-    background-color: var(--PaletaCor01);
-    color: var(--PaletaCor03);
+  flex: 0 0 80%;
+  background-color: var(--PaletaCor01);
+  color: var(--PaletaCor03);
 }
 
 .star-conteiner {
-    background-color: var(--PaletaCor03);
-    flex: 1 1;
-    padding: 0px;
-    
+  background-color: var(--PaletaCor03);
+  flex: 1 1;
+  padding: 0px;
 }
 
-
 #buywishlist {
-    width: 100%;
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 2px;
-    align-items: stretch;
-    height: 40px;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 2px;
+  align-items: stretch;
+  height: 40px;
 
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .starwishlist {
-    fill: none;
-    stroke: var(--PaletaCor01);
-    stroke-width: 2px;
-    height: 100%;
- 
-
+  fill: none;
+  stroke: var(--PaletaCor01);
+  stroke-width: 2px;
+  height: 100%;
 }
 
 .starfilled {
-    fill: var(--PaletaCor01);
-    
+  fill: var(--PaletaCor01);
 }
 
 #container-bolinha {
-   flex: 1 1;
-   align-self: center;
-   gap: 10px;
-   display: flex;
+  flex: 1 1;
+  align-self: center;
+  gap: 10px;
+  display: flex;
 }
 
 .bolinhas {
-    background-color: var(--PaletaCor02);
-    height: 8px;
-    width: 8px;
-    border-radius: 50% 50%;
-
+  background-color: var(--PaletaCor02);
+  height: 8px;
+  width: 8px;
+  border-radius: 50% 50%;
 }
 
 #firstbolinha {
-    background-color: var(--PaletaCor01);
+  background-color: var(--PaletaCor01);
 }
 
 /*
@@ -377,573 +336,529 @@ main {
 }*/
 
 #allgames {
-    
-    grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
 
-    height: 80%;
-    width: 15vw;
-    gap: 5px;
-    
-    position: relative;
-    display: none;
-    z-index: 2;
+  height: 80%;
+  width: 15vw;
+  gap: 5px;
+
+  position: relative;
+  display: none;
+  z-index: 2;
 }
 
 .imggames {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    border-radius: 10px;
-    border: 5px solid var(--PaletaCor03);
-    overflow: hidden;
-    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.404);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 10px;
+  border: 5px solid var(--PaletaCor03);
+  overflow: hidden;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.404);
 }
 
 .imggames:nth-child(1) {
-    background:  url(Images/Games/red_dead_redemption_2_wallpaper.jpg) center center / cover no-repeat;
-    border: 5px solid var(--PaletaCor01);
+  background: url(Images/Games/red_dead_redemption_2_wallpaper.jpg) center
+    center / cover no-repeat;
+  border: 5px solid var(--PaletaCor01);
 }
 
 .imggames:nth-child(2) {
-    background:  url(Images/Games/minecraft.jpg) center 10% / cover no-repeat;
+  background: url(Images/Games/minecraft.jpg) center 10% / cover no-repeat;
 }
 
 .imggames:nth-child(3) {
-    background:  url(Images/Games/theLastOfUsPaisagem.jpg) 20% center / cover no-repeat;
+  background: url(Images/Games/theLastOfUsPaisagem.jpg) 20% center / cover
+    no-repeat;
 }
 
 .imggames:nth-child(4) {
-    background:  url(Images/Games/God_of_War_Ragnarök_capa.jpg) center 10% / cover no-repeat;
+  background: url(Images/Games/God_of_War_Ragnarök_capa.jpg) center 10% / cover
+    no-repeat;
 }
 
-
-
 .imggames::after {
-    content: '';
-    position: absolute; 
-    background-color:  rgba(255, 255, 255, 0.432);
-    pointer-events: none;
-    inset: 0;
+  content: "";
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.432);
+  pointer-events: none;
+  inset: 0;
 }
 
 .imggames:nth-child(1):after {
-
-    opacity: 0;
+  opacity: 0;
 }
-
-
 
 /*-----SEC1------------------*/
 
 #sec2 {
-    text-align: center;
-    width: 100%;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-around;
-    align-items: center;
-    gap: 25px ;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 25px;
 }
 
 #sec2 div {
-    width: 90%;
+  width: 90%;
 }
 
 #text_sec2 {
-    max-width: 400px;
+  max-width: 400px;
 }
 
 #sec2 h2 #sec2 p {
-    width: 90%;
+  width: 90%;
 }
 
 #sec2 h2 {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 #sec2 img {
-    width: 30%;
-    max-width: 60px;
-    margin-bottom: 5px;
+  width: 30%;
+  max-width: 60px;
+  margin-bottom: 5px;
 }
 
 .mainreasons p {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 #container_reasons {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    gap: 25px;
-    
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 25px;
 }
 
 /*------------SEC2----------------*/
 
 #sec3 {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }
 
 #sec3 h2 {
-    margin: 15px 0px 15px 0px;
-
+  margin: 15px 0px 15px 0px;
 }
 
 .textahead {
-    z-index: 2;
-    color: white;
-    font-weight: 500;
+  z-index: 2;
+  color: white;
+  font-weight: 500;
 }
 
 #sec3 .slide {
-    background-color: rgb(0, 0, 0);
-    flex: 0 0 35%;
-    max-width: 200px;
-    min-width: 120px ;
-    min-height: 120px;
-    list-style-type: none;
+  background-color: rgb(0, 0, 0);
+  flex: 0 0 45%;
+  max-width: 200px;
+  min-width: 120px;
+  min-height: 120px;
+  list-style-type: none;
 
-    border-radius: 5px;
-    border: 3px solid var(--PaletaCor01);
-    
+  border-radius: 5px;
+  border: 3px solid var(--PaletaCor01);
 
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    position: relative;
+  position: relative;
 
+   box-shadow: 2px 2px 5px black;
 }
 
-
-#sec3 .slide:nth-child(1)::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.15;
-    z-index: 0;
-    background:  url(../Images/Games/Cyberpunk_2077_box_art.jpg) center center /cover;
-    
+#sec3 .slide:nth-child(5n + 1)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+  z-index: 0;
+  background: url(../Images/Games/Cyberpunk_2077_box_art.jpg) center center /
+    cover;
 }
 
-#sec3 .slide:nth-child(2)::before {
-    background:  url(../Images/Games/stardewvalley.jpg) center top /cover;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.15;
-    z-index: 0;
+#sec3 .slide:nth-child(5n + 2)::before {
+  background: url(../Images/Games/stardewvalley.jpg) center top / cover;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+  z-index: 0;
 }
 
-#sec3 .slide:nth-child(3)::before {
-    background:  url(../Images/Games/farcry.jpg) center center /cover;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.15;
-    z-index: 0;
+#sec3 .slide:nth-child(5n + 3)::before {
+  background: url(../Images/Games/farcry.jpg) center center / cover;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+  z-index: 0;
 }
 
-#sec3 .slide:nth-child(4)::before {
-    background:  url(../Images/Games/baldurst.jpg) center center /cover;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.15;
-    z-index: 0;
+#sec3 .slide:nth-child(5n + 4)::before {
+  background: url(../Images/Games/baldurst.jpg) center center / cover;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+  z-index: 0;
 }
 
-#sec3 .slide:nth-child(5)::before {
-    background:  url(../Images/Games/fifa.jpg) center center /cover;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.15;
-    z-index: 0;
+#sec3 .slide:nth-child(5n + 5)::before {
+  background: url(../Images/Games/fifa.jpg) center center / cover;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+  z-index: 0;
 }
 
 #sec3 .all-slides {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    user-select: none;
-
-
+  overflow-x: auto;
+  display: flex;
+  gap: 10px;
+  user-select: none;
+  padding: 10px;
+ 
 }
 
-
-#sec3 .container-slides {
-    overflow-x: auto; 
-    display: flex;
-    justify-content: center;
-}
-
-#sec3 .container-slides::-webkit-scrollbar {
-    display: none;
+#sec3 .all-slides::-webkit-scrollbar {
+  display: none;
 }
 
 /*-------------SEC3----------------*/
 
 #sec4 {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }
 
 #sec4 h2 {
-    margin: 15px 0px 15px 0px;
+  margin: 15px 0px 15px 0px;
 }
 
 #sec4 ul {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: ;
-    align-items: center;
-    list-style: none;
+  display: flex;
+  flex-flow: column nowrap;
 
+  align-items: center;
+  list-style: none;
 
-    gap: 20px;
-    
+  gap: 20px;
 }
 
+.eachgame { /*-----EACH GAME GLOBAL SETTINGS----*/
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 1px 6px 10px rgba(0, 0, 0, 0.24);
+  flex: 0 0 auto;
+  height: 350px;
+  width: 252px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
 
-
-
-.eachgame {
-    background-color: white;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 1px 6px 10px rgba(0, 0, 0, 0.24);
-    flex: 0 0 auto;
-    width: 262px;
-   height: 350px;
-
-
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    
-
-
-    
+#sec4 .eachgame {
+  
 }
 
 .eachgame h3 {
-    font-size: clamp(18px, 140%, 27px);
-    text-align: left;
-    font-weight: 600;
-    margin-top:10px;
-    margin-bottom: 5px;
+  font-size: clamp(18px, 140%, 27px);
+  text-align: left;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 .square-container {
-    flex: 1 0 70%;
-    height: 100%;
-    overflow: hidden;
-    border-radius: 5px;
-
+  flex: 1 0 70%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 5px;
 }
 
 .pricediscount {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    height: 50px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  height: 50px;
 }
 
 .discount {
-    font-size: 1.9rem;
-    font-weight: 500;
-    background-color: var(--PaletaCor01);
-    color: var(--PaletaCor03);
-    flex: 0 1 70%;
-    
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
+  font-size: 1.9rem;
+  font-weight: 500;
+  background-color: var(--PaletaCor01);
+  color: var(--PaletaCor03);
+  flex: 0 1 70%;
 
-    border-radius: 5px 0px 0px 5px;
-    
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 5px 0px 0px 5px;
 }
 
 .price {
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    border: 2px solid var(--PaletaCor01);
-    flex: 0 0 30%;
+  border: 2px solid var(--PaletaCor01);
+  flex: 0 0 30%;
 
-    display: flex;
-    flex-flow: column nowrap;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 
-    border-radius: 0px 5px 5px 0px;
-    
+  border-radius: 0px 5px 5px 0px;
 }
 
 .first {
-    font-size: 0.8em;
-    text-decoration: line-through;
-    color: var(--PaletaCor04);
-
+  font-size: 0.8em;
+  text-decoration: line-through;
+  color: var(--PaletaCor04);
 }
 
 .second {
-    font-size: 1.4em;
-    font-weight: 600;
-    color: var(--PaletaCor01);
+  font-size: 1.4em;
+  font-weight: 600;
+  color: var(--PaletaCor01);
 }
 
-#sec4 img, #sec5 img {
-    width: 100%;
-    height: 100%;           
-    object-position: center;
-    object-fit: cover;
-
-    
- 
+#sec4 img,
+#sec5 img {
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  object-fit: cover;
 }
 
 /*----SEC4 ( PRECISO ARRUMAR TAMNAHO DO NOME DOS JOGOS PARA NAO BUGAR SE FOR MUITO GRANDE) ------------*/
 
 #sec5 {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 
-    display: flex;
-    flex-flow: column nowrap;
-    gap:;
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 #sec5 h2 {
-    margin: 15px 0px 0px 0px;
+  margin: 15px 0px 0px 0px;
 }
 
 #sec5 ul {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    list-style: none;
-    
-    overflow-x: auto;
-    gap: 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
 
-    padding: 15px;
-    
+  overflow-x: auto;
+  gap: 20px;
 
-   
+  padding: 15px;
 }
 
 #sec5 ul::-webkit-scrollbar {
-    display: none;
-    
+  display: none;
 }
 
 #sec5 img {
-    width: 100%;
-    height: 100%;           
-    object-position: center;
-    object-fit: cover;
- 
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  object-fit: cover;
 }
 
 #sec5 .eachgame {
-    width: calc(262px*0.8);
-    height: calc(350px*0.8);
-
+  width: calc(262px * 0.8);
+  height: calc(350px * 0.8);
 }
 
 #sec5 .pricediscount {
-    height: 40px;
-    margin-top: -5px;
-    font-size: 0.8em;
+  height: 40px;
+  margin-top: -5px;
+  font-size: 0.8em;
 }
 
 /*------------SEC5-----------------*/
 
 #sec6 {
-    background-color: var(--PaletaCor01);
-    width: 100%;
-    text-align: center;
-    padding: 40px 0px 40px 0px;
-   
+  background-color: var(--PaletaCor01);
+  width: 100%;
+  text-align: center;
+  padding: 40px 0px 40px 0px;
 }
 
 #sec6 h2 {
-    margin-bottom:15px;
-    color: var(--PaletaCor03);
+  margin-bottom: 15px;
+  color: var(--PaletaCor03);
 }
 
 #sec6 ul {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    list-style: none;
-    gap: 20px;
-   
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+  gap: 20px;
 }
 
-
-
-
 #sec6 img {
-    width: 100%;
-    height: 100%;           
-    object-position: center;
-    object-fit: cover;
- 
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  object-fit: cover;
 }
 
 #sec6 .eachgame {
-    box-shadow: 1px 6px 14px rgba(0, 0, 0, 0.459);
- 
+  box-shadow: 1px 6px 14px rgba(0, 0, 0, 0.459);
 
-
-
-
-    background-color: var(--PaletaCor04);
-
+  background-color: var(--PaletaCor04);
 }
 
 .wishlist {
-    flex: 1 0 ;
-    border-radius: 5px;
-    font-size: 1.4rem;
+  flex: 1 0;
+  border-radius: 5px;
+  font-size: 1.4rem;
 }
 
-#sec6 h3, #sec6 .first {
-    color: var(--PaletaCor03);
+#sec6 h3,
+#sec6 .first {
+  color: var(--PaletaCor03);
 }
 
 #sec6 h3 {
-    margin-top: 10px;
-    margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #sec6 .pricediscount {
-    height: 40px;
-    margin-top: -5px;
-    font-size: 0.8em;
+  height: 40px;
+  margin-top: -5px;
+  font-size: 0.8em;
 }
 
 /*--------------SEC6----------------*/
 
 #sec7 {
-    text-align: center;
+  text-align: center;
 
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    width: 100%;
-    gap: 15px;
-
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
 }
 
 #maininfos {
-    width: 80%;
-    max-width: 400px;
+  width: 80%;
+  max-width: 400px;
+}
+
+#sec7 .slider-container {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 #allreviews {
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 20px;
-    width: 100%;
-    padding: 15px 0px 15px 0px;
-    justify-content: center;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 20px;
+  width: 100%;
+  padding: 15px 0px 15px 0px;
 
-    overflow-x: auto;
+  overflow-x: auto;
 
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 #allreviews::-webkit-scrollbar {
-    display: none ;
+  display: none;
 }
 
-.reviews  {
-    background-color: var(--PaletaCor03);
-    flex: 0 0 300px;
+.reviews {
+  background-color: var(--PaletaCor03);
+  flex: 0 0 300px;
 
-    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.329);
-    border-radius: 8px;
-    padding: 20px;
+  box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.329);
+  border-radius: 8px;
+  padding: 20px;
 
-    user-select: none;
-    pointer-events: none;
-    
+  user-select: none;
+  pointer-events: none;
 }
 
 .peopleimg {
-    border-radius: 50%;
-    width: 20vw;
-    max-width: 100px;
-    height: 20vw;
-    max-height: 100px;
-    object-fit: cover;
-    object-position: right top;
+  border-radius: 50%;
+  width: 20vw;
+  max-width: 100px;
+  height: 20vw;
+  max-height: 100px;
+  object-fit: cover;
+  object-position: right top;
 }
 
 .stars {
-    height: 7vw;
-    max-height: 35px;
-    margin-bottom: 10px;
-
+  height: 7vw;
+  max-height: 35px;
+  margin-bottom: 10px;
 }
 
 /*---------------------SEC7-------------------------*/
 
 footer {
-    background-color: var(--PaletaCor04);
-    color: var(--PaletaCor03);
-    padding: 30px 0px 15px 0px;
+  background-color: var(--PaletaCor04);
+  color: var(--PaletaCor03);
+  padding: 30px 0px 15px 0px;
 }
 
 footer a {
-    text-decoration: none;
-    color: var(--PaletaCor03);
-    font-weight: 300;
+  text-decoration: none;
+  color: var(--PaletaCor03);
+  font-weight: 300;
 }
 
 footer a:visited {
-    color: var(--PaletaCor05);
+  color: var(--PaletaCor05);
 }
 
 footer li {
-    list-style-type: none;
-    margin-bottom: 8px;
+  list-style-type: none;
+  margin-bottom: 8px;
 }
 
 footer h3 {
-
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 footer nav {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    margin-bottom: 40px;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-bottom: 40px;
 }

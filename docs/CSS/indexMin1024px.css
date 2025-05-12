@@ -1,99 +1,91 @@
 /*FOR MEDIUM WIDTHS*/
 
-#title_sec1 h1  {
-    font-size: 2rem;
+#title_sec1 h1 {
+  font-size: 2rem;
 }
 
 #title_sec1 p {
-    font-size: 1rem;
-    line-height: 1.2rem;
-    
+  font-size: 1rem;
+  line-height: 1.2rem;
 }
 
 #divsec1 {
-    height: 90vh;
-    align-items: center;
-    
-#sec1 {
-  height: 80%;
-  width: 70%;
-  border-radius: 10px;
-  border: 5px solid var(--PaletaCor01);
-  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.404);
-}
+  height: 90vh;
+  align-items: center;
 
- 
- 
+  #sec1 {
+    height: 80%;
+    width: 70%;
+    border-radius: 10px;
+    border: 5px solid var(--PaletaCor01);
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.404);
+  }
 }
 
 #allgames {
-    display: grid;
+  display: grid;
 }
 
-#container-bolinha {
-    display: 
-}
+
 /*---------SEC1-----------*/
 
 #container_reasons {
-    flex-flow: row nowrap;
+  flex-flow: row nowrap;
 }
 
-#text_sec2  {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-
+#text_sec2 {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }
 
 #text_sec2 p {
-    max-width: 400px;
+  max-width: 400px;
 }
 
 /*----------SEC2---------*/
 
-
 #sec3 ul {
-    justify-content: center;
+  justify-content: center;
 }
 
 #sec3 li {
-    min-width: 150px ;
-    min-height: 150px;
+  min-width: 150px;
+  min-height: 150px;
 }
 
 .all-slides {
-    justify-content: center;
+  justify-content: center;
 }
 /*------SEC3------*/
 
 #sec4 ul {
-    flex-flow: row wrap;
-    justify-content: center;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
 .eachgame {
-    width: 400px;
-    height: 533.59px;
-    /*width: 220px;
+  width: 400px;
+  height: 533.59px;
+  /*width: 220px;
     height: 275.19px;*/
 }
 
 #sec4 .pricediscount {
-    height: 40px;
+  height: 40px;
 }
 
 #sec4 .price {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
 /*--------SEC4-----------*/
 
 #sec5 ul {
-    justify-content: center;
+  justify-content: center;
 }
 
 #sec .eachgame {
-    width: calc(400px*0.8);
-    height: calc(533.59px*0.8); 
+  width: calc(400px * 0.8);
+  height: calc(533.59px * 0.8);
 }
