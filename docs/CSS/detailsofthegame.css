@@ -24,21 +24,23 @@ main {
   width: 85vw;
   font-size: clamp(1.5rem, 5vw, 2.2rem);
 }
+
 .stars {
   height: 7vw;
   max-height: 35px;
-  margin-left: -8px;
+
 }
 
 .star-container {
   width: clamp(18px, 5vw, 30px);
-  margin-left: -5px;
+  margin-left: -1.5px;
 }
 
 
 .star-path {
 
   stroke: #F8C316;
+  stroke-width: 2px;
 
 }
 
