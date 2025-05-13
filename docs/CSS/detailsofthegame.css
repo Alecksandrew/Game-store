@@ -16,7 +16,18 @@ main {
   align-items: center;
 }
 
-h1 {
+.name-and-rate {
+
+}
+
+#nameOfTheGame {
+  width: 85vw;
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+}
+.stars {
+  height: 7vw;
+  max-height: 35px;
+  margin-left: -8px;
 }
 
 .eachgame {
@@ -98,29 +109,33 @@ h1 {
   display: grid;
   width: 85vw;
   height: 65vh;
-  grid-template: repeat(3, 1fr) 60px / repeat(3, 1fr);
+  grid-template: repeat(3, 1fr) clamp(3.75rem, 2.411rem + 6.696vw, 5.625rem) / repeat(3, 1fr);
 }
 
 .container-secondary-images {
   grid-area: 4/1/5/4;
   margin-top: 5px;
   height: 100%;
+  
+
   display: flex;
   justify-content: space-between;
 }
 
-.main-game-content .secondary-images {
+.secondary-images {
   background-color: black;
-  width: 32%;
   border-radius: 5px;
   border: 2px solid rgb(51, 0, 235);
-  height: ;
+  aspect-ratio: 16/9;
+  max-width: 32%;
+  object-fit: cover;
+
 }
 
 .container-action {
   display: grid;
   width: 85vw;
-  grid-template: 1.3fr 1fr 1fr / 1fr;
+  grid-template: repeat(3, 1fr) / 1fr;
   margin-top: 15px;
   gap: 3px;
 }
@@ -150,12 +165,22 @@ h1 {
 #details {
     width: 85vw;
     margin: 0 auto;
-    background-color: var(--PaletaCor04);
+    background-color: var(--PaletaCor02);
     color: var(--PaletaCor03);
-    border: 2px solid var(--PaletaCor0);
+    border: 2px solid var(--PaletaCor01);
     padding: 10px;
     border-radius: 5px;
     margin-top: 40px;
+}
+
+.about h2 {
+  color: var(--PaletaCor01);
+  font-size: clamp(1rem, 7vw, 2rem);
+}
+
+#DescriptionOfTheGame {
+  color: var(--PaletaCor04);
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
 }
 
 .more-infos {
@@ -169,7 +194,10 @@ h1 {
 .more-infos li {
     width: 100%;
     list-style: none;
-
+    border: none;
+    border-radius: 3px;
+    padding: clamp(0.15rem, 1vw, 0.3rem);
+    background-color: var(--PaletaCor01);
 
     display: flex;
     justify-content: space-between;
