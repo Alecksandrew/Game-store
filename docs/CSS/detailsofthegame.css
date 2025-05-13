@@ -30,6 +30,18 @@ main {
   margin-left: -8px;
 }
 
+.star-container {
+  width: clamp(18px, 5vw, 30px);
+  margin-left: -5px;
+}
+
+
+.star-path {
+
+  stroke: #F8C316;
+
+}
+
 .eachgame {
   /*-----EACH GAME GLOBAL SETTINGS----*/
   background-color: white;
@@ -120,6 +132,8 @@ main {
 
   display: flex;
   justify-content: space-between;
+  gap: 5px;
+  overflow: hidden;
 }
 
 .secondary-images {
@@ -127,7 +141,7 @@ main {
   border-radius: 5px;
   border: 2px solid rgb(51, 0, 235);
   aspect-ratio: 16/9;
-  max-width: 32%;
+  max-width: 30%;
   object-fit: cover;
 
 }
