@@ -201,7 +201,7 @@ let bestSellersURL = fetch(url + "?" + bestSellersParams.toString())
         background_image: result.background_image,
         name: result.name,
         release_date: result.release_date,
-        slug: result.slug
+        id: result.id
       }
       
       infoBestSellers.push(gameInfo);
@@ -219,8 +219,8 @@ let bestSellersURL = fetch(url + "?" + bestSellersParams.toString())
       nameOfTheGame.textContent = infoBestSellers[index].name;
 
       bestSeller.addEventListener("click", () => {
-        const encodedSlug = encodeURIComponent(infoBestSellers[index].slug);
-        window.location.href = `HTML/detailsofthegame.html?slug=${encodedSlug}`;
+        const gameID = infoBestSellers[index].id;
+        window.location.href = `HTML/detailsofthegame.html?id=${gameID}`;
       })
     })
       

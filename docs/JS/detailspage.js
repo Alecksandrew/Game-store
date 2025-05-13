@@ -36,16 +36,16 @@ let bestSellersURL = fetch(url + "?" + bestSellersParams.toString())
 
 const myKey = "dc9051c56aeb476bb3131334856215f4"
 const gameParams = new URLSearchParams(window.location.search);
-const gameSlug = gameParams.get("slug");
+const gameID = gameParams.get("id");
 const mainEndpointParams = new URLSearchParams ({
   key: myKey,
-  search: gameSlug,
+  ids: gameID,
   page: 1,
   page_size:1,
 })
 
 const mainEndpoint = `https://api.rawg.io/api/games?${mainEndpointParams.toString()}`;
-const specificEndpoint = "https://api.rawg.io/api/games" + `/${gameSlug}`  +  `?${myKey}`;
+const specificEndpoint = "https://api.rawg.io/api/games" + `/${gameID}`  +  `?${myKey}`;
 
 async function fetchGameDetails() {
   
@@ -53,9 +53,10 @@ async function fetchGameDetails() {
   const response = await fetch(mainEndpoint);
   const gameInfoJSON = await response.json();
   console.log(gameInfoJSON);
-  //COLCOANDO NOME DO GAME CLICADO
+  
+  //COLCANDO NOME DO GAME CLICADO
   let gameNameHTML = document.querySelector("#nameOfTheGame");
-  gameNameHTML.textContent = gameInfoJSON.name;
+  gameNameHTML.textContent = gameInfoJSON.results[0].name;
 
   //MUDANDO A IMAGEM PRINCIPAL DO GAME CLICADO
   let mainImage = document.querySelector("#mainImage");
@@ -72,18 +73,30 @@ async function fetchGameDetails() {
     secondaryImage.setAttribute("src", secondaryImagesFromAPI[index]);
   });
 
-  //PEGANDO A DATA DE LANÇAMENTO DO GAME
+  //MUDANDO INFORMAÇÕES ADICIONAIS
+  
+    //PEGANDO A DATA DE LANÇAMENTO DO GAME
   let releaseDate = gameInfoJSON.results[0].released;
+  
   function fixingDate(date) {
-    const year = date.slice(0,5);
-    const day = date.slice(date.length-3, date.length);
-    let fixedDate = day + date + year;
-    return fixedDate;
+    
+    const [year, month, day] = date.split("-");
+
+    return `${day}/${month}/${year}`
   };
 
   let releaseDateHTML = document.querySelector("#release-date");
   releaseDateHTML.textContent = fixingDate(releaseDate);
 
+    //PEGANDO CATEGORIA DO GAME
+    let gameCategoryHTML = document.querySelector("#game-category");
+    let gameCategory = gameInfoJSON.results[0].genres;
+    if(gameCategory.length > 1) {
+      gameCategoryHTML.textContent = gameCategory[0].name + " & " + gameCategory[1].name;
+    }
+    else {
+      gameCategoryHTML.textContent = gameCategory[0].name;
+    };
 
   //NAME, RATING, BACKGROUND IMAGES (MAIN IMAGE), SHORT+SCREENSHOTS ( SECONDARY IMAGES ), RELEASED (RELEASE DATE), DEVELOPER
 }

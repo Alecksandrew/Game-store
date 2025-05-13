@@ -222,3 +222,39 @@ main {
 .more-infos li p {
     font-size: 0.8rem;
 }
+
+.metacritic-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+}
+
+#metacritic-logo {
+  flex: 1 1;
+  max-width: 60%;
+}
+
+#nota-metacritic {
+  background-color: black;
+  width: clamp(20px, 12vw, 80px);
+  height: clamp(20px, 12vw, 80px);
+  aspect-ratio: 1/1;
+  border-radius: 3px;
+  font-size: clamp(1rem, 5vw, 1.8rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.bad {
+  background-color: #FF6874;
+}
+
+.medium {
+  background-color: #FFBD3F;
+}
+
+.good {
+  background-color: #00CE7A;
+}
