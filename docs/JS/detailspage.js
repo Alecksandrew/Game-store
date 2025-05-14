@@ -45,13 +45,13 @@ const mainEndpointParams = new URLSearchParams({
 });
 
 const mainEndpoint = `https://api.rawg.io/api/games?${mainEndpointParams.toString()}`;
-const specificEndpoint =
-  "https://api.rawg.io/api/games" + `/${gameID}` + `?${myKey}`;
+const specificEndpoint = "https://api.rawg.io/api/games" + `/${gameID}` + `?key=${myKey}`;
 
 async function fetchGameDetails() {
+  //!GENERAL ENDPOINT
   //BUSCANDO INFORMAÇÕES SOBRE O GAME [PART 1]
-  const response = await fetch(mainEndpoint);
-  const gameInfoJSON = await response.json();
+  const response1 = await fetch(mainEndpoint);
+  const gameInfoJSON = await response1.json();
   console.log(gameInfoJSON);
 
   //COLCANDO NOME DO GAME CLICADO
@@ -112,7 +112,73 @@ async function fetchGameDetails() {
         metacriticHTML.classList.add("good");
       };
 
-  //NAME, RATING, BACKGROUND IMAGES (MAIN IMAGE), SHORT+SCREENSHOTS ( SECONDARY IMAGES ), RELEASED (RELEASE DATE), DEVELOPER
-}
+  //PEGANDO PLATAFORMAS DISPONÍVEIS
+  let platforms = gameInfoJSON.results[0].platforms;
+  let computer = document.querySelector(".bi.bi-laptop");
+  let xbox = document.querySelector(".bi.bi-xbox");
+  let playstation = document.querySelector(".bi.bi-playstation");
 
+  platforms.forEach((each) => {
+    if(each.platform.slug === "pc") {
+      computer.style.display = "inline"
+    };
+    if(each.platform.slug.includes("playstation")) {
+      playstation.style.display = "inline"
+    };
+    if(each.platform.slug.includes("xbox")) {
+      xbox.style.display = "inline"
+    };
+  })
+
+  //PEGANDO TAGS CATEGORIAS DO GAME 
+  let gameTags = gameInfoJSON.results[0].tags;
+  let gameTagsHTML = document.querySelector("#game-tags");
+  let tagsToShow = [];
+
+  gameTags.forEach((tag) => {
+    
+    if(tagsToShow.length >= 4.) return
+    if ( tag.language === "eng" ) {
+      tagsToShow.push(tag.name);   
+    }
+ 
+  });
+
+  gameTagsHTML.textContent = tagsToShow.join(" / ");
+
+  //! SPECIFIC ENDPOINT
+  const response2 = await fetch(specificEndpoint);
+  const specificGameInfoJSON = await response2.json();
+  console.log(specificGameInfoJSON);
+
+  //MUDANDO A DESCRIÇÃO
+  let gameDescriptionHTML = document.querySelector("#DescriptionOfTheGame");
+  let fullGameDescription = specificGameInfoJSON.description_raw;
+  let shortGameDescription;
+  let maxLenght = 350;
+  let verMais = document.querySelector(".ver-mais");
+  
+  if (fullGameDescription.length > maxLenght) {
+    shortGameDescription =  fullGameDescription.slice(0, maxLenght) + "...";
+    gameDescriptionHTML.textContent = shortGameDescription;
+  }
+  else {
+    gameDescriptionHTML.textContent = fullGameDescription;
+  }
+
+  //LOGICA DO VER MAIS VER MENOS
+  verMais.addEventListener("click", () => {
+    if(gameDescriptionHTML.textContent === fullGameDescription) {
+      gameDescriptionHTML.textContent = shortGameDescription;
+      verMais.textContent = "Ver mais";
+    }
+    else if(gameDescriptionHTML.textContent === shortGameDescription) {
+      gameDescriptionHTML.textContent = fullGameDescription;
+      verMais.textContent = "Ver menos";
+    };
+
+  })
+
+  
+}
 fetchGameDetails();

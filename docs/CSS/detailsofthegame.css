@@ -197,6 +197,8 @@ main {
 #DescriptionOfTheGame {
   color: var(--PaletaCor04);
   font-size: clamp(0.9rem, 3vw, 1.1rem);
+  text-align: justify;
+
 }
 
 .more-infos {
@@ -205,6 +207,15 @@ main {
     justify-content: space-between;
     gap: 5px;
     margin-top: 30px;
+}
+
+.ver-mais {
+  font-weight: bolder;
+  color: var(--PaletaCor01);
+  background-color: unset;
+  border: unset;
+  display: inline-block;
+  float: right;
 }
 
 .more-infos li {
@@ -217,10 +228,12 @@ main {
 
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .more-infos li p {
     font-size: clamp(0.8rem, 2.5vw, 1.2rem);
+
 }
 
 .plataform-container {
@@ -228,6 +241,8 @@ main {
 
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
 }
 
 .icon-plataform {
@@ -249,6 +264,7 @@ main {
 }
 
 #nota-metacritic {
+  background-color: var(--PaletaCor03);
   width: clamp(20px, 12vw, 80px);
   height: clamp(20px, 12vw, 80px);
   aspect-ratio: 1/1;
@@ -261,14 +277,14 @@ main {
   align-items: center;
   
 }
-.bad {
+#nota-metacritic.bad {
   background-color: #FF6874;
 }
 
-.medium {
+#nota-metacritic.medium {
   background-color: #FFBD3F;
 }
 
-.good {
+#nota-metacritic.good {
   background-color: #00CE7A;
 }
