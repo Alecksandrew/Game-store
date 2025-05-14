@@ -220,13 +220,26 @@ main {
 }
 
 .more-infos li p {
-    font-size: 0.8rem;
+    font-size: clamp(0.8rem, 2.5vw, 1.2rem);
 }
 
+.plataform-container {
+  flex: 0 0 30%;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon-plataform {
+  width: 10%;
+
+
+}
 .metacritic-container {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  margin-top: 5px;
 
 }
 
@@ -236,12 +249,13 @@ main {
 }
 
 #nota-metacritic {
-  background-color: black;
   width: clamp(20px, 12vw, 80px);
   height: clamp(20px, 12vw, 80px);
   aspect-ratio: 1/1;
   border-radius: 3px;
   font-size: clamp(1rem, 5vw, 1.8rem);
+  font-weight: 700;
+  color: var(--PaletaCor04);
   display: flex;
   justify-content: center;
   align-items: center;

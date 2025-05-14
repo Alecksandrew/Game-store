@@ -1,0 +1,8 @@
+ENDPOINT /GAMES -> name, background, screenshots, RELEASED
+
+endpoint específico -> description
+
+metacritic 
+0 - 49 -> vermelho #FF6874
+50 - 74 -> Amarelo #FFBD3F
+75 - 100 -> verde #00CE7A

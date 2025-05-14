@@ -34,26 +34,26 @@ let bestSellersURL = fetch(url + "?" + bestSellersParams.toString())
 
 //!=======================MAIN=======================
 
-const myKey = "dc9051c56aeb476bb3131334856215f4"
+const myKey = "dc9051c56aeb476bb3131334856215f4";
 const gameParams = new URLSearchParams(window.location.search);
 const gameID = gameParams.get("id");
-const mainEndpointParams = new URLSearchParams ({
+const mainEndpointParams = new URLSearchParams({
   key: myKey,
   ids: gameID,
   page: 1,
-  page_size:1,
-})
+  page_size: 1,
+});
 
 const mainEndpoint = `https://api.rawg.io/api/games?${mainEndpointParams.toString()}`;
-const specificEndpoint = "https://api.rawg.io/api/games" + `/${gameID}`  +  `?${myKey}`;
+const specificEndpoint =
+  "https://api.rawg.io/api/games" + `/${gameID}` + `?${myKey}`;
 
 async function fetchGameDetails() {
-  
   //BUSCANDO INFORMAÇÕES SOBRE O GAME [PART 1]
   const response = await fetch(mainEndpoint);
   const gameInfoJSON = await response.json();
   console.log(gameInfoJSON);
-  
+
   //COLCANDO NOME DO GAME CLICADO
   let gameNameHTML = document.querySelector("#nameOfTheGame");
   gameNameHTML.textContent = gameInfoJSON.results[0].name;
@@ -73,30 +73,44 @@ async function fetchGameDetails() {
     secondaryImage.setAttribute("src", secondaryImagesFromAPI[index]);
   });
 
-  //MUDANDO INFORMAÇÕES ADICIONAIS
-  
-    //PEGANDO A DATA DE LANÇAMENTO DO GAME
+  //*MUDANDO INFORMAÇÕES ADICIONAIS
+
+  //PEGANDO A DATA DE LANÇAMENTO DO GAME
   let releaseDate = gameInfoJSON.results[0].released;
-  
+
   function fixingDate(date) {
-    
     const [year, month, day] = date.split("-");
 
-    return `${day}/${month}/${year}`
-  };
+    return `${day}/${month}/${year}`;
+  }
 
   let releaseDateHTML = document.querySelector("#release-date");
   releaseDateHTML.textContent = fixingDate(releaseDate);
 
-    //PEGANDO CATEGORIA DO GAME
-    let gameCategoryHTML = document.querySelector("#game-category");
-    let gameCategory = gameInfoJSON.results[0].genres;
-    if(gameCategory.length > 1) {
-      gameCategoryHTML.textContent = gameCategory[0].name + " & " + gameCategory[1].name;
-    }
-    else {
-      gameCategoryHTML.textContent = gameCategory[0].name;
-    };
+  //PEGANDO CATEGORIA DO GAME
+  let gameCategoryHTML = document.querySelector("#game-category");
+  let gameCategory = gameInfoJSON.results[0].genres;
+  if (gameCategory.length > 1) {
+    gameCategoryHTML.textContent =
+      gameCategory[0].name + " & " + gameCategory[1].name;
+  } else {
+    gameCategoryHTML.textContent = gameCategory[0].name;
+  }
+
+  //PEGANDO NOTA METACRITIC
+  let metacriticHTML = document.querySelector("#nota-metacritic");
+  let metacritic = gameInfoJSON.results[0].metacritic;
+
+  metacriticHTML.textContent = metacritic;
+  if(metacritic < 50) {
+    metacriticHTML.classList.add("bad");
+  }
+  else if(metacritic >= 50 && metacritic < 75) {
+    metacriticHTML.classList.add("medium");
+  }
+      else {
+        metacriticHTML.classList.add("good");
+      };
 
   //NAME, RATING, BACKGROUND IMAGES (MAIN IMAGE), SHORT+SCREENSHOTS ( SECONDARY IMAGES ), RELEASED (RELEASE DATE), DEVELOPER
 }
