@@ -45,7 +45,8 @@ const mainEndpointParams = new URLSearchParams({
 });
 
 const mainEndpoint = `https://api.rawg.io/api/games?${mainEndpointParams.toString()}`;
-const specificEndpoint = "https://api.rawg.io/api/games" + `/${gameID}` + `?key=${myKey}`;
+const specificEndpoint =
+  "https://api.rawg.io/api/games" + `/${gameID}` + `?key=${myKey}`;
 
 async function fetchGameDetails() {
   //!GENERAL ENDPOINT
@@ -57,6 +58,25 @@ async function fetchGameDetails() {
   //COLCANDO NOME DO GAME CLICADO
   let gameNameHTML = document.querySelector("#nameOfTheGame");
   gameNameHTML.textContent = gameInfoJSON.results[0].name;
+
+  //MUDANDO AS ESTRELAS BASEADO NO RATING
+  let gameRating = gameInfoJSON.results[0].rating;
+  
+  for (let c = 1; gameRating > 0; c++) {
+    
+    if(gameRating >= 1) {
+      let startGradient = document.querySelector(`#linear-gradient-star${c} .color-star`);
+      startGradient.setAttribute("offset", "100%");
+      gameRating--
+  }
+    else {
+      let startGradient = document.querySelector(`#linear-gradient-star${c} .color-star`);
+      startGradient.setAttribute("offset", `${gameRating*100}%`);
+      gameRating--
+  }
+    
+  }
+  
 
   //MUDANDO A IMAGEM PRINCIPAL DO GAME CLICADO
   let mainImage = document.querySelector("#mainImage");
@@ -102,15 +122,13 @@ async function fetchGameDetails() {
   let metacritic = gameInfoJSON.results[0].metacritic;
 
   metacriticHTML.textContent = metacritic;
-  if(metacritic < 50) {
+  if (metacritic < 50) {
     metacriticHTML.classList.add("bad");
-  }
-  else if(metacritic >= 50 && metacritic < 75) {
+  } else if (metacritic >= 50 && metacritic < 75) {
     metacriticHTML.classList.add("medium");
+  } else {
+    metacriticHTML.classList.add("good");
   }
-      else {
-        metacriticHTML.classList.add("good");
-      };
 
   //PEGANDO PLATAFORMAS DISPONÍVEIS
   let platforms = gameInfoJSON.results[0].platforms;
@@ -119,32 +137,33 @@ async function fetchGameDetails() {
   let playstation = document.querySelector(".bi.bi-playstation");
 
   platforms.forEach((each) => {
-    if(each.platform.slug === "pc") {
-      computer.style.display = "inline"
-    };
-    if(each.platform.slug.includes("playstation")) {
-      playstation.style.display = "inline"
-    };
-    if(each.platform.slug.includes("xbox")) {
-      xbox.style.display = "inline"
-    };
-  })
+    if (each.platform.slug === "pc") {
+      computer.style.display = "inline";
+    }
+    if (each.platform.slug.includes("playstation")) {
+      playstation.style.display = "inline";
+    }
+    if (each.platform.slug.includes("xbox")) {
+      xbox.style.display = "inline";
+    }
+  });
 
-  //PEGANDO TAGS CATEGORIAS DO GAME 
+  //PEGANDO TAGS CATEGORIAS DO GAME
   let gameTags = gameInfoJSON.results[0].tags;
   let gameTagsHTML = document.querySelector("#game-tags");
   let tagsToShow = [];
 
   gameTags.forEach((tag) => {
-    
-    if(tagsToShow.length >= 4.) return
-    if ( tag.language === "eng" ) {
-      tagsToShow.push(tag.name);   
+    if (tagsToShow.length >= 4) return;
+    if (tag.language === "eng" && tag.name.length <= 12 && tag.id <= 10000) {
+      tagsToShow.push(tag.name);
     }
- 
   });
 
-  gameTagsHTML.textContent = tagsToShow.join(" / ");
+  let firstTwoTags = tagsToShow.slice(0, 2).join(" / ");
+  let lastTwoTags = tagsToShow.slice(2).join(" / ");
+
+  gameTagsHTML.innerHTML = `${firstTwoTags}<br>${lastTwoTags}`;
 
   //! SPECIFIC ENDPOINT
   const response2 = await fetch(specificEndpoint);
@@ -157,28 +176,24 @@ async function fetchGameDetails() {
   let shortGameDescription;
   let maxLenght = 350;
   let verMais = document.querySelector(".ver-mais");
-  
+
   if (fullGameDescription.length > maxLenght) {
-    shortGameDescription =  fullGameDescription.slice(0, maxLenght) + "...";
+    shortGameDescription = fullGameDescription.slice(0, maxLenght) + "...";
     gameDescriptionHTML.textContent = shortGameDescription;
-  }
-  else {
+  } else {
     gameDescriptionHTML.textContent = fullGameDescription;
   }
 
   //LOGICA DO VER MAIS VER MENOS
   verMais.addEventListener("click", () => {
-    if(gameDescriptionHTML.textContent === fullGameDescription) {
+    if (gameDescriptionHTML.textContent === fullGameDescription) {
       gameDescriptionHTML.textContent = shortGameDescription;
       verMais.textContent = "Ver mais";
-    }
-    else if(gameDescriptionHTML.textContent === shortGameDescription) {
+    } else if (gameDescriptionHTML.textContent === shortGameDescription) {
       gameDescriptionHTML.textContent = fullGameDescription;
       verMais.textContent = "Ver menos";
-    };
-
-  })
-
-  
+    }
+  });
 }
+
 fetchGameDetails();

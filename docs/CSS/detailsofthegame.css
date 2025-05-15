@@ -250,6 +250,11 @@ main {
 
 
 }
+
+#game-tags {
+  text-align: right;
+}
+
 .metacritic-container {
   display: flex;
   width: 100%;
