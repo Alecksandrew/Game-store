@@ -83,15 +83,34 @@ async function fetchGameDetails() {
   mainImage.setAttribute("src", gameInfoJSON.results[0].background_image);
 
   //MUDANDO AS IMAGENS SECUNDARIAS DO GAME CLICADO
-  let secondaryImages = document.querySelectorAll(".secondary-images");
+  let secondaryImages = document.querySelectorAll(".secondary-images img");
+  let secondaryImagesContainer = document.querySelectorAll(".secondary-images");
   let secondaryImagesFromAPI = [];
   gameInfoJSON.results[0].short_screenshots.forEach((obj) => {
     secondaryImagesFromAPI.push(obj.image);
   });
 
   secondaryImages.forEach((secondaryImage, index) => {
+   
     secondaryImage.setAttribute("src", secondaryImagesFromAPI[index]);
+    
   });
+
+  let c = 1;
+
+  setInterval(() => {
+      mainImage.setAttribute("src", secondaryImagesFromAPI[c]);
+      secondaryImagesContainer.forEach( container => {
+        container.classList.add("color-for-hiding")
+      });
+      secondaryImagesContainer[c].classList.remove("color-for-hiding");
+    
+      c = (c + 1)%secondaryImagesContainer.length;
+    
+  }, 3500);
+
+
+  //LOGICA DE ESCURECER IMAGENS QUE NÃO ESTÃO EM FOCO
 
   //*MUDANDO INFORMAÇÕES ADICIONAIS
 
