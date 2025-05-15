@@ -188,10 +188,10 @@ async function fetchGameDetails() {
   verMais.addEventListener("click", () => {
     if (gameDescriptionHTML.textContent === fullGameDescription) {
       gameDescriptionHTML.textContent = shortGameDescription;
-      verMais.textContent = "Ver mais";
+      verMais.textContent = "See more";
     } else if (gameDescriptionHTML.textContent === shortGameDescription) {
       gameDescriptionHTML.textContent = fullGameDescription;
-      verMais.textContent = "Ver menos";
+      verMais.textContent = "See less";
     }
   });
 }
