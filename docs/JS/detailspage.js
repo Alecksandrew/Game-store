@@ -61,22 +61,22 @@ async function fetchGameDetails() {
 
   //MUDANDO AS ESTRELAS BASEADO NO RATING
   let gameRating = gameInfoJSON.results[0].rating;
-  
+
   for (let c = 1; gameRating > 0; c++) {
-    
-    if(gameRating >= 1) {
-      let startGradient = document.querySelector(`#linear-gradient-star${c} .color-star`);
+    if (gameRating >= 1) {
+      let startGradient = document.querySelector(
+        `#linear-gradient-star${c} .color-star`
+      );
       startGradient.setAttribute("offset", "100%");
-      gameRating--
+      gameRating--;
+    } else {
+      let startGradient = document.querySelector(
+        `#linear-gradient-star${c} .color-star`
+      );
+      startGradient.setAttribute("offset", `${gameRating * 100}%`);
+      gameRating--;
+    }
   }
-    else {
-      let startGradient = document.querySelector(`#linear-gradient-star${c} .color-star`);
-      startGradient.setAttribute("offset", `${gameRating*100}%`);
-      gameRating--
-  }
-    
-  }
-  
 
   //MUDANDO A IMAGEM PRINCIPAL DO GAME CLICADO
   let mainImage = document.querySelector("#mainImage");
@@ -91,24 +91,43 @@ async function fetchGameDetails() {
   });
 
   secondaryImages.forEach((secondaryImage, index) => {
-   
     secondaryImage.setAttribute("src", secondaryImagesFromAPI[index]);
-    
   });
 
   let c = 1;
 
-  setInterval(() => {
-      mainImage.setAttribute("src", secondaryImagesFromAPI[c]);
-      secondaryImagesContainer.forEach( container => {
-        container.classList.add("color-for-hiding")
-      });
-      secondaryImagesContainer[c].classList.remove("color-for-hiding");
-    
-      c = (c + 1)%secondaryImagesContainer.length;
-    
-  }, 3500);
+  const changeImageAndColor = function() {
+    mainImage.setAttribute("src", secondaryImagesFromAPI[c]);
+    secondaryImagesContainer.forEach((container) => {
+      container.classList.add("color-for-hiding");
+    });
+    secondaryImagesContainer[c].classList.remove("color-for-hiding");
 
+    c = (c + 1) % secondaryImagesContainer.length;
+  };
+
+  
+
+  const startNewInterval = setInterval(changeImageAndColor, 3500);
+
+//!!!!!!ERRI NESSE BLOCO, TENTAR RESOLVER
+  secondaryImagesContainer.forEach((container, index) => {
+    
+    container.addEventListener("click", () => {
+      
+      secondaryImagesContainer.forEach((cont) => { //LOGICA DA COR NAS SECONDARY IMAGE
+        cont.classList.add("color-for-hiding");
+      });
+      container.classList.remove("color-for-hiding");
+
+      mainImage.setAttribute("src", secondaryImagesFromAPI[index]); ///LOGICA DE CADA CLIQUE FAZER A IMAGEM APARECER NO CARD PRINCIPAL
+      c = index + 1;
+      clearInterval(startNewInterval);
+      setInterval(changeImageAndColor, 2500); // INICIAR UM NOVO INTERVALO DEPOIS DO USUARIO PARAR DE CLICAR NOS CONTAINER POR 6000 MS
+      setTimeout(() => {
+        setInterval(changeImageAndColor, 3500)
+      }, 2500)
+  });
 
   //LOGICA DE ESCURECER IMAGENS QUE NÃO ESTÃO EM FOCO
 

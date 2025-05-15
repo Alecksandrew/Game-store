@@ -17,7 +17,8 @@ main {
 }
 
 .name-and-rate {
-
+  margin-bottom: 10px;
+  padding-top: 10;
 }
 
 #nameOfTheGame {
@@ -135,7 +136,7 @@ main {
   display: flex;
   justify-content: space-between;
   gap: 5px;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .secondary-images {
