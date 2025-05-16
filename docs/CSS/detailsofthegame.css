@@ -11,9 +11,14 @@ body {
 
 main {
   width: 100%;
+
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+}
+
+main > * {
+  max-width: 600px;
 }
 
 .name-and-rate {
@@ -33,7 +38,7 @@ main {
 }
 
 .star-container {
-  width: clamp(18px, 5vw, 30px);
+  width: clamp(18px, 5vw, 22px);
   margin-left: -1.5px;
 }
 
@@ -129,7 +134,7 @@ main {
 
 .container-secondary-images {
   grid-area: 4/1/5/4;
-  margin-top: 5px;
+  padding-top: 5px;
   height: 100%;
   
 
@@ -169,18 +174,21 @@ main {
 .container-action {
   display: grid;
   width: 85vw;
-  grid-template: repeat(3, 1fr) / 1fr;
+  grid-template: repeat(3, clamp(1.938rem, 1.42rem + 2.762vw, 3.188rem)) / 1fr;
   margin-top: 15px;
-  gap: 3px;
+  gap: 3px ;
 }
 
 .action {
   background-color: var(--PaletaCor02);
   color: var(--PaletaCor01);
-  padding: 2.2vw;
   border: 1px solid var(--PaletaCor01);
   border-radius: 4px;
   font: normal 500 0.9rem var(--Font01);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .action:first-child {
@@ -205,7 +213,9 @@ main {
     padding: 10px;
     border-radius: 5px;
     margin-top: 40px;
+    max-width: 600px;
 }
+
 
 .about h2 {
   color: var(--PaletaCor01);
@@ -283,7 +293,7 @@ main {
 
 #metacritic-logo {
   flex: 1 1;
-  max-width: 60%;
+  max-width: clamp(10rem, 40vw, 20rem);
 }
 
 #nota-metacritic {
@@ -310,4 +320,59 @@ main {
 
 #nota-metacritic.good {
   background-color: #00CE7A;
+}
+
+
+
+
+/*!-----------------------MEDIA QUERY 1024PX---------------------*/
+
+@media (min-width:1024px) {
+
+  main {
+    display: grid;
+    grid-template: repeat(5, 1fr) / repeat(5, 1fr);
+    margin: 0 auto;
+    width: 80%;
+    column-gap: 8px;
+  }
+
+  .name-and-rate{
+    grid-area: 1/1/1/5;
+    margin: 0;
+  }
+
+  .main-game-content {
+    grid-area: 2/1/6/4;
+  }
+
+  .container-action {
+    grid-area: 2/4/6/6;
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    background-color: var(--PaletaCor02);
+    border-radius: 5px;
+    border: 2px solid var(--PaletaCor01);
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container-action .action {
+    padding: clamp(10px, 3vw, 20px);
+    width: 90%;
+    background-color: var(--PaletaCor03);
+  }
+
+  .action:first-child {
+    background-color: var(--PaletaCor01);
+  }
+
+
+
+
 }

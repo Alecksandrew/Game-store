@@ -85,7 +85,11 @@ async function fetchGameDetails() {
   //MUDANDO AS IMAGENS SECUNDARIAS DO GAME CLICADO
   let secondaryImages = document.querySelectorAll(".secondary-images img");
   let secondaryImagesContainer = document.querySelectorAll(".secondary-images");
+  let allSecondaryImagesContainer = document.querySelector(
+    ".container-secondary-images"
+  );
   let secondaryImagesFromAPI = [];
+
   gameInfoJSON.results[0].short_screenshots.forEach((obj) => {
     secondaryImagesFromAPI.push(obj.image);
   });
@@ -96,37 +100,74 @@ async function fetchGameDetails() {
 
   let c = 1;
 
-  const changeImageAndColor = function() {
+  const changeImageAndColor = function () {
     mainImage.setAttribute("src", secondaryImagesFromAPI[c]);
     secondaryImagesContainer.forEach((container) => {
       container.classList.add("color-for-hiding");
     });
     secondaryImagesContainer[c].classList.remove("color-for-hiding");
 
+    const parent = allSecondaryImagesContainer;
+    const children = secondaryImagesContainer;
+    let parentRect = parent.getBoundingClientRect();
+    let parentScrollLeft = parent.scrollLeft;
+    let childRect = children[c].getBoundingClientRect();
+
+    let isFullVisible = () => {
+      if (
+        parentRect.right >= childRect.right &&
+        parentRect.left <= childRect.left
+      ) {
+        //Scroll para a direita
+        return true;
+      }
+      return false;
+    };
+
+    if (!isFullVisible()) {
+      if (childRect.left > parentRect.left) {
+        // SCROL PARA A DIREITA
+        parent.scrollTo({
+          left: childRect.left - parentRect.left,
+          behavior: "smooth",
+        });
+      } else if (childRect.left <= parentRect.left) {
+        /// SCROLL PARA A ESQUERDA
+        parent.scrollTo({
+          left: parentScrollLeft - (parentRect.left - childRect.left), // (parentRect.left - childRect.left) ISSO SIGNIFICA O OVERFLOW LEFT QUE O CONTAINER TERÁ
+          behavior: "smooth",
+        });
+      }
+    }
+
     c = (c + 1) % secondaryImagesContainer.length;
   };
 
-  
+  let currentInterval = setInterval(changeImageAndColor, 3500); //INICIA A EXECUÇÃO DO INTERVALO
+  let currentTimeout = null;
 
-  const startNewInterval = setInterval(changeImageAndColor, 3500);
-
-//!!!!!!ERRI NESSE BLOCO, TENTAR RESOLVER
+  //LOGICA -> USUARIO CLICA NO CONTAINER , ELE CLAREIA E SE O USUARIO NAO CLICAR EM OUTRO CONTAINER POR ALGUNS SEGUNDOS, ISSO DEIXAR O LOOP CONTINUAR AUTOMATICAMENTE
   secondaryImagesContainer.forEach((container, index) => {
-    
     container.addEventListener("click", () => {
-      
-      secondaryImagesContainer.forEach((cont) => { //LOGICA DA COR NAS SECONDARY IMAGE
+      if (currentInterval) {
+        clearInterval(currentInterval);
+      }
+      if (currentTimeout) {
+        clearTimeout(currentTimeout);
+      }
+
+      secondaryImagesContainer.forEach((cont) => {
         cont.classList.add("color-for-hiding");
       });
       container.classList.remove("color-for-hiding");
 
-      mainImage.setAttribute("src", secondaryImagesFromAPI[index]); ///LOGICA DE CADA CLIQUE FAZER A IMAGEM APARECER NO CARD PRINCIPAL
-      c = index + 1;
-      clearInterval(startNewInterval);
-      setInterval(changeImageAndColor, 2500); // INICIAR UM NOVO INTERVALO DEPOIS DO USUARIO PARAR DE CLICAR NOS CONTAINER POR 6000 MS
-      setTimeout(() => {
-        setInterval(changeImageAndColor, 3500)
-      }, 2500)
+      mainImage.setAttribute("src", secondaryImagesFromAPI[index]);
+      c = index;
+
+      currentTimeout = setTimeout(() => {
+        currentInterval = setInterval(changeImageAndColor, 3500);
+      }, 2500);
+    });
   });
 
   //LOGICA DE ESCURECER IMAGENS QUE NÃO ESTÃO EM FOCO
