@@ -7,7 +7,7 @@
    - [x] Página principal
    - [x] Página de Log in
    - [x] Página de detalhes
- - [ ] **Integração e consumo de API ( RAWG.io )**
+ - [x] **Integração e consumo de API ( RAWG.io )**
    - [x] Na página principal
    - [x] Na página de detalhes
  - [ ] **Acessibilidade**
