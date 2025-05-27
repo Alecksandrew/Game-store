@@ -272,17 +272,54 @@ async function fetchPopularGames() {
 
   let popularGamesImagesTag = document.querySelectorAll("#sec5 .eachgame .square-container img");
   let popularGamesTitleTag = document.querySelectorAll("#sec5 .nameOfTheGame");
-  let eachGameContainer = document.querySelectorAll("#sec5 .eachgame");
+  let eachGameContainerS5 = document.querySelectorAll("#sec5 .eachgame");
 
   //LINKING IMAGES AND TITLE TAGS WITH GAME DATA
   popularGamesData.results.forEach((result, index) => {
     popularGamesImagesTag[index].setAttribute("src", result.background_image);
     popularGamesImagesTag[index].setAttribute("alt", result.name);
     popularGamesTitleTag[index].textContent = result.name;
-    eachGameContainer[index].addEventListener("click", () => {
+    eachGameContainerS5[index].addEventListener("click", () => {
       window.location.href = `HTML/detailsofthegame.html?id=${result.id}` 
     })
   });
 };
 
 fetchPopularGames();
+
+
+//!----------------- SECTION SIX -------------------*/
+
+let nextTwoYears = new Date();
+nextTwoYears.setFullYear(nextTwoYears.getFullYear() + 2);
+
+let dataIncioMaisAguardados = fixFormatDate(today);
+let dataFimMaisAguardados = fixFormatDate(nextTwoYears);
+
+const mostAnticipatedParams = new URLSearchParams({
+  key: key,
+  page_size: 4,
+  dates: `${dataIncioMaisAguardados},${dataFimMaisAguardados}`,
+  ordering: "-added",
+});
+
+async function fetchMostAnticipated() {
+  const mostAnticipatedResponse = await fetch(`${url}?${mostAnticipatedParams.toString()}`);
+  const mostAnticipatedData = await mostAnticipatedResponse.json();
+  console.log(mostAnticipatedData);
+
+  let MostAnticipatedImagesTag = document.querySelectorAll("#sec6 .eachgame .square-container img");
+  let MostAnticipatedTitleTag = document.querySelectorAll("#sec6 .nameOfTheGame");
+  let eachGameContainerS6 = document.querySelectorAll("#sec6 .eachgame");
+
+  mostAnticipatedData.results.forEach((result,index) => {
+    MostAnticipatedImagesTag[index].setAttribute("src", result.background_image);
+    MostAnticipatedImagesTag[index].setAttribute("alt", result.name);
+    MostAnticipatedTitleTag[index].textContent = result.name;
+    eachGameContainerS6[index].addEventListener("click", () => {
+      window.location.href = `HTML/detailsofthegame.html?id=${result.id}`;
+    });
+  });
+}
+
+fetchMostAnticipated();
