@@ -243,3 +243,46 @@ let bestSellersURL = fetch(url + "?" + bestSellersParams.toString())
       });
     });
   }); //BEST SELLERS OF THE LAST EIGHT YEARS
+
+
+//!----------------- SECTION FIVE -------------------*/
+//*MOST POPULAR GAMES OF THE LAST TWO YEARS
+
+let lastTwoYears = new Date();
+lastTwoYears.setFullYear(lastTwoYears.getFullYear() - 2 );
+
+
+let dataInicioPopularGames = fixFormatDate(today);
+let dataFimPopularGames = fixFormatDate(lastTwoYears);
+
+
+const popularGamesParams = new URLSearchParams({
+  key: key,
+  page: 1,
+  page_size: 14,
+  dates: `${dataFimPopularGames},${dataInicioPopularGames}`,
+  ordering: "-added",
+});
+
+async function fetchPopularGames() {
+
+  //FETCHING DATA
+  const popularGamesResponse = await fetch(`${url}?${popularGamesParams.toString()}`);
+  const popularGamesData = await popularGamesResponse.json();
+
+  let popularGamesImagesTag = document.querySelectorAll("#sec5 .eachgame .square-container img");
+  let popularGamesTitleTag = document.querySelectorAll("#sec5 .nameOfTheGame");
+  let eachGameContainer = document.querySelectorAll("#sec5 .eachgame");
+
+  //LINKING IMAGES AND TITLE TAGS WITH GAME DATA
+  popularGamesData.results.forEach((result, index) => {
+    popularGamesImagesTag[index].setAttribute("src", result.background_image);
+    popularGamesImagesTag[index].setAttribute("alt", result.name);
+    popularGamesTitleTag[index].textContent = result.name;
+    eachGameContainer[index].addEventListener("click", () => {
+      window.location.href = `HTML/detailsofthegame.html?id=${result.id}` 
+    })
+  });
+};
+
+fetchPopularGames();
