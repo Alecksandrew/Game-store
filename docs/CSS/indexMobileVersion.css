@@ -1,6 +1,5 @@
 :root {
-  --main-game-image: url(../Images/Games/red_dead_redemption_2_wallpaper.jpg)
-    center center / cover no-repeat;
+  --main-game-image: ;
 }
 
 h2 {
@@ -213,7 +212,10 @@ main {
   height: 100%;
   position: absolute;
   z-index: 0;
-  background: var(--main-game-image);
+  background-image: var(--main-game-image);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
   opacity: 0.5;
   filter: grayscale(100%);
 }
@@ -234,7 +236,9 @@ main {
   overflow: hidden;
   background: var(--main-game-image);
   background-color: black;
-
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
   position: relative;
   display: flex;
   flex-flow: row nowrap;
@@ -250,15 +254,15 @@ main {
 
 #sec1 h1 {
   margin-bottom: 0.2rem;
-  font-size: 1.8rem;
+  font-size: clamp(1.4rem, 0.943rem + 2.286vw, 3rem);
   color: var(--PaletaCor01);
 }
 
 #sec1 p {
   margin-bottom: 1.3rem;
   font-family: var(--Font02);
-  font-size: 0.8rem;
-  line-height: 1.1rem;
+  font-size: clamp(0.72rem, 0.583rem + 0.686vw, 1.2rem);
+  line-height: clamp(0.93rem, 0.824rem + 0.529vw, 1.3rem);
   font-weight: 300;
 }
 
@@ -865,14 +869,7 @@ footer nav {
 /*!--------------------MEDIA QUERY 768PX---------------------*/
 
 @media (min-width: 768px) {
-  #title_sec1 h1 {
-    font-size: 2.8rem;
-  }
 
-  #title_sec1 p {
-    font-size: 1.5rem;
-    line-height: 1.6rem;
-  }
 
   #container_reasons {
     flex-flow: row nowrap;
@@ -911,15 +908,6 @@ footer nav {
 
 @media (min-width: 1024px) {
   /*FOR MEDIUM WIDTHS*/
-
-  #title_sec1 h1 {
-    font-size: 2rem;
-  }
-
-  #title_sec1 p {
-    font-size: 1rem;
-    line-height: 1.2rem;
-  }
 
   #divsec1 {
     height: 90vh;
