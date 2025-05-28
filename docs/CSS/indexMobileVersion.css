@@ -34,6 +34,12 @@ header {
   min-height: 50px;
 }
 
+.desktop-header {
+  display: grid;
+  grid-template: 100% / 1fr 2.5fr 1fr;
+  justify-items: center;
+}
+
 #menuhamburguer {
   margin-left: 10px;
   margin-top: 5px;
@@ -60,17 +66,34 @@ rect {
   position: fixed;
   top: 0;
   left: 0;
-  width: 60vw;
+  width: clamp(13.75rem, 5.714rem + 40.179vw, 25rem);
   height: 100vh;
   background-color: var(--PaletaCor02);
   transform: translateX(-120%);
   transition: transform 0.5s ease-in-out;
 }
 
+#nav1.desktop-menu {
+  all: unset;
+  grid-area: 1/2/2/3;
+  height: 100%;
+  
+}
+
+
 #nav1 ul {
   position: relative;
   height: 100%;
+  
 }
+
+#nav1.desktop-menu ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
 
 #nav1 li {
   list-style: none;
@@ -79,8 +102,23 @@ rect {
   padding: 0.8rem 0rem 0.8rem 0.4rem;
 }
 
+#nav1.desktop-menu li {
+  margin: 0;
+  padding: 0.6rem 1.5rem;
+  height: 100%;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
 #nav1 li:hover {
   background-color: var(--PaletaCor01);
+  transition: background-color 0.2s ease-in-out;
+}
+
+#nav1.desktop-menu li:hover {
+  background-color: var(--PaletaCor03);
   transition: background-color 0.2s ease-in-out;
 }
 
@@ -90,9 +128,19 @@ rect {
   transition: color 0.2s ease-in-out;
 }
 
+#nav1.desktop-menu li:hover a {
+  color: var(--PaletaCor01);
+  transition: background-color 0.2s ease-in-out;
+}
+
 #nav1 li a {
   text-decoration: none;
   color: var(--PaletaCor01);
+}
+
+#nav1.desktop-menu a {
+  color: white;
+
 }
 
 .closeMenuDesign {
@@ -103,6 +151,11 @@ rect {
   top: 50%;
   right: -4%;
   transform: scale(1.2);
+}
+
+#nav1.desktop-menu .closeMenuDesign {
+  display: none;
+
 }
 
 #closeMenu {
@@ -144,6 +197,11 @@ rect {
   gap: 10px;
   align-items: center;
   height: 100%;
+}
+
+#nav2.nav2-desktop {
+  grid-area: 1/3/2/4;
+  justify-self: right;
 }
 
 #nav2 button {
