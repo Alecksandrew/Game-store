@@ -803,6 +803,7 @@ main {
 .reviews {
   background-color: var(--PaletaCor03);
   flex: 0 0 300px;
+  
 
   box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.329);
   border-radius: 8px;
@@ -908,6 +909,24 @@ footer nav {
     margin-bottom: 0px;
   }
 
+  #sec7 .slider-container {
+    width: 95%;
+    max-width: calc(360px*3);
+  }
+
+  #allreviews {
+    gap: 0;
+    justify-content: space-between;
+;
+    padding: 15px;
+  }
+  
+  .reviews {
+    flex: 0 0 32%;
+    max-width: 360px;
+  
+
+  } 
   /*---ARRUMAR REVIEWS, ROLAGEM LATERAL COM FOCO NA REVIEW CENTRAL-------------*/
 }
 
