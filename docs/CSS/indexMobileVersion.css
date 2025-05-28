@@ -1,5 +1,9 @@
 :root {
   --main-game-image: ;
+  --first-game-image: ;
+  --second-game-image: ;
+  --third-game-image: ;
+  --fourth-game-image: ;
 }
 
 h2 {
@@ -328,18 +332,6 @@ main {
   background-color: var(--PaletaCor01);
 }
 
-/*
-#allgames {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    height: 80%;
-    width: 15vw;
-    gap: 5px;
-
-    position: relative;
-}*/
-
 #allgames {
   grid-template-rows: repeat(4, 1fr);
 
@@ -364,22 +356,22 @@ main {
 }
 
 .imggames:nth-child(1) {
-  background: url(Images/Games/red_dead_redemption_2_wallpaper.jpg) center
+  background: var(--first-game-image) center
     center / cover no-repeat;
   border: 5px solid var(--PaletaCor01);
 }
 
 .imggames:nth-child(2) {
-  background: url(Images/Games/minecraft.jpg) center 10% / cover no-repeat;
+  background: var(--second-game-image) center center / cover no-repeat;
 }
 
 .imggames:nth-child(3) {
-  background: url(Images/Games/theLastOfUsPaisagem.jpg) 20% center / cover
+  background: var(--third-game-image) center center / cover
     no-repeat;
 }
 
 .imggames:nth-child(4) {
-  background: url(Images/Games/God_of_War_Ragnarök_capa.jpg) center 10% / cover
+  background: var(--fourth-game-image) center center / cover
     no-repeat;
 }
 
@@ -391,7 +383,7 @@ main {
   inset: 0;
 }
 
-.imggames:nth-child(1):after {
+.imggames.overlay-hidden:after { /* FOCAR NO GAME QUE ESTA APARECENDO NO MOMENTO */
   opacity: 0;
 }
 

@@ -30,6 +30,7 @@ closeMenuDesign.addEventListener("click", () => {
 let mainTitle = document.getElementById("maintitle");
 let mainParagraph = document.getElementById("mainparagraph");
 let mainContentCounter = 0;
+let allSecondaryImages = document.querySelectorAll(".imggames");
 let mainContent = [
   {
     slug: "red-dead-redemption-2",
@@ -78,6 +79,13 @@ async function fetchAllMainGameData() {
   allGameData = await Promise.all(gameDataPromises);
   console.log(allGameData);
 
+  //CHANGING SIDE IMAGES
+document.documentElement.style.setProperty("--first-game-image", `url(${allGameData[mainContentCounter].img})`);
+document.documentElement.style.setProperty("--second-game-image", `url(${allGameData[mainContentCounter + 1].img})`);
+document.documentElement.style.setProperty("--third-game-image", `url(${allGameData[mainContentCounter + 2].img})`);
+document.documentElement.style.setProperty("--fourth-game-image", `url(${allGameData[mainContentCounter + 3].img})`);
+
+
   changingMainContent();
   setInterval(() => {
     changingMainContent();
@@ -97,9 +105,31 @@ function fixLengthDescription() {
   }
 };
 
+//LOGICA PARA AO CLICAR NO JOGO, ELE FICAR EM FOCO E APARECER COMO IMAGEM PRINCIPAL
+allSecondaryImages.forEach((img, index) => {
+  img.addEventListener("click", () => {
+    mainContentCounter = index;
+    document.documentElement.style.setProperty("--main-game-image", `url(${allGameData[index].img})`);
+    allSecondaryImages.forEach(imggame => {
+    imggame.classList.remove("overlay-hidden")
+    });
+    allSecondaryImages[index].classList.add("overlay-hidden");
+    mainTitle.textContent = allGameData[index].name;
+    currentGameId = allGameData[index].id;
+    fixLengthDescription();
+    currentGameId = allGameData[index].id
+  });
+});
+
+
+
 function changingMainContent() {
-  //Changing Main Images, Titles and Paragraphs...
+  //Changing Main Images, focused image, Titles and Paragraphs...
   document.documentElement.style.setProperty("--main-game-image", `url(${allGameData[mainContentCounter].img})`);
+  allSecondaryImages.forEach(img => {
+    img.classList.remove("overlay-hidden")
+  });
+  allSecondaryImages[mainContentCounter].classList.add("overlay-hidden");
   mainTitle.textContent = allGameData[mainContentCounter].name;
   currentGameId = allGameData[mainContentCounter].id;
   fixLengthDescription();
