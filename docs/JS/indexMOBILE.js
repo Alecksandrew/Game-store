@@ -226,38 +226,62 @@ let eachSlide = document.querySelectorAll(".slide");
 
 //CLONAR SLIDES
 eachSlide.forEach((slide) => {
-    const clone = slide.cloneNode(true);
-    containerSlides.appendChild(clone);
+    const prependedClone = slide.cloneNode(true);
+    const appendedClone = slide.cloneNode(true);
+    containerSlides.append(appendedClone);
+    containerSlides.prepend(prependedClone);
 });
 
+let eachSlideAfterClone = document.querySelectorAll(".slide");
 
-const containerScrollWidth = containerSlides.scrollWidth; // Original + clones width
-const maxScrollWidth = containerScrollWidth / 2; // only original width
+let startOfSecondSet = 0;
+let startOfThirdSet = 0;
+let oneSetWidth = 0; // Usaremos isso em vez de maxScrollWidth
+const tolerance = 5; // Podemos usar uma tolerância menor agora
 let isAdjusting = false;
 
 
+
+function setupSliderDimensions() {
+  isAdjusting = true;
+  
+  const firstOriginalSlide = eachSlideAfterClone[eachSlideAfterClone.length/3];
+  const firstThirdSetSlide = eachSlideAfterClone[(eachSlideAfterClone.length/3)*2];
+
+  startOfSecondSet = firstOriginalSlide.offsetLeft;
+  startOfThirdSet = firstThirdSetSlide.offsetLeft;
+  oneSetWidth = startOfThirdSet - startOfSecondSet;
+
+  containerSlides.scrollLeft = startOfSecondSet;
+
+  setTimeout(() => { isAdjusting = false; }, 50)
+};
+
+window.addEventListener("load", setupSliderDimensions);
+window.addEventListener("resize", setupSliderDimensions);
 
 // LOGICA DO DESLIZE INFINITO
 containerSlides.addEventListener("scroll", () => {
     if (isAdjusting) return; 
 
     isAdjusting = true; 
-    
     let currentScroll = containerSlides.scrollLeft;
 
-    if (currentScroll >= maxScrollWidth) {
+    if (currentScroll >= startOfThirdSet - tolerance) {
         containerSlides.style.scrollBehavior = "auto";
-        containerSlides.scrollLeft = currentScroll - maxScrollWidth;
+        containerSlides.scrollLeft = currentScroll - oneSetWidth;
     }
-    else if ( currentScroll <= 0) {
+    else if ( currentScroll <= startOfSecondSet + tolerance) {
         containerSlides.style.scrollBehavior = "auto";
-        containerSlides.scrollLeft = currentScroll + maxScrollWidth;
+        containerSlides.scrollLeft = currentScroll + oneSetWidth;
     }
 
     requestAnimationFrame(() => {
-    isAdjusting = false;
+      containerSlides.style.scrollBehavior = "smooth"
+      isAdjusting = false;
   });
 });
+
 
 //!-----------------SECTION FOUR -------------------*/
 

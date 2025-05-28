@@ -509,10 +509,11 @@ main {
 
 #sec3 .slide {
   background-color: rgb(0, 0, 0);
-  flex: 0 0 45%;
-  max-width: 200px;
-  min-width: 120px;
-  min-height: 120px;
+  flex: 0 0 auto;
+
+  aspect-ratio: 5/3;
+  height: clamp(6.25rem, 5.703rem + 2.734vw, 8.438rem);
+
   list-style-type: none;
 
   border-radius: 5px;
@@ -942,7 +943,7 @@ footer nav {
   }
 
   #sec3 ul {
-    justify-content: center;
+
   }
 
   #sec4 ul {
@@ -1037,17 +1038,10 @@ footer nav {
 
   /*----------SEC2---------*/
 
-  #sec3 ul {
-    justify-content: center;
-  }
 
-  #sec3 li {
-    min-width: 150px;
-    min-height: 150px;
-  }
 
   .all-slides {
-    justify-content: center;
+
   }
 
   #sec4 .eachgame .nameOfTheGame, #sec6 .eachgame .nameOfTheGame {
