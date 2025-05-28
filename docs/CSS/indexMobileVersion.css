@@ -578,36 +578,43 @@ main {
   border-radius: 5px;
   box-shadow: 1px 6px 10px rgba(0, 0, 0, 0.24);
   flex: 0 0 auto;
-  height: 350px;
-  width: 252px;
+  height: 370px;
+  width: 265px;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-between;
 }
 
 #sec4 .eachgame {
 }
 
 .eachgame h3 {
-  font-size: clamp(18px, 140%, 27px);
+  font-size: 20px;
   text-align: left;
   font-weight: 600;
-  margin-top: 10px;
+  margin-top: 8px;
   margin-bottom: 5px;
+
 }
 
 .square-container {
-  flex: 1 0 70%;
+  flex: 0 0 70%;
   height: 100%;
+  aspect-ratio: 1/1;
   overflow: hidden;
   border-radius: 5px;
 }
 
 .pricediscount {
+  flex: 0 0 10%;
+  margin-top: auto;
   display: flex;
   flex-flow: row nowrap;
-  align-items: center;
-  height: 50px;
+  align-items: stretch;
+
+  height: 40px;
+  margin-top: auto;
+  font-size: 0.8em;
+
 }
 
 .discount {
@@ -615,7 +622,7 @@ main {
   font-weight: 500;
   background-color: var(--PaletaCor01);
   color: var(--PaletaCor03);
-  flex: 0 1 70%;
+  flex: 0 0 70%;
 
   display: flex;
   height: 100%;
@@ -699,15 +706,16 @@ main {
 }
 
 #sec5 .eachgame {
-  width: calc(262px * 0.8);
-  height: calc(350px * 0.8);
+  width: calc(265px * 0.85);
+  height: calc(370px * 0.85);
 }
 
-#sec5 .pricediscount {
-  height: 40px;
-  margin-top: -5px;
-  font-size: 0.8em;
-}
+#sec5 .eachgame h3 {
+    font-size: clamp(1rem, 0.938rem + 0.313vw, 1.25rem);
+    line-height: 19px;
+    margin-top: 5px;
+  }
+
 
 /*------------SEC5-----------------*/
 
@@ -761,11 +769,6 @@ main {
   margin-bottom: 10px;
 }
 
-#sec6 .pricediscount {
-  height: 40px;
-  margin-top: -5px;
-  font-size: 0.8em;
-}
 
 /*--------------SEC6----------------*/
 
@@ -883,6 +886,10 @@ footer nav {
     flex-flow: row nowrap;
   }
 
+  #sec4 .eachgame h3, #sec6 .eachgame h3 {
+    font-size: 24px;
+  }
+
   #sec3 ul {
     justify-content: center;
   }
@@ -929,14 +936,14 @@ footer nav {
   #divsec1 {
     height: 90vh;
     align-items: center;
-
-    #sec1 {
+  }
+  
+  #sec1 {
       height: 80%;
       width: 70%;
       border-radius: 10px;
       border: 5px solid var(--PaletaCor01);
       box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.404);
-    }
   }
 
   #allgames {
@@ -973,6 +980,11 @@ footer nav {
   .all-slides {
     justify-content: center;
   }
+
+  #sec4 .eachgame .nameOfTheGame, #sec6 .eachgame .nameOfTheGame {
+    font-size: 30px;
+  }
+
   /*------SEC3------*/
 
   #sec4 ul {
@@ -985,10 +997,6 @@ footer nav {
     height: 533.59px;
     /*width: 220px;
     height: 275.19px;*/
-  }
-
-  #sec4 .pricediscount {
-    height: 40px;
   }
 
   #sec4 .price {
