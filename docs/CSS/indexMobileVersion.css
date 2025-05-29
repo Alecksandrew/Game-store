@@ -942,9 +942,6 @@ footer nav {
     font-size: 24px;
   }
 
-  #sec3 ul {
-
-  }
 
   #sec4 ul {
     flex-flow: row wrap;
@@ -1040,9 +1037,7 @@ footer nav {
 
 
 
-  .all-slides {
 
-  }
 
   #sec4 .eachgame .nameOfTheGame, #sec6 .eachgame .nameOfTheGame {
     font-size: 30px;

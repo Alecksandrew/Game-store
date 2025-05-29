@@ -6,7 +6,6 @@ btn2.addEventListener("click", () => {
   window.location.href = "HTML/loginscreen2.0.html";
 });
 
-
 //*LÓGICA ABRIR E FECHAR MENU HAMBURUGER
 const menuHamburguer = document.getElementById("menuhamburguer");
 const menuContainerOptions = document.getElementById("nav1");
@@ -26,38 +25,33 @@ let header = document.querySelector("header");
 let loginOptions = document.querySelector("#nav2");
 
 if (window.matchMedia("(min-width: 768px)").matches) {
-    header.prepend(menuContainerOptions)
-    header.classList.add("desktop-header");
-    loginOptions.classList.add("nav2-desktop")
-    menuContainerOptions.classList.add("desktop-menu");
-    menuContainerOptions.style.transform = "translateX(0);"
-    menuHamburguer.style.display = "none";
-  };
+  header.prepend(menuContainerOptions);
+  header.classList.add("desktop-header");
+  loginOptions.classList.add("nav2-desktop");
+  menuContainerOptions.classList.add("desktop-menu");
+  menuContainerOptions.style.transform = "translateX(0);";
+  menuHamburguer.style.display = "none";
+}
 
 window.addEventListener("resize", () => {
   if (window.matchMedia("(min-width: 768px)").matches) {
     header.prepend(menuContainerOptions);
     header.classList.add("desktop-header");
-    loginOptions.classList.add("nav2-desktop")
+    loginOptions.classList.add("nav2-desktop");
     menuContainerOptions.classList.add("desktop-menu");
     menuContainerOptions.style.transform = "translateX(0)";
     menuHamburguer.style.display = "none";
-  }
-  else {
-    header.append(menuContainerOptions)
+  } else {
+    header.append(menuContainerOptions);
     header.classList.remove("desktop-header");
-    loginOptions.classList.remove("nav2-desktop")
+    loginOptions.classList.remove("nav2-desktop");
     menuContainerOptions.classList.remove("desktop-menu");
     menuContainerOptions.style.transform = "translateX(-120vw)";
     menuHamburguer.style.display = "block";
-  };
+  }
 });
 
-
-
 //!--------------------HEADER--------------------
-
-
 
 //*Change main content
 //*Change main content
@@ -114,54 +108,71 @@ async function fetchAllMainGameData() {
   console.log(allGameData);
 
   //CHANGING SIDE IMAGES
-document.documentElement.style.setProperty("--first-game-image", `url(${allGameData[mainContentCounter].img})`);
-document.documentElement.style.setProperty("--second-game-image", `url(${allGameData[mainContentCounter + 1].img})`);
-document.documentElement.style.setProperty("--third-game-image", `url(${allGameData[mainContentCounter + 2].img})`);
-document.documentElement.style.setProperty("--fourth-game-image", `url(${allGameData[mainContentCounter + 3].img})`);
-
+  document.documentElement.style.setProperty(
+    "--first-game-image",
+    `url(${allGameData[mainContentCounter].img})`
+  );
+  document.documentElement.style.setProperty(
+    "--second-game-image",
+    `url(${allGameData[mainContentCounter + 1].img})`
+  );
+  document.documentElement.style.setProperty(
+    "--third-game-image",
+    `url(${allGameData[mainContentCounter + 2].img})`
+  );
+  document.documentElement.style.setProperty(
+    "--fourth-game-image",
+    `url(${allGameData[mainContentCounter + 3].img})`
+  );
 
   changingMainContent();
   setInterval(() => {
     changingMainContent();
   }, 5000);
-};
+}
 
 fetchAllMainGameData();
 
 function fixLengthDescription() {
- 
   if (isMobile.matches) {
-    mainParagraph.textContent = allGameData[mainContentCounter].description.substr(0, 140) + "...";
+    mainParagraph.textContent =
+      allGameData[mainContentCounter].description.substr(0, 140) + "...";
   } else if (isTablet.matches) {
-    mainParagraph.textContent = allGameData[mainContentCounter].description.substr(0, 270) + "...";
+    mainParagraph.textContent =
+      allGameData[mainContentCounter].description.substr(0, 270) + "...";
   } else {
-    mainParagraph.textContent = allGameData[mainContentCounter].description.substr(0, 300) + "...";
+    mainParagraph.textContent =
+      allGameData[mainContentCounter].description.substr(0, 300) + "...";
   }
-};
+}
 
 //LOGICA PARA AO CLICAR NO JOGO, ELE FICAR EM FOCO E APARECER COMO IMAGEM PRINCIPAL
 allSecondaryImages.forEach((img, index) => {
   img.addEventListener("click", () => {
     mainContentCounter = index;
-    document.documentElement.style.setProperty("--main-game-image", `url(${allGameData[index].img})`);
-    allSecondaryImages.forEach(imggame => {
-    imggame.classList.remove("overlay-hidden")
+    document.documentElement.style.setProperty(
+      "--main-game-image",
+      `url(${allGameData[index].img})`
+    );
+    allSecondaryImages.forEach((imggame) => {
+      imggame.classList.remove("overlay-hidden");
     });
     allSecondaryImages[index].classList.add("overlay-hidden");
     mainTitle.textContent = allGameData[index].name;
     currentGameId = allGameData[index].id;
     fixLengthDescription();
-    currentGameId = allGameData[index].id
+    currentGameId = allGameData[index].id;
   });
 });
 
-
-
 function changingMainContent() {
   //Changing Main Images, focused image, Titles and Paragraphs...
-  document.documentElement.style.setProperty("--main-game-image", `url(${allGameData[mainContentCounter].img})`);
-  allSecondaryImages.forEach(img => {
-    img.classList.remove("overlay-hidden")
+  document.documentElement.style.setProperty(
+    "--main-game-image",
+    `url(${allGameData[mainContentCounter].img})`
+  );
+  allSecondaryImages.forEach((img) => {
+    img.classList.remove("overlay-hidden");
   });
   allSecondaryImages[mainContentCounter].classList.add("overlay-hidden");
   mainTitle.textContent = allGameData[mainContentCounter].name;
@@ -170,21 +181,20 @@ function changingMainContent() {
 
   //Changing little balls
   bolinhas[mainContentCounter].style["background-color"] = cor01;
-  noColorBolinha = bolinhas[mainContentCounter - 1] || bolinhas[bolinhas.length - 1];
+  noColorBolinha =
+    bolinhas[mainContentCounter - 1] || bolinhas[bolinhas.length - 1];
   noColorBolinha.style["background-color"] = cor02;
 
   //General counter
   mainContentCounter = (mainContentCounter + 1) % allGameData.length;
-
 }
 
-  //Changing HREF get it now button
+//Changing HREF get it now button
 getItNowButton.addEventListener("click", () => {
-    window.location.href = `HTML/detailsofthegame.html?id=${currentGameId}`;    
+  window.location.href = `HTML/detailsofthegame.html?id=${currentGameId}`;
 });
 
 //GET IT NOW -> Redirecionando para a página de detalhes
-
 
 //Changing wishlist star
 const wishlistStarConteiner = document.querySelectorAll(".star-conteiner");
@@ -197,9 +207,6 @@ wishlistStarConteiner.forEach((starConteiner, c) => {
 });
 
 //!----------------------SEC1-------------------------------*/
-
-
-
 
 //!------------SEC2 ----------------------*/
 
@@ -226,74 +233,110 @@ let eachSlide = document.querySelectorAll(".slide");
 
 //CLONAR SLIDES
 eachSlide.forEach((slide) => {
-    const prependedClone = slide.cloneNode(true);
-    const appendedClone = slide.cloneNode(true);
-    containerSlides.append(appendedClone);
-    containerSlides.prepend(prependedClone);
+  const prependedClone = slide.cloneNode(true);
+  const appendedClone = slide.cloneNode(true);
+  containerSlides.append(appendedClone);
+  containerSlides.prepend(prependedClone);
 });
 
-let eachSlideAfterClone = document.querySelectorAll(".slide");
-
-let startOfSecondSet = 0;
-let startOfThirdSet = 0;
-let oneSetWidth = 0; // Usaremos isso em vez de maxScrollWidth
-const tolerance = 5; // Podemos usar uma tolerância menor agora
+const containerScrollWidth = containerSlides.scrollWidth; // Original + clones width
+const maxScrollWidth = containerScrollWidth / 3; // only original width -> LARGURA DE DO CONJUNTO ORIGINAL DE SLIDES
 let isAdjusting = false;
+containerSlides.scrollLeft = maxScrollWidth;
 
+// LOGICA DO DESLIZE INFINITO BY TOUCH
 
-
-function setupSliderDimensions() {
-  isAdjusting = true;
-  
-  const firstOriginalSlide = eachSlideAfterClone[eachSlideAfterClone.length/3];
-  const firstThirdSetSlide = eachSlideAfterClone[(eachSlideAfterClone.length/3)*2];
-
-  startOfSecondSet = firstOriginalSlide.offsetLeft;
-  startOfThirdSet = firstThirdSetSlide.offsetLeft;
-  oneSetWidth = startOfThirdSet - startOfSecondSet;
-
-  containerSlides.scrollLeft = startOfSecondSet;
-
-  setTimeout(() => { isAdjusting = false; }, 50)
-};
-
-window.addEventListener("load", setupSliderDimensions);
-window.addEventListener("resize", setupSliderDimensions);
-
-// LOGICA DO DESLIZE INFINITO
 containerSlides.addEventListener("scroll", () => {
-    if (isAdjusting) return; 
+  if (isAdjusting) return;
 
-    isAdjusting = true; 
-    let currentScroll = containerSlides.scrollLeft;
+  isAdjusting = true;
 
-    if (currentScroll >= startOfThirdSet - tolerance) {
-        containerSlides.style.scrollBehavior = "auto";
-        containerSlides.scrollLeft = currentScroll - oneSetWidth;
-    }
-    else if ( currentScroll <= startOfSecondSet + tolerance) {
-        containerSlides.style.scrollBehavior = "auto";
-        containerSlides.scrollLeft = currentScroll + oneSetWidth;
-    }
+  let currentScroll = containerSlides.scrollLeft;
+  const tolerance = 10;
+  let maximumRightScroll =
+    containerSlides.scrollWidth - containerSlides.clientWidth;
 
-    requestAnimationFrame(() => {
-      containerSlides.style.scrollBehavior = "smooth"
-      isAdjusting = false;
+  if (currentScroll >= maximumRightScroll - tolerance) {
+    containerSlides.style.scrollBehavior = "auto";
+    containerSlides.scrollLeft = currentScroll - maxScrollWidth;
+  } else if (currentScroll <= tolerance) {
+    containerSlides.style.scrollBehavior = "auto";
+    containerSlides.scrollLeft = currentScroll + maxScrollWidth;
+  }
+
+  requestAnimationFrame(() => {
+    containerSlides.style.scrollBehavior = "smooth";
+    isAdjusting = false;
   });
 });
 
+// LOGICA DO DESLIZE INFINITO BY MOUSE
+let isMouseDown = false;
+let mouseStartX, initialScrollLeft;
 
+let lastMouseX;
+let velocity = 0;
+let inertiaFrameID;
+
+containerSlides.addEventListener("mousedown", (e) => {
+  isMouseDown = true;
+  cancelAnimationFrame(inertiaFrameID);
+  initialScrollLeft = containerSlides.scrollLeft;
+  mouseStartX = e.pageX;
+  lastMouseX = e.pageX;
+  velocity = 0;
+});
+
+window.addEventListener("mousemove", (e) => {
+  if (!isMouseDown) return;
+
+  let mouseCurrentX = e.pageX;
+
+  let dislocationX = mouseCurrentX - mouseStartX;
+
+  let movementX = mouseCurrentX - lastMouseX;
+
+  containerSlides.scrollLeft = initialScrollLeft - dislocationX;
+  containerSlides.style.scrollBehavior = "auto";
+
+  velocity = -movementX;
+  lastMouseX = mouseCurrentX;
+});
+
+window.addEventListener("mouseup", (e) => {
+  if (!isMouseDown) return;
+  isMouseDown = false;
+
+  if (Math.abs(velocity) > 0.5) {
+    runInertiaStep();
+  } else {
+    containerSlides.style.scrollBehavior = "smooth";
+  }
+});
+
+function runInertiaStep() {
+  if (isMouseDown || Math.abs(velocity) < 0.5) {
+    velocity = 0; //
+    containerSlides.style.scrollBehavior = "smooth";
+  }
+
+  containerSlides.style.scrollBehavior = "auto";
+  containerSlides.scrollLeft += velocity;
+  velocity *= 0.98; // DESACELERAÇÃO
+
+  inertiaFrameID = requestAnimationFrame(runInertiaStep);
+}
 //!-----------------SECTION FOUR -------------------*/
 
 //* BEST SELLERS GAMES WITH API
 
 function fixFormatDate(date) {
   const yyyy = String(date.getFullYear());
-  const mm = String(date.getMonth() + 1).padStart(2,"0");
+  const mm = String(date.getMonth() + 1).padStart(2, "0");
   const dd = String(date.getDate()).padStart(2, "0");
 
   return `${yyyy}-${mm}-${dd}`;
-};
+}
 
 let today = new Date();
 let LastEightYears = new Date();
@@ -313,31 +356,28 @@ const bestSellersParams = new URLSearchParams({
 
 let bestSellersURL = fetch(url + "?" + bestSellersParams.toString())
   .then((response) => response.json())
-  .then(data => {
-    
+  .then((data) => {
     //LÓGICA ATUALIZAR IMAGENS DOS BESTSELLERS
     let infoBestSellers = [];
 
     data.results.forEach((result) => {
-      
       const gameInfo = {
         background_image: result.background_image,
         name: result.name,
         release_date: result.release_date,
-        id: result.id
-      }
-      
-      infoBestSellers.push(gameInfo);
+        id: result.id,
+      };
 
+      infoBestSellers.push(gameInfo);
     });
-    
+
     let bestSellersTag = document.querySelectorAll("#sec4 .eachgame");
-    
+
     bestSellersTag.forEach((bestSeller, index) => {
       const img = bestSeller.querySelector("img");
       const nameOfTheGame = bestSeller.querySelector(".nameOfTheGame");
 
-      img.setAttribute("src", infoBestSellers[index].background_image)
+      img.setAttribute("src", infoBestSellers[index].background_image);
       img.setAttribute("alt", infoBestSellers[index].name);
       nameOfTheGame.textContent = infoBestSellers[index].name;
 
@@ -348,17 +388,14 @@ let bestSellersURL = fetch(url + "?" + bestSellersParams.toString())
     });
   }); //BEST SELLERS OF THE LAST EIGHT YEARS
 
-
 //!----------------- SECTION FIVE -------------------*/
 //*MOST POPULAR GAMES OF THE LAST TWO YEARS
 
 let lastTwoYears = new Date();
-lastTwoYears.setFullYear(lastTwoYears.getFullYear() - 2 );
-
+lastTwoYears.setFullYear(lastTwoYears.getFullYear() - 2);
 
 let dataInicioPopularGames = fixFormatDate(today);
 let dataFimPopularGames = fixFormatDate(lastTwoYears);
-
 
 const popularGamesParams = new URLSearchParams({
   key: key,
@@ -369,12 +406,15 @@ const popularGamesParams = new URLSearchParams({
 });
 
 async function fetchPopularGames() {
-
   //FETCHING DATA
-  const popularGamesResponse = await fetch(`${url}?${popularGamesParams.toString()}`);
+  const popularGamesResponse = await fetch(
+    `${url}?${popularGamesParams.toString()}`
+  );
   const popularGamesData = await popularGamesResponse.json();
 
-  let popularGamesImagesTag = document.querySelectorAll("#sec5 .eachgame .square-container img");
+  let popularGamesImagesTag = document.querySelectorAll(
+    "#sec5 .eachgame .square-container img"
+  );
   let popularGamesTitleTag = document.querySelectorAll("#sec5 .nameOfTheGame");
   let eachGameContainerS5 = document.querySelectorAll("#sec5 .eachgame");
 
@@ -384,13 +424,12 @@ async function fetchPopularGames() {
     popularGamesImagesTag[index].setAttribute("alt", result.name);
     popularGamesTitleTag[index].textContent = result.name;
     eachGameContainerS5[index].addEventListener("click", () => {
-      window.location.href = `HTML/detailsofthegame.html?id=${result.id}` 
-    })
+      window.location.href = `HTML/detailsofthegame.html?id=${result.id}`;
+    });
   });
-};
+}
 
 fetchPopularGames();
-
 
 //!----------------- SECTION SIX -------------------*/
 
@@ -408,16 +447,25 @@ const mostAnticipatedParams = new URLSearchParams({
 });
 
 async function fetchMostAnticipated() {
-  const mostAnticipatedResponse = await fetch(`${url}?${mostAnticipatedParams.toString()}`);
+  const mostAnticipatedResponse = await fetch(
+    `${url}?${mostAnticipatedParams.toString()}`
+  );
   const mostAnticipatedData = await mostAnticipatedResponse.json();
   console.log(mostAnticipatedData);
 
-  let MostAnticipatedImagesTag = document.querySelectorAll("#sec6 .eachgame .square-container img");
-  let MostAnticipatedTitleTag = document.querySelectorAll("#sec6 .nameOfTheGame");
+  let MostAnticipatedImagesTag = document.querySelectorAll(
+    "#sec6 .eachgame .square-container img"
+  );
+  let MostAnticipatedTitleTag = document.querySelectorAll(
+    "#sec6 .nameOfTheGame"
+  );
   let eachGameContainerS6 = document.querySelectorAll("#sec6 .eachgame");
 
-  mostAnticipatedData.results.forEach((result,index) => {
-    MostAnticipatedImagesTag[index].setAttribute("src", result.background_image);
+  mostAnticipatedData.results.forEach((result, index) => {
+    MostAnticipatedImagesTag[index].setAttribute(
+      "src",
+      result.background_image
+    );
     MostAnticipatedImagesTag[index].setAttribute("alt", result.name);
     MostAnticipatedTitleTag[index].textContent = result.name;
     eachGameContainerS6[index].addEventListener("click", () => {
