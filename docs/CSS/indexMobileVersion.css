@@ -634,8 +634,8 @@ main {
   border-radius: 5px;
   box-shadow: 1px 6px 10px rgba(0, 0, 0, 0.24);
   flex: 0 0 auto;
-  height: 370px;
-  width: 265px;
+  width: clamp(16.563rem, 10.536rem + 30.134vw, 25rem);
+  aspect-ratio: 265/370; /*largura e altura originais em pixel*/
   display: flex;
   flex-flow: column nowrap;
 }
@@ -644,7 +644,7 @@ main {
 }
 
 .eachgame h3 {
-  font-size: 20px;
+  font-size: clamp(1.125rem, 0.679rem + 2.232vw, 1.75rem);
   text-align: left;
   font-weight: 600;
   margin-top: 8px;
@@ -704,13 +704,13 @@ main {
 }
 
 .first {
-  font-size: 0.8em;
+  font-size: clamp(0.7rem, 0.557rem + 0.714vw, 0.9rem);
   text-decoration: line-through;
   color: var(--PaletaCor04);
 }
 
 .second {
-  font-size: 1.4em;
+  font-size: clamp(1.2rem, 0.986rem + 1.071vw, 1.5rem);
   font-weight: 600;
   color: var(--PaletaCor01);
 }
@@ -763,7 +763,7 @@ main {
 
 #sec5 .eachgame {
   width: calc(265px * 0.85);
-  height: calc(370px * 0.85);
+
 }
 
 #sec5 .eachgame h3 {
@@ -773,6 +773,13 @@ main {
   }
 
 
+#sec5 .first {
+  font-size: 0.7rem;
+}
+
+#sec5 .second {
+  font-size: 1.1rem;
+}
 /*------------SEC5-----------------*/
 
 #sec6 {
@@ -931,12 +938,12 @@ footer nav {
 
 @media (min-width: 768px) {
   #title_sec1 h1 {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
   }
 
   #title_sec1 p {
-    font-size: 1.5rem;
-    line-height: 1.6rem;
+    font-size: 1rem;
+    line-height: 1.4rem;
   }
 
   #container_reasons {
@@ -944,7 +951,7 @@ footer nav {
   }
 
   #sec4 .eachgame h3, #sec6 .eachgame h3 {
-    font-size: 24px;
+    font-size: clamp(1.5rem, 0.771rem + 1.519vw, 2.1rem);
   }
 
 
@@ -953,14 +960,22 @@ footer nav {
     justify-content: center;
   }
 
+  .first {
+    font-size:clamp(0.8rem, 0.557rem + 0.506vw, 1rem);
+  }
+
+  .second {
+    font-size: clamp(1.2rem, 0.714rem + 1.013vw, 1.6rem);
+  }
+
   .eachgame {
-    width: 301px; /* 262 * 1.15 */
-    height: 402px; /* 350 * 1.15 */
+    width: clamp(21.875rem, 12.002rem + 20.57vw, 30rem);
+
+     aspect-ratio: 265/370;
   }
 
   #sec5 .eachgame {
     width: calc(301px * 0.8);
-    height: calc(402px * 0.8);
   }
 
   #sec6 ul {
@@ -1045,7 +1060,7 @@ footer nav {
 
 
   #sec4 .eachgame .nameOfTheGame, #sec6 .eachgame .nameOfTheGame {
-    font-size: 30px;
+   
   }
 
   /*------SEC3------*/
@@ -1056,10 +1071,7 @@ footer nav {
   }
 
   .eachgame {
-    width: 400px;
-    height: 533.59px;
-    /*width: 220px;
-    height: 275.19px;*/
+
   }
 
   #sec4 .price {
@@ -1076,4 +1088,30 @@ footer nav {
     width: calc(400px * 0.8);
     height: calc(533.59px * 0.8);
   }
+}
+
+
+/*!--------------------MEDIA QUERY 1400PX---------------------*/
+
+@media (min-width: 1400px) {
+
+.eachgame {
+  width: clamp(20rem, 3.173rem + 19.231vw, 26.25rem);
+
+  }
+
+.first {
+  font-size: clamp(0.7rem, 0.162rem + 0.615vw, 0.9rem);
+}
+
+.second {
+  font-size: clamp(1.1rem, -0.246rem + 1.538vw, 1.6rem);
+}
+
+
+
+#sec4 .eachgame h3, #sec6 .eachgame h3 {
+  font-size: clamp(1.375rem, -0.308rem + 1.923vw, 2rem);
+}
+
 }
