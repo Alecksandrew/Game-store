@@ -16,6 +16,8 @@
   --game-genre-9: ;
   --game-genre-10: ;
   
+  scroll-behavior: smooth;
+  scroll-padding-top: 50px;
 }
 
 h2 {
@@ -44,11 +46,13 @@ header {
   max-height: 50px;
   width: 100%;
   min-height: 50px;
+
+  position: fixed;
 }
 
 .desktop-header {
   display: grid;
-  grid-template: 100% / 1fr 2.5fr 1fr;
+  grid-template: 100% / 1fr 3fr 1fr;
   justify-items: center;
 }
 
@@ -112,11 +116,12 @@ rect {
   font-size: 1.1rem;
   margin-bottom: 0.4rem;
   padding: 0.8rem 0rem 0.8rem 0.4rem;
+  text-align: center;
 }
 
 #nav1.desktop-menu li {
   margin: 0;
-  padding: 0.6rem 1.5rem;
+  padding: 0.5rem 0.8rem;
   height: 100%;
 
   display: flex;
@@ -937,6 +942,11 @@ footer nav {
 /*!--------------------MEDIA QUERY 768PX---------------------*/
 
 @media (min-width: 768px) {
+  #nav1 li {
+    font-size: clamp(0.9rem, 0.657rem + 0.506vw, 1.1rem);
+ 
+  }
+  
   #title_sec1 h1 {
     font-size: 2.6rem;
   }
