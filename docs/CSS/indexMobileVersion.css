@@ -5,16 +5,16 @@
   --third-game-image: ;
   --fourth-game-image: ;
 
-  --game-genre-one: ;
-  --game-genre-two: ;
-  --game-genre-three: ;
-  --game-genre-four: ;
-  --game-genre-five: ;
-  --game-genre-six: ;
-  --game-genre-seven: ;
-  --game-genre-eight: ;
-  --game-genre-nine: ;
-  --game-genre-ten: ;
+  --game-genre-1: ;
+  --game-genre-2: ;
+  --game-genre-3: ;
+  --game-genre-4: ;
+  --game-genre-5: ;
+  --game-genre-6: ;
+  --game-genre-7: ;
+  --game-genre-8: ;
+  --game-genre-9: ;
+  --game-genre-10: ;
   
 }
 
@@ -552,45 +552,46 @@ main {
   z-index: 0;
   background-position: center center;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 #sec3 .slide:nth-child(10n + 1)::before {
-  background: var(--game-genre-one);
+  background-image: var(--game-genre-1);
 }
 
 #sec3 .slide:nth-child(10n + 2)::before {
-  background: var(--game-genre-two);
+  background-image: var(--game-genre-2);
 }
 
 #sec3 .slide:nth-child(10n + 3)::before {
-  background: var(--game-genre-three); 
+  background-image: var(--game-genre-3); 
 }
 
 #sec3 .slide:nth-child(10n + 4)::before {
-  background: var(--game-genre-four);  
+  background-image: var(--game-genre-4);  
 }
 
 #sec3 .slide:nth-child(10n + 5)::before {
-  background: var(--game-genre-five); 
+  background-image: var(--game-genre-5); 
 }
 
 #sec3 .slide:nth-child(10n + 6)::before {
-  background: var(--game-genre-six);   
+  background-image: var(--game-genre-6);   
 }
 
 #sec3 .slide:nth-child(10n + 7)::before {
-  background: var(--game-genre-seven); 
+  background-image: var(--game-genre-7); 
 }
 
 #sec3 .slide:nth-child(10n + 8)::before {
-  background: var(--game-genre-eight); 
+  background-image: var(--game-genre-8); 
 }
 
 #sec3 .slide:nth-child(10n + 9)::before {
-  background: var(--game-genre-nine); 
+  background-image: var(--game-genre-9); 
 }
 
 #sec3 .slide:nth-child(10n + 10)::before {
-  background: var(--game-genre-ten); 
+  background-image: var(--game-genre-10); 
 }
 
 #sec3 .all-slides {

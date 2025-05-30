@@ -227,7 +227,6 @@ eachGame.forEach((game) =>
 
 //!------------SEC3----------------------*/
 
-
 //*GÊNEROS DE JOGOS SINCRONIZADOS COM A API
 
 let urlGenres = "https://api.rawg.io/api/genres";
@@ -240,121 +239,118 @@ const gamesGenresParams = new URLSearchParams({
 
 let allGameGenreNameHTML = document.querySelectorAll("#sec3 .textahead");
 
-
 async function fetchGamesGenres() {
-    const response = await fetch(`${urlGenres}?${gamesGenresParams.toString()}`);
-    const gamesGenresData = await response.json();
-    console.log(gamesGenresData);
+  const response = await fetch(`${urlGenres}?${gamesGenresParams.toString()}`);
+  const gamesGenresData = await response.json();
+  console.log(gamesGenresData);
 
-    allGameGenreNameHTML.forEach((genreName,index) => {
-      genreName.textContent = gamesGenresData.results[index].name;
-    })
-};
-
-fetchGamesGenres();
-
-
-
-//*SLIDER INFINITO
-let containerSlides = document.querySelector(".all-slides");
-let eachSlide = document.querySelectorAll(".slide");
-
-//CLONAR SLIDES
-eachSlide.forEach((slide) => {
-  const prependedClone = slide.cloneNode(true);
-  const appendedClone = slide.cloneNode(true);
-  containerSlides.append(appendedClone);
-  containerSlides.prepend(prependedClone);
-});
-
-const containerScrollWidth = containerSlides.scrollWidth; // Original + clones width
-const maxScrollWidth = containerScrollWidth / 3; // only original width -> LARGURA DE DO CONJUNTO ORIGINAL DE SLIDES
-let isAdjusting = false;
-containerSlides.scrollLeft = maxScrollWidth;
-
-// LOGICA DO DESLIZE INFINITO BY TOUCH
-
-containerSlides.addEventListener("scroll", () => {
-  if (isAdjusting) return;
-
-  isAdjusting = true;
-
-  let currentScroll = containerSlides.scrollLeft;
-  const tolerance = 10;
-  let maximumRightScroll =
-    containerSlides.scrollWidth - containerSlides.clientWidth;
-
-  if (currentScroll >= maximumRightScroll - tolerance) {
-    containerSlides.style.scrollBehavior = "auto";
-    containerSlides.scrollLeft = currentScroll - maxScrollWidth;
-  } else if (currentScroll <= tolerance) {
-    containerSlides.style.scrollBehavior = "auto";
-    containerSlides.scrollLeft = currentScroll + maxScrollWidth;
-  }
-
-  requestAnimationFrame(() => {
-    containerSlides.style.scrollBehavior = "smooth";
-    isAdjusting = false;
+  allGameGenreNameHTML.forEach((genreName, index) => {
+    genreName.textContent = gamesGenresData.results[index].name;
+    document.documentElement.style.setProperty(`--game-genre-${index + 1}`, `url(${gamesGenresData.results[index].image_background}` );
   });
-});
-
-// LOGICA DO DESLIZE INFINITO BY MOUSE
-let isMouseDown = false;
-let mouseStartX, initialScrollLeft;
-
-let lastMouseX;
-let velocity = 0;
-let inertiaFrameID;
-
-containerSlides.addEventListener("mousedown", (e) => {
-  isMouseDown = true;
-  cancelAnimationFrame(inertiaFrameID);
-  initialScrollLeft = containerSlides.scrollLeft;
-  mouseStartX = e.pageX;
-  lastMouseX = e.pageX;
-  velocity = 0;
-});
-
-window.addEventListener("mousemove", (e) => {
-  if (!isMouseDown) return;
-
-  let mouseCurrentX = e.pageX;
-
-  let dislocationX = mouseCurrentX - mouseStartX;
-
-  let movementX = mouseCurrentX - lastMouseX;
-
-  containerSlides.scrollLeft = initialScrollLeft - dislocationX;
-  containerSlides.style.scrollBehavior = "auto";
-
-  velocity = -movementX;
-  lastMouseX = mouseCurrentX;
-});
-
-window.addEventListener("mouseup", (e) => {
-  if (!isMouseDown) return;
-  isMouseDown = false;
-
-  if (Math.abs(velocity) > 0.5) {
-    runInertiaStep();
-  } else {
-    containerSlides.style.scrollBehavior = "smooth";
-  }
-});
-
-function runInertiaStep() {
-  if (isMouseDown || Math.abs(velocity) < 0.5) {
-    velocity = 0; //
-    containerSlides.style.scrollBehavior = "smooth";
-  }
-
-  containerSlides.style.scrollBehavior = "auto";
-  containerSlides.scrollLeft += velocity;
-  velocity *= 0.98; // DESACELERAÇÃO
-
-  inertiaFrameID = requestAnimationFrame(runInertiaStep);
 }
 
+fetchGamesGenres().then(() => {  //SÓ POSSO CARREGAR O SLIDER INFINITO E O CLONE DEPOIS QUE O NOME DOS GENEROS FOREM ATRIBUIDOS
+  //*SLIDER INFINITO
+  let containerSlides = document.querySelector(".all-slides");
+  let eachSlide = document.querySelectorAll(".slide");
+
+  //CLONAR SLIDES
+  eachSlide.forEach((slide) => {
+    const prependedClone = slide.cloneNode(true);
+    const appendedClone = slide.cloneNode(true);
+    containerSlides.append(appendedClone);
+    containerSlides.prepend(prependedClone);
+  });
+
+  const containerScrollWidth = containerSlides.scrollWidth; // Original + clones width
+  const maxScrollWidth = containerScrollWidth / 3; // only original width -> LARGURA DE DO CONJUNTO ORIGINAL DE SLIDES
+  let isAdjusting = false;
+  containerSlides.scrollLeft = maxScrollWidth;
+
+  // LOGICA DO DESLIZE INFINITO BY TOUCH
+
+  containerSlides.addEventListener("scroll", () => {
+    if (isAdjusting) return;
+
+    isAdjusting = true;
+
+    let currentScroll = containerSlides.scrollLeft;
+    const tolerance = 10;
+    let maximumRightScroll =
+      containerSlides.scrollWidth - containerSlides.clientWidth;
+
+    if (currentScroll >= maximumRightScroll - tolerance) {
+      containerSlides.style.scrollBehavior = "auto";
+      containerSlides.scrollLeft = currentScroll - maxScrollWidth;
+    } else if (currentScroll <= tolerance) {
+      containerSlides.style.scrollBehavior = "auto";
+      containerSlides.scrollLeft = currentScroll + maxScrollWidth;
+    }
+
+    requestAnimationFrame(() => {
+      containerSlides.style.scrollBehavior = "smooth";
+      isAdjusting = false;
+    });
+  });
+
+  // LOGICA DO DESLIZE INFINITO BY MOUSE
+  let isMouseDown = false;
+  let mouseStartX, initialScrollLeft;
+
+  let lastMouseX;
+  let velocity = 0;
+  let inertiaFrameID;
+
+  containerSlides.addEventListener("mousedown", (e) => {
+    isMouseDown = true;
+    cancelAnimationFrame(inertiaFrameID);
+    initialScrollLeft = containerSlides.scrollLeft;
+    mouseStartX = e.pageX;
+    lastMouseX = e.pageX;
+    velocity = 0;
+  });
+
+  window.addEventListener("mousemove", (e) => {
+    if (!isMouseDown) return;
+
+    let mouseCurrentX = e.pageX;
+
+    let dislocationX = mouseCurrentX - mouseStartX;
+
+    let movementX = mouseCurrentX - lastMouseX;
+
+    containerSlides.scrollLeft = initialScrollLeft - dislocationX;
+    containerSlides.style.scrollBehavior = "auto";
+
+    velocity = -movementX;
+    lastMouseX = mouseCurrentX;
+  });
+
+  window.addEventListener("mouseup", (e) => {
+    if (!isMouseDown) return;
+    isMouseDown = false;
+
+    if (Math.abs(velocity) > 0.5) {
+      runInertiaStep();
+    } else {
+      containerSlides.style.scrollBehavior = "smooth";
+    }
+  });
+
+  function runInertiaStep() {
+    if (isMouseDown || Math.abs(velocity) < 0.5) {
+      velocity = 0; //
+      containerSlides.style.scrollBehavior = "smooth";
+    }
+
+    containerSlides.style.scrollBehavior = "auto";
+    containerSlides.scrollLeft += velocity;
+    velocity *= 0.98; // DESACELERAÇÃO
+
+    inertiaFrameID = requestAnimationFrame(runInertiaStep);
+  }
+});
 
 //!-----------------SECTION FOUR -------------------*/
 
