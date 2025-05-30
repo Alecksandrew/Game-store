@@ -4,6 +4,18 @@
   --second-game-image: ;
   --third-game-image: ;
   --fourth-game-image: ;
+
+  --game-genre-one: ;
+  --game-genre-two: ;
+  --game-genre-three: ;
+  --game-genre-four: ;
+  --game-genre-five: ;
+  --game-genre-six: ;
+  --game-genre-seven: ;
+  --game-genre-eight: ;
+  --game-genre-nine: ;
+  --game-genre-ten: ;
+  
 }
 
 h2 {
@@ -528,7 +540,8 @@ main {
   box-shadow: 2px 2px 5px black;
 }
 
-#sec3 .slide:nth-child(5n + 1)::before {
+
+#sec3 .slide::before {
   content: "";
   position: absolute;
   top: 0;
@@ -537,56 +550,47 @@ main {
   height: 100%;
   opacity: 0.15;
   z-index: 0;
-  background: url(../Images/Games/Cyberpunk_2077_box_art.jpg) center center /
-    cover;
+  background-position: center center;
+  background-size: cover;
+}
+#sec3 .slide:nth-child(10n + 1)::before {
+  background: var(--game-genre-one);
 }
 
-#sec3 .slide:nth-child(5n + 2)::before {
-  background: url(../Images/Games/stardewvalley.jpg) center top / cover;
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.15;
-  z-index: 0;
+#sec3 .slide:nth-child(10n + 2)::before {
+  background: var(--game-genre-two);
 }
 
-#sec3 .slide:nth-child(5n + 3)::before {
-  background: url(../Images/Games/farcry.jpg) center center / cover;
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.15;
-  z-index: 0;
+#sec3 .slide:nth-child(10n + 3)::before {
+  background: var(--game-genre-three); 
 }
 
-#sec3 .slide:nth-child(5n + 4)::before {
-  background: url(../Images/Games/baldurst.jpg) center center / cover;
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.15;
-  z-index: 0;
+#sec3 .slide:nth-child(10n + 4)::before {
+  background: var(--game-genre-four);  
 }
 
-#sec3 .slide:nth-child(5n + 5)::before {
-  background: url(../Images/Games/fifa.jpg) center center / cover;
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.15;
-  z-index: 0;
+#sec3 .slide:nth-child(10n + 5)::before {
+  background: var(--game-genre-five); 
+}
+
+#sec3 .slide:nth-child(10n + 6)::before {
+  background: var(--game-genre-six);   
+}
+
+#sec3 .slide:nth-child(10n + 7)::before {
+  background: var(--game-genre-seven); 
+}
+
+#sec3 .slide:nth-child(10n + 8)::before {
+  background: var(--game-genre-eight); 
+}
+
+#sec3 .slide:nth-child(10n + 9)::before {
+  background: var(--game-genre-nine); 
+}
+
+#sec3 .slide:nth-child(10n + 10)::before {
+  background: var(--game-genre-ten); 
 }
 
 #sec3 .all-slides {

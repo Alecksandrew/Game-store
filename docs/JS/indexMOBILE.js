@@ -80,7 +80,7 @@ let getItNowButton = document.querySelector("#btn3");
 let currentGameId = null;
 
 const key = "dc9051c56aeb476bb3131334856215f4";
-const url = "https://api.rawg.io/api/games";
+const urlGames = "https://api.rawg.io/api/games";
 
 const root = document.documentElement,
   cor01 = getComputedStyle(root).getPropertyValue("--PaletaCor01"),
@@ -90,7 +90,7 @@ let bolinhas = document.querySelectorAll(".bolinhas"),
 
 async function fetchAllMainGameData() {
   const gameDataPromises = mainContent.map(async (game) => {
-    const mainFetchURL = `${url}/${game.slug}?key=${key}`;
+    const mainFetchURL = `${urlGames}/${game.slug}?key=${key}`;
 
     const fetchgameData = await fetch(mainFetchURL);
     const gameData = await fetchgameData.json();
@@ -227,6 +227,34 @@ eachGame.forEach((game) =>
 
 //!------------SEC3----------------------*/
 
+
+//*GÊNEROS DE JOGOS SINCRONIZADOS COM A API
+
+let urlGenres = "https://api.rawg.io/api/genres";
+
+const gamesGenresParams = new URLSearchParams({
+  key: key,
+  page_size: 10,
+  ordering: "-games_count",
+});
+
+let allGameGenreNameHTML = document.querySelectorAll("#sec3 .textahead");
+
+
+async function fetchGamesGenres() {
+    const response = await fetch(`${urlGenres}?${gamesGenresParams.toString()}`);
+    const gamesGenresData = await response.json();
+    console.log(gamesGenresData);
+
+    allGameGenreNameHTML.forEach((genreName,index) => {
+      genreName.textContent = gamesGenresData.results[index].name;
+    })
+};
+
+fetchGamesGenres();
+
+
+
 //*SLIDER INFINITO
 let containerSlides = document.querySelector(".all-slides");
 let eachSlide = document.querySelectorAll(".slide");
@@ -326,6 +354,8 @@ function runInertiaStep() {
 
   inertiaFrameID = requestAnimationFrame(runInertiaStep);
 }
+
+
 //!-----------------SECTION FOUR -------------------*/
 
 //* BEST SELLERS GAMES WITH API
@@ -354,7 +384,7 @@ const bestSellersParams = new URLSearchParams({
   ordering: "-added",
 });
 
-let bestSellersURL = fetch(url + "?" + bestSellersParams.toString())
+let bestSellersURL = fetch(urlGames + "?" + bestSellersParams.toString())
   .then((response) => response.json())
   .then((data) => {
     //LÓGICA ATUALIZAR IMAGENS DOS BESTSELLERS
@@ -408,7 +438,7 @@ const popularGamesParams = new URLSearchParams({
 async function fetchPopularGames() {
   //FETCHING DATA
   const popularGamesResponse = await fetch(
-    `${url}?${popularGamesParams.toString()}`
+    `${urlGames}?${popularGamesParams.toString()}`
   );
   const popularGamesData = await popularGamesResponse.json();
 
@@ -448,7 +478,7 @@ const mostAnticipatedParams = new URLSearchParams({
 
 async function fetchMostAnticipated() {
   const mostAnticipatedResponse = await fetch(
-    `${url}?${mostAnticipatedParams.toString()}`
+    `${urlGames}?${mostAnticipatedParams.toString()}`
   );
   const mostAnticipatedData = await mostAnticipatedResponse.json();
   console.log(mostAnticipatedData);
