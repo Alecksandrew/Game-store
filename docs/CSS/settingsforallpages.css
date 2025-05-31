@@ -14,6 +14,7 @@
     --PaletaCor04: rgb(24, 24, 24);   /* Page's Background and Texts */
     --PaletaCor05: #f5f4f9;   /* Page's Background */
     --PaletaCor06: rgba(24, 24, 24, 0.569); /* Page's Background and Texts - Less opacity */
+    --PaletaCor07: #EF4444;
     --Font01: 'Lexend', sans-serif; /* Titles */
     --Font02: 'Roboto', sans-serif; /* Paragraphs */
 }

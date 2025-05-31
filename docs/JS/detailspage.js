@@ -44,17 +44,7 @@ async function fetchGameDetails() {
       startGradient.setAttribute("offset", `${gameRating * 100}%`);
       gameRating--;
     }
-
-   
-
   }
-
-
-
-
-
-
-
 
   //MUDANDO A IMAGEM PRINCIPAL DO GAME CLICADO
   let mainImage = document.querySelector("#mainImage");
@@ -252,31 +242,88 @@ async function fetchGameDetails() {
     }
   });
 
-
-    //LOGICA DA WISHLIST
+  //LOGICA DA WISHLIST
   console.log(localStorage);
   const wishlistButton = document.querySelector(".wishlist-button");
   let wishlistedGames = [];
-  let wishlistedGamesExistent = localStorage.getItem("WishlistedGamesInfos");
   let isWishlisted = false;
 
-  if ( wishlistedGamesExistent ) {
-    wishlistedGames = JSON.parse(wishlistedGamesExistent) ;
+  function setupWishlist() {
+    let wishlistedGamesExistent = localStorage.getItem("WishlistedGamesInfos");
 
-    if (wishlistedGames.some(gameInfo => gameInfo.id === specificGameInfoJSON.id)) {
-      isWishlisted = true;
+    if (wishlistedGamesExistent) {
+      wishlistedGames = JSON.parse(wishlistedGamesExistent);
+
+      if (
+        wishlistedGames.some(
+          (gameInfo) => gameInfo.id === specificGameInfoJSON.id
+        )
+      ) {
+        isWishlisted = true;
+      }
     }
-  }
-  
-  if (!isWishlisted) {
-    wishlistButton.addEventListener("click", () => {
-    wishlistedGames.push(specificGameInfoJSON);
-    localStorage.setItem("WishlistedGamesInfos", JSON.stringify(wishlistedGames));
-    console.log(localStorage);
-  });
-  }
-  
 
+    updateWishlistButton();
+  };
+
+  function mouseEnterRemoveButtonEffect() {
+    wishlistButton.style.backgroundColor = "var(--PaletaCor07)";
+    wishlistButton.style.border = "1px solid var(--PaletaCor07)";
+    wishlistButton.style.color = "white";
+  };
+
+  function mouseLeaveRemoveButtonEffect() {
+    wishlistButton.style.backgroundColor = "";
+    wishlistButton.style.border = "";
+    wishlistButton.style.color = "";
+  };
+
+  function addListenerRemoveButton() {
+    wishlistButton.addEventListener("mouseover", mouseEnterRemoveButtonEffect);
+    wishlistButton.addEventListener("mouseout", mouseLeaveRemoveButtonEffect);
+  };
+
+  function removeListenerRemoveButton() {
+      wishlistButton.removeEventListener("mouseover", mouseEnterRemoveButtonEffect);
+      wishlistButton.removeEventListener("mouseout", mouseLeaveRemoveButtonEffect);
+  };
+
+  function updateWishlistButton() {
+    if (isWishlisted) {
+      wishlistButton.textContent = "Remove from wishlist";
+      if (wishlistButton.matches(":hover")) {
+        mouseEnterRemoveButtonEffect();
+      }
+      addListenerRemoveButton();
+    } else {
+      wishlistButton.textContent = "Add to wishlist";
+      mouseLeaveRemoveButtonEffect();
+      removeListenerRemoveButton();
+    }
+  };
+
+  function addAndRemoveWishilist() {
+    if (isWishlisted) {
+      wishlistedGames = wishlistedGames.filter(
+        (gameInfo) => gameInfo.id !== specificGameInfoJSON.id
+      );
+
+    } else {
+      wishlistedGames.push(specificGameInfoJSON);
+    }
+
+    localStorage.setItem(
+      "WishlistedGamesInfos",
+      JSON.stringify(wishlistedGames)
+    );
+    console.log(localStorage);
+    isWishlisted = !isWishlisted;
+
+    updateWishlistButton();
+  };
+
+  setupWishlist();
+  wishlistButton.addEventListener("click", addAndRemoveWishilist);
 }
 
 fetchGameDetails();
