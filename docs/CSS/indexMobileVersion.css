@@ -644,8 +644,7 @@ main {
   flex-flow: column nowrap;
 }
 
-#sec4 .eachgame {
-}
+
 
 .eachgame h3 {
   font-size: clamp(1.125rem, 0.679rem + 2.232vw, 1.75rem);
@@ -1123,4 +1122,4 @@ footer nav {
   font-size: clamp(1.375rem, -0.308rem + 1.923vw, 2rem);
 }
 
-}
+
