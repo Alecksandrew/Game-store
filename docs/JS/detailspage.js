@@ -44,7 +44,17 @@ async function fetchGameDetails() {
       startGradient.setAttribute("offset", `${gameRating * 100}%`);
       gameRating--;
     }
+
+   
+
   }
+
+
+
+
+
+
+
 
   //MUDANDO A IMAGEM PRINCIPAL DO GAME CLICADO
   let mainImage = document.querySelector("#mainImage");
@@ -241,6 +251,32 @@ async function fetchGameDetails() {
       verMais.textContent = "See less";
     }
   });
+
+
+    //LOGICA DA WISHLIST
+  console.log(localStorage);
+  const wishlistButton = document.querySelector(".wishlist-button");
+  let wishlistedGames = [];
+  let wishlistedGamesExistent = localStorage.getItem("WishlistedGamesInfos");
+  let isWishlisted = false;
+
+  if ( wishlistedGamesExistent ) {
+    wishlistedGames = JSON.parse(wishlistedGamesExistent) ;
+
+    if (wishlistedGames.some(gameInfo => gameInfo.id === specificGameInfoJSON.id)) {
+      isWishlisted = true;
+    }
+  }
+  
+  if (!isWishlisted) {
+    wishlistButton.addEventListener("click", () => {
+    wishlistedGames.push(specificGameInfoJSON);
+    localStorage.setItem("WishlistedGamesInfos", JSON.stringify(wishlistedGames));
+    console.log(localStorage);
+  });
+  }
+  
+
 }
 
 fetchGameDetails();
