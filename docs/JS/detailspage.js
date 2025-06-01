@@ -266,39 +266,40 @@ async function fetchGameDetails() {
     updateWishlistButton();
   };
 
-  function mouseEnterRemoveButtonEffect() {
-    wishlistButton.style.backgroundColor = "var(--PaletaCor07)";
-    wishlistButton.style.border = "1px solid var(--PaletaCor07)";
-    wishlistButton.style.color = "white";
+  function mouseEnterRemoveButtonEffect(item) {
+    item.style.backgroundColor = "var(--PaletaCor07)";
+    item.style.border = "1px solid var(--PaletaCor07)";
+    item.style.color = "white";
   };
 
-  function mouseLeaveRemoveButtonEffect() {
-    wishlistButton.style.backgroundColor = "";
-    wishlistButton.style.border = "";
-    wishlistButton.style.color = "";
+  function mouseLeaveRemoveButtonEffect(item) {
+    item.style.backgroundColor = "";
+    item.style.border = "";
+    item.style.color = "";
   };
 
-  function addListenerRemoveButton() {
-    wishlistButton.addEventListener("mouseover", mouseEnterRemoveButtonEffect);
-    wishlistButton.addEventListener("mouseout", mouseLeaveRemoveButtonEffect);
+  function addListenerRemoveButton(item) {
+    item.addEventListener("mouseover", () => {mouseEnterRemoveButtonEffect(item) });
+    item.addEventListener("mouseout", () => {mouseLeaveRemoveButtonEffect(item)});
   };
 
-  function removeListenerRemoveButton() {
-      wishlistButton.removeEventListener("mouseover", mouseEnterRemoveButtonEffect);
-      wishlistButton.removeEventListener("mouseout", mouseLeaveRemoveButtonEffect);
+  function removeListenerRemoveButton(item) {
+      item.removeEventListener("mouseover", () =>{ mouseEnterRemoveButtonEffect(item) });
+      item.removeEventListener("mouseout", () =>{ mouseLeaveRemoveButtonEffect(item) });
   };
+
 
   function updateWishlistButton() {
     if (isWishlisted) {
       wishlistButton.textContent = "Remove from wishlist";
       if (wishlistButton.matches(":hover")) {
-        mouseEnterRemoveButtonEffect();
+        mouseEnterRemoveButtonEffect(wishlistButton);
       }
-      addListenerRemoveButton();
+      addListenerRemoveButton(wishlistButton);
     } else {
       wishlistButton.textContent = "Add to wishlist";
-      mouseLeaveRemoveButtonEffect();
-      removeListenerRemoveButton();
+      mouseLeaveRemoveButtonEffect(wishlistButton);
+      removeListenerRemoveButton(wishlistButton);
     }
   };
 
@@ -327,3 +328,6 @@ async function fetchGameDetails() {
 }
 
 fetchGameDetails();
+
+
+
