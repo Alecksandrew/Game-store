@@ -149,25 +149,55 @@ function fixLengthDescription() {
 }
 
 //LOGICA PARA AO CLICAR NO JOGO, ELE FICAR EM FOCO E APARECER COMO IMAGEM PRINCIPAL
+function updateSecondaryImagesAppearance(choosenIndex) {
+    allSecondaryImages.forEach( secondaryImage => {
+      if (secondaryImage === allSecondaryImages[choosenIndex]) {
+        secondaryImage.classList.add("overlay-hidden");
+      }
+      else {
+        secondaryImage.classList.remove("overlay-hidden");
+      };
+    });
+};
+
+function updateMainImageInfos(choosenGame) {
+    mainTitle.textContent = choosenGame.name;
+    currentGameId = choosenGame.id;
+}
+
+
+function handleSecondaryImagesSelection(selectedIndex) {
+  //ATUALIZAR CONTADOR
+  mainContentCounter = selectedIndex;
+  
+  const selectedGame = allGameData[selectedIndex];
+  
+  //UPDATE MAIN IMAGE
+  document.documentElement.style.setProperty("--main-game-image", `url(${selectedGame.img})`);
+  
+  updateSecondaryImagesAppearance(selectedIndex)
+  updateMainImageInfos(selectedGame);
+  fixLengthDescription();
+  updateBolinhasAppearance();
+  updateStarAppearance();
+};
+
 allSecondaryImages.forEach((img, index) => {
   img.addEventListener("click", () => {
-    mainContentCounter = index;
-    document.documentElement.style.setProperty(
-      "--main-game-image",
-      `url(${allGameData[index].img})`
-    );
-    allSecondaryImages.forEach((imggame) => {
-      imggame.classList.remove("overlay-hidden");
-    });
-    allSecondaryImages[index].classList.add("overlay-hidden");
-    mainTitle.textContent = allGameData[index].name;
-    currentGameId = allGameData[index].id;
-    fixLengthDescription();
-    currentGameId = allGameData[index].id;
-
-    updateStarAppearence();
+      handleSecondaryImagesSelection(index);
   });
 });
+
+function updateBolinhasAppearance() {
+  bolinhas.forEach((bolinha, index) => {
+    if ( index === mainContentCounter) {
+      bolinha.style.backgroundColor = cor01;
+    }
+    else {
+      bolinha.style.backgroundColor = cor02;
+    };
+  });
+};
 
 function changingMainContent() {
   //Changing Main Images, focused image, Titles and Paragraphs...
@@ -184,15 +214,12 @@ function changingMainContent() {
   fixLengthDescription();
 
   //Changing little balls
-  bolinhas[mainContentCounter].style["background-color"] = cor01;
-  noColorBolinha =
-    bolinhas[mainContentCounter - 1] || bolinhas[bolinhas.length - 1];
-  noColorBolinha.style["background-color"] = cor02;
+  updateBolinhasAppearance();
 
   //General counter
   mainContentCounter = (mainContentCounter + 1) % allGameData.length;
 
-  updateStarAppearence();
+  updateStarAppearance();
 }
 
 //Changing HREF get it now button
@@ -219,7 +246,7 @@ function isWishlisted(id) {
   return wishlistLocalStorage.some((gameInfo) => gameInfo.id === id);
 }
 
-function updateStarAppearence() {
+function updateStarAppearance() {
   if (isWishlisted(currentGameId)) {
     wishlistStar.classList.add("starfilled");
   } else {
@@ -249,7 +276,7 @@ function toggleWishlist() {
 }
 
 function initWishlistFeature() {
-  updateStarAppearence();
+  updateStarAppearance();
 
   wishlistStarConteiner.addEventListener("click", toggleWishlist);
 }
