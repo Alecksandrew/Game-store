@@ -20,7 +20,7 @@ function createWishlistCards(gameDataObj, index) {
     const gameName = eachGameCard.querySelector(".nameOfTheGame");
 
     eachGameCard.style.display = "flex";
-    gameImage.setAttribute("src", gameDataObj.background_image);
+    gameImage.setAttribute("src", gameDataObj.background_image || gameDataObj.img);
     gameName.textContent = gameDataObj.name;
   } else {
     let clonedEachGameCard = eachGameCard.cloneNode(true);
@@ -29,7 +29,7 @@ function createWishlistCards(gameDataObj, index) {
     const cloneGameName = clonedEachGameCard.querySelector(".nameOfTheGame");
     console.log(cloneGameImage);
     console.log(cloneGameName);
-    cloneGameImage.setAttribute("src", gameDataObj.background_image);
+    cloneGameImage.setAttribute("src", gameDataObj.background_image || gameDataObj.img);
     cloneGameName.textContent = gameDataObj.name;
   }
 }
