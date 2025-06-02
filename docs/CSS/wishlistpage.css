@@ -135,8 +135,9 @@ outline: 2px solid var(--PaletaCor01);
     width: 50%;
 
     display: grid;
-    justify-items: center;
-    align-items: center;
+    justify-items: left;
+    align-items: baseline;
+    margin-top: 10px;
     grid-template-rows: 1fr 2fr;
     grid-template-columns: 1fr 85% 1fr;
 
