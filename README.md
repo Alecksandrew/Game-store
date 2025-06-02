@@ -14,6 +14,6 @@
     - [x] Tags semânticas
     - [ ] Texto alternativo
   - [ ] **Filtro por gênero**
-  - [ ] **Sistema de wishlist**
+  - [x] **Sistema de wishlist**
   - [ ] **Sistema de carrinho**    
  
