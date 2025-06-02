@@ -129,6 +129,8 @@ async function fetchAllMainGameData() {
   setInterval(() => {
     changingMainContent();
   }, 5000);
+
+  initWishlistFeature();
 }
 
 fetchAllMainGameData();
@@ -162,6 +164,8 @@ allSecondaryImages.forEach((img, index) => {
     currentGameId = allGameData[index].id;
     fixLengthDescription();
     currentGameId = allGameData[index].id;
+
+    updateStarAppearence();
   });
 });
 
@@ -187,6 +191,8 @@ function changingMainContent() {
 
   //General counter
   mainContentCounter = (mainContentCounter + 1) % allGameData.length;
+
+  updateStarAppearence();
 }
 
 //Changing HREF get it now button
@@ -197,14 +203,56 @@ getItNowButton.addEventListener("click", () => {
 //GET IT NOW -> Redirecionando para a página de detalhes
 
 //Changing wishlist star
-const wishlistStarConteiner = document.querySelectorAll(".star-conteiner");
-const wishlistStar = document.querySelectorAll(".starwishlist");
+const wishlistStarConteiner = document.querySelector(".star-conteiner");
+const wishlistStar = document.querySelector(".starwishlist");
 
-wishlistStarConteiner.forEach((starConteiner, c) => {
-  starConteiner.addEventListener("click", () => {
-    wishlistStar[c].classList.toggle("starfilled");
-  });
-});
+function getParsedFromLocalStorage(propertyName) {
+  return JSON.parse(localStorage.getItem(propertyName)) || [];
+}
+
+function sendToLocalStorage(propertyName, dataToSend) {
+  return localStorage.setItem(propertyName, JSON.stringify(dataToSend));
+}
+
+function isWishlisted(id) {
+  let wishlistLocalStorage = getParsedFromLocalStorage("WishlistedGamesInfos");
+  return wishlistLocalStorage.some((gameInfo) => gameInfo.id === id);
+}
+
+function updateStarAppearence() {
+  if (isWishlisted(currentGameId)) {
+    wishlistStar.classList.add("starfilled");
+  } else {
+    wishlistStar.classList.remove("starfilled");
+  }
+}
+
+function toggleWishlist() {
+  let gameDataLocalStorageParsed = getParsedFromLocalStorage(
+    "WishlistedGamesInfos"
+  );
+
+  if (isWishlisted(currentGameId)) {
+    wishlistStar.classList.remove("starfilled");
+    gameDataLocalStorageParsed = gameDataLocalStorageParsed.filter(
+      (gameData) => gameData.id !== currentGameId
+    );
+  } else {
+    wishlistStar.classList.add("starfilled");
+    const currentMainGame = allGameData.find(
+      (gameDataObj) => gameDataObj.id === currentGameId
+    );
+    gameDataLocalStorageParsed.push(currentMainGame);
+  }
+
+  sendToLocalStorage("WishlistedGamesInfos", gameDataLocalStorageParsed);
+}
+
+function initWishlistFeature() {
+  updateStarAppearence();
+
+  wishlistStarConteiner.addEventListener("click", toggleWishlist);
+}
 
 //!----------------------SEC1-------------------------------*/
 
@@ -246,11 +294,15 @@ async function fetchGamesGenres() {
 
   allGameGenreNameHTML.forEach((genreName, index) => {
     genreName.textContent = gamesGenresData.results[index].name;
-    document.documentElement.style.setProperty(`--game-genre-${index + 1}`, `url(${gamesGenresData.results[index].image_background}` );
+    document.documentElement.style.setProperty(
+      `--game-genre-${index + 1}`,
+      `url(${gamesGenresData.results[index].image_background}`
+    );
   });
 }
 
-fetchGamesGenres().then(() => {  //SÓ POSSO CARREGAR O SLIDER INFINITO E O CLONE DEPOIS QUE O NOME DOS GENEROS FOREM ATRIBUIDOS
+fetchGamesGenres().then(() => {
+  //SÓ POSSO CARREGAR O SLIDER INFINITO E O CLONE DEPOIS QUE O NOME DOS GENEROS FOREM ATRIBUIDOS
   //*SLIDER INFINITO
   let containerSlides = document.querySelector(".all-slides");
   let eachSlide = document.querySelectorAll(".slide");
