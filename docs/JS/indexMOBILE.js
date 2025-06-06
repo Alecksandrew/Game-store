@@ -383,6 +383,7 @@ fetchGamesGenres().then(() => {
   let lastMouseX;
   let velocity = 0;
   let inertiaFrameID;
+  let isInertiaActive = false;
 
   containerSlides.addEventListener("mousedown", (e) => {
     isMouseDown = true;
@@ -394,6 +395,7 @@ fetchGamesGenres().then(() => {
     mouseStartX = e.pageX;
     lastMouseX = e.pageX;
     velocity = 0;
+    isInertiaActive = false;
   });
 
   window.addEventListener("mousemove", (e) => {
@@ -420,11 +422,11 @@ fetchGamesGenres().then(() => {
     if (!isMouseDown) return;
     isMouseDown = false;
 
-    isDragging = false;
-
     if (Math.abs(velocity) > 0.5) {
+      isInertiaActive = true;
       runInertiaStep();
     } else {
+      isDragging = false;
       containerSlides.style.scrollBehavior = "smooth";
     }
   });
@@ -433,6 +435,9 @@ fetchGamesGenres().then(() => {
     if (isMouseDown || Math.abs(velocity) < 0.5) {
       velocity = 0; //
       containerSlides.style.scrollBehavior = "smooth";
+      isInertiaActive = false;
+      isDragging = false;
+      return;
     }
 
     containerSlides.style.scrollBehavior = "auto";
@@ -447,7 +452,7 @@ fetchGamesGenres().then(() => {
       const slide = e.target.closest('.slide');
       const isLongPress = Date.now() - mouseDownTime > 200;
       
-      if (isDragging || !slide || isLongPress) return;
+      if (isDragging || !slide || isLongPress || isInertiaActive) return;
 
       const index = slide.dataset.index;
 
