@@ -11,7 +11,7 @@ const newParams = new URLSearchParams({
     genres:`${fixedGenreName}`,
     ordering:`-added`,
     page: 1,
-    page_size:8,
+    page_size:12,
 });
 
 async function fetchGamesByGenre() {
