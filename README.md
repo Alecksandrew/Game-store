@@ -13,7 +13,7 @@
  - [ ] **Acessibilidade**
     - [x] Tags semânticas
     - [ ] Texto alternativo
-  - [ ] **Filtro por gênero**
+  - [x] **Filtro por gênero**
   - [x] **Sistema de wishlist**
   - [ ] **Sistema de carrinho**    
  
