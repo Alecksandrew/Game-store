@@ -429,7 +429,21 @@ fetchGamesGenres().then(() => {
 
     inertiaFrameID = requestAnimationFrame(runInertiaStep);
   }
+
+  //*AO CLICAR, ENVIA PARA A PAGINA DE CATEGORIA
+  eachSlide.forEach((slide, index) => {
+    slide.addEventListener("click", () => {
+    
+    const genreElementHTML = allGameGenreNameHTML[index];
+    const genreName = genreElementHTML.textContent;
+    const encodedGenreName = encodeURIComponent(genreName);
+
+    window.open(`HTML/genre.html?genre=${encodedGenreName}`, "_blank");
+  })
+})
 });
+
+
 
 //!-----------------SECTION FOUR -------------------*/
 
