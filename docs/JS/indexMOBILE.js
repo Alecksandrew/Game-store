@@ -378,6 +378,7 @@ fetchGamesGenres().then(() => {
   // LOGICA DO DESLIZE INFINITO BY MOUSE
   let isMouseDown, isDragging = false;
   let mouseStartX, initialScrollLeft;
+  let mouseDownTime = 0;
 
   let lastMouseX;
   let velocity = 0;
@@ -386,6 +387,7 @@ fetchGamesGenres().then(() => {
   containerSlides.addEventListener("mousedown", (e) => {
     isMouseDown = true;
     isDragging = false;
+    mouseDownTime = Date.now();
 
     cancelAnimationFrame(inertiaFrameID);
     initialScrollLeft = containerSlides.scrollLeft;
@@ -443,8 +445,9 @@ fetchGamesGenres().then(() => {
   //*AO CLICAR, ENVIA PARA A PAGINA DE CATEGORIA
     containerSlides.addEventListener("click", (e) => {
       const slide = e.target.closest('.slide');
+      const isLongPress = Date.now() - mouseDownTime > 200;
       
-      if (isDragging || !slide) return;
+      if (isDragging || !slide || isLongPress) return;
 
       const index = slide.dataset.index;
 
