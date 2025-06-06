@@ -11,7 +11,6 @@ h1 {
 }
 
 ul {
-  background-color: red;
   display: grid;
   grid-template: repeat(auto-fit, 1fr)/ 1fr;
   justify-items: center;
@@ -158,6 +157,10 @@ img {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
+  .eachgame h3 {
+    font-size: clamp(1.25rem, -0.112rem + 2.128vw, 1.75rem);
+  }
+
    .first {
     font-size:  12px;
   }
@@ -177,6 +180,9 @@ img {
   ul {
     grid-template-columns: repeat(4, 1fr);
   }
-
+  
+  .eachgame h3 {
+    font-size: clamp(1.25rem, -2.25rem + 4vw, 1.75rem);
+  } 
 
 }
