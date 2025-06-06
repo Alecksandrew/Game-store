@@ -150,54 +150,54 @@ function fixLengthDescription() {
 
 //LOGICA PARA AO CLICAR NO JOGO, ELE FICAR EM FOCO E APARECER COMO IMAGEM PRINCIPAL
 function updateSecondaryImagesAppearance(choosenIndex) {
-    allSecondaryImages.forEach( secondaryImage => {
-      if (secondaryImage === allSecondaryImages[choosenIndex]) {
-        secondaryImage.classList.add("overlay-hidden");
-      }
-      else {
-        secondaryImage.classList.remove("overlay-hidden");
-      };
-    });
-};
-
-function updateMainImageInfos(choosenGame) {
-    mainTitle.textContent = choosenGame.name;
-    currentGameId = choosenGame.id;
+  allSecondaryImages.forEach((secondaryImage) => {
+    if (secondaryImage === allSecondaryImages[choosenIndex]) {
+      secondaryImage.classList.add("overlay-hidden");
+    } else {
+      secondaryImage.classList.remove("overlay-hidden");
+    }
+  });
 }
 
+function updateMainImageInfos(choosenGame) {
+  mainTitle.textContent = choosenGame.name;
+  currentGameId = choosenGame.id;
+}
 
 function handleSecondaryImagesSelection(selectedIndex) {
   //ATUALIZAR CONTADOR
   mainContentCounter = selectedIndex;
-  
+
   const selectedGame = allGameData[selectedIndex];
-  
+
   //UPDATE MAIN IMAGE
-  document.documentElement.style.setProperty("--main-game-image", `url(${selectedGame.img})`);
-  
-  updateSecondaryImagesAppearance(selectedIndex)
+  document.documentElement.style.setProperty(
+    "--main-game-image",
+    `url(${selectedGame.img})`
+  );
+
+  updateSecondaryImagesAppearance(selectedIndex);
   updateMainImageInfos(selectedGame);
   fixLengthDescription();
   updateBolinhasAppearance();
   updateStarAppearance();
-};
+}
 
 allSecondaryImages.forEach((img, index) => {
   img.addEventListener("click", () => {
-      handleSecondaryImagesSelection(index);
+    handleSecondaryImagesSelection(index);
   });
 });
 
 function updateBolinhasAppearance() {
   bolinhas.forEach((bolinha, index) => {
-    if ( index === mainContentCounter) {
+    if (index === mainContentCounter) {
       bolinha.style.backgroundColor = cor01;
-    }
-    else {
+    } else {
       bolinha.style.backgroundColor = cor02;
-    };
+    }
   });
-};
+}
 
 function changingMainContent() {
   //Changing Main Images, focused image, Titles and Paragraphs...
@@ -335,7 +335,9 @@ fetchGamesGenres().then(() => {
   let eachSlide = document.querySelectorAll(".slide");
 
   //CLONAR SLIDES
-  eachSlide.forEach((slide) => {
+  eachSlide.forEach((slide, index) => {
+    slide.dataset.index = index;
+    
     const prependedClone = slide.cloneNode(true);
     const appendedClone = slide.cloneNode(true);
     containerSlides.append(appendedClone);
@@ -374,7 +376,7 @@ fetchGamesGenres().then(() => {
   });
 
   // LOGICA DO DESLIZE INFINITO BY MOUSE
-  let isMouseDown = false;
+  let isMouseDown, isDragging = false;
   let mouseStartX, initialScrollLeft;
 
   let lastMouseX;
@@ -383,6 +385,8 @@ fetchGamesGenres().then(() => {
 
   containerSlides.addEventListener("mousedown", (e) => {
     isMouseDown = true;
+    isDragging = false;
+
     cancelAnimationFrame(inertiaFrameID);
     initialScrollLeft = containerSlides.scrollLeft;
     mouseStartX = e.pageX;
@@ -397,6 +401,10 @@ fetchGamesGenres().then(() => {
 
     let dislocationX = mouseCurrentX - mouseStartX;
 
+    if (dislocationX > 5) {
+      isDragging = true;
+    }
+
     let movementX = mouseCurrentX - lastMouseX;
 
     containerSlides.scrollLeft = initialScrollLeft - dislocationX;
@@ -409,6 +417,8 @@ fetchGamesGenres().then(() => {
   window.addEventListener("mouseup", (e) => {
     if (!isMouseDown) return;
     isMouseDown = false;
+
+    isDragging = false;
 
     if (Math.abs(velocity) > 0.5) {
       runInertiaStep();
@@ -431,19 +441,20 @@ fetchGamesGenres().then(() => {
   }
 
   //*AO CLICAR, ENVIA PARA A PAGINA DE CATEGORIA
-  eachSlide.forEach((slide, index) => {
-    slide.addEventListener("click", () => {
-    
-    const genreElementHTML = allGameGenreNameHTML[index];
-    const genreName = genreElementHTML.textContent;
-    const encodedGenreName = encodeURIComponent(genreName);
+    containerSlides.addEventListener("click", (e) => {
+      const slide = e.target.closest('.slide');
+      
+      if (isDragging || !slide) return;
 
-    window.open(`HTML/genre.html?genre=${encodedGenreName}`, "_blank");
-  })
-})
-});
+      const index = slide.dataset.index;
 
+      const genreElementHTML = allGameGenreNameHTML[index];
+      const genreName = genreElementHTML.textContent;
+      const encodedGenreName = encodeURIComponent(genreName);
 
+      window.open(`HTML/genre.html?genre=${encodedGenreName}`, "_blank");
+    });
+  });
 
 //!-----------------SECTION FOUR -------------------*/
 
