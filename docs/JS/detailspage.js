@@ -140,6 +140,8 @@ async function fetchGameDetails() {
 
   //LOGICA DE ESCURECER IMAGENS QUE NÃO ESTÃO EM FOCO
 
+  //*LOGICA PARA CONTAINER SECONDARY IMAGES SER SCROLADO SEM SCROLLBAR
+
   //*MUDANDO INFORMAÇÕES ADICIONAIS
 
   //PEGANDO A DATA DE LANÇAMENTO DO GAME
@@ -264,30 +266,37 @@ async function fetchGameDetails() {
     }
 
     updateWishlistButton();
-  };
+  }
 
   function mouseEnterRemoveButtonEffect(item) {
     item.style.backgroundColor = "var(--PaletaCor07)";
     item.style.border = "1px solid var(--PaletaCor07)";
     item.style.color = "white";
-  };
+  }
 
   function mouseLeaveRemoveButtonEffect(item) {
     item.style.backgroundColor = "";
     item.style.border = "";
     item.style.color = "";
-  };
+  }
 
   function addListenerRemoveButton(item) {
-    item.addEventListener("mouseover", () => {mouseEnterRemoveButtonEffect(item) });
-    item.addEventListener("mouseout", () => {mouseLeaveRemoveButtonEffect(item)});
-  };
+    item.addEventListener("mouseover", () => {
+      mouseEnterRemoveButtonEffect(item);
+    });
+    item.addEventListener("mouseout", () => {
+      mouseLeaveRemoveButtonEffect(item);
+    });
+  }
 
   function removeListenerRemoveButton(item) {
-      item.removeEventListener("mouseover", () =>{ mouseEnterRemoveButtonEffect(item) });
-      item.removeEventListener("mouseout", () =>{ mouseLeaveRemoveButtonEffect(item) });
-  };
-
+    item.removeEventListener("mouseover", () => {
+      mouseEnterRemoveButtonEffect(item);
+    });
+    item.removeEventListener("mouseout", () => {
+      mouseLeaveRemoveButtonEffect(item);
+    });
+  }
 
   function updateWishlistButton() {
     if (isWishlisted) {
@@ -301,14 +310,13 @@ async function fetchGameDetails() {
       mouseLeaveRemoveButtonEffect(wishlistButton);
       removeListenerRemoveButton(wishlistButton);
     }
-  };
+  }
 
   function addAndRemoveWishilist() {
     if (isWishlisted) {
       wishlistedGames = wishlistedGames.filter(
         (gameInfo) => gameInfo.id !== specificGameInfoJSON.id
       );
-
     } else {
       wishlistedGames.push(specificGameInfoJSON);
     }
@@ -321,13 +329,10 @@ async function fetchGameDetails() {
     isWishlisted = !isWishlisted;
 
     updateWishlistButton();
-  };
+  }
 
   setupWishlist();
   wishlistButton.addEventListener("click", addAndRemoveWishilist);
 }
 
 fetchGameDetails();
-
-
-

@@ -4,10 +4,14 @@ main {
   width: 80vw;
   max-width: 425px;
   margin: 0 auto;
+  padding: 25px 0px 25px 0px;
 }
 
 h1 {
   text-align: center;
+  margin-bottom: 15px;
+  background-color: var(--PaletaCor01);
+  color: var(--PaletaCor03);
 }
 
 ul {
