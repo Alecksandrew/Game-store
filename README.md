@@ -1,7 +1,7 @@
 # 🎮 Game-store 
 Projeto pessoal de uma loja de games desenvolvido para praticar e consolidar conhecimentos em HTML, CSS e JavaScript vanila.  
 
-<a href="https://alecksandrew.github.io/Game-store/" target="_blank">Deploy</a>
+<a href="https://alecksandrew.github.io/Game-store/">[DEPLOY]</a>
 
 # 🚀 Sobre o Projeto 
 Este projeto é uma aplicação web responsiva que consome dados da RAWG.io API para exibir informações de jogos, permitindo ao usuário navegar por gêneros, adicionar jogos à wishlist, visualizar detalhes de cada game e mais.  
