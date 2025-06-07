@@ -48,11 +48,23 @@ O projeto foi inspirado em grandes plataformas como Steam, Epic Games, Nuuvem de
   #### PÁGINA DE DETALHES
   <img src=https://github.com/user-attachments/assets/22116d10-5044-40da-b7f4-ae709bd667c4 alt="Página de detalhes" >  <br>
   #### FILTRO POR CATEGORIA
-  <img src=https://github.com/user-attachments/assets/089dc0da-bd94-412e-bd63-a52c8ef49926 alt="Filtro por categoria" >  <br>
+  <img src=https://github.com/user-attachments/assets/6579f69a-a230-42a9-9758-dd2eb3369b88 alt="Filtro por categoria" >  <br>
   #### PÁGINA DE WISHLIST
   <img src=https://github.com/user-attachments/assets/872ecbba-904a-45e8-a83d-84d8062bd9a2 alt="Página de wishlist" >  <br>
   #### RESPONSIVIDADE
-  <img src=https://github.com/user-attachments/assets/84d92087-6a7c-40cd-b477-d40d51c1f99b alt="Responsividade da página" >
+  <div>
+   
+   <img src=https://github.com/user-attachments/assets/df0c60af-a7ff-4482-aec1-7d276fe45749 alt="Responsividade da página" width="100%" >
+   <img src=https://github.com/user-attachments/assets/e964f862-281f-4fd0-b232-473c634b9552 alt="Responsividade da página" width="48%" >
+   <img src=https://github.com/user-attachments/assets/ba01773e-0095-4305-b098-85a1552f44db alt="Responsividade da página" width="48%" >
+   <img src=https://github.com/user-attachments/assets/c63c2f31-f744-4da9-9055-4ac364c35109 alt="Responsividade da página" width="48%" >
+   <img src=https://github.com/user-attachments/assets/238c7b46-5019-4924-bb7e-d16dcdd52509 alt="Responsividade da página" width="48%" >
+  </div>
+  
+
+
+
+
 
 
 
@@ -67,7 +79,7 @@ O projeto foi inspirado em grandes plataformas como Steam, Epic Games, Nuuvem de
    - [x] Na página de detalhes
  - [ ] **Acessibilidade**
     - [x] Tags semânticas
-    - [ ] Texto alternativo
+    - [ ] Texto alternativo ( em andamento )
   - [x] **Filtro por gênero**
   - [x] **Sistema de wishlist**
   - [ ] **Sistema de carrinho**    
