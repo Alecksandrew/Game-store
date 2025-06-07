@@ -44,11 +44,11 @@ O projeto foi inspirado em grandes plataformas como Steam, Epic Games, Nuuvem de
 
 # 📱 Demonstração 
   #### PÁGINA DE DETALHES
-  <img src=https://github.com/user-attachments/assets/22116d10-5044-40da-b7f4-ae709bd667c4 alt="Página de detalhes" >  <br><br>
+  <img src=https://github.com/user-attachments/assets/22116d10-5044-40da-b7f4-ae709bd667c4 alt="Página de detalhes" >  <br>
   #### FILTRO POR CATEGORIA
-  <img src=https://github.com/user-attachments/assets/089dc0da-bd94-412e-bd63-a52c8ef49926 alt="Filtro por categoria" >  <br><br>
+  <img src=https://github.com/user-attachments/assets/089dc0da-bd94-412e-bd63-a52c8ef49926 alt="Filtro por categoria" >  <br>
   #### PÁGINA DE WISHLIST
-  <img src=https://github.com/user-attachments/assets/872ecbba-904a-45e8-a83d-84d8062bd9a2 alt="Página de wishlist" >  <br><br>
+  <img src=https://github.com/user-attachments/assets/872ecbba-904a-45e8-a83d-84d8062bd9a2 alt="Página de wishlist" >  <br>
   #### RESPONSIVIDADE
   <img src=https://github.com/user-attachments/assets/84d92087-6a7c-40cd-b477-d40d51c1f99b alt="Responsividade da página" >
 
