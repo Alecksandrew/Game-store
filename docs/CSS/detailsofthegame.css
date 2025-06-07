@@ -157,7 +157,7 @@ main > * {
 
 .container-secondary-images {
   grid-area: 4/1/5/4;
-  padding-top: 5px;
+  padding: 5px 0px 5px 0px;
   height: 100%;
   
 
@@ -165,7 +165,9 @@ main > * {
   justify-content: space-between;
   gap: 5px;
   overflow: auto;
+
   scrollbar-width: none;
+
 }
 
 .secondary-images {
@@ -477,7 +479,26 @@ main > * {
     height: 100px;
   }
 
+}
 
 
+@media (hover: hover) {
 
+.container-secondary-images {
+  scrollbar-width: unset;
+
+}  
+.container-secondary-images::-webkit-scrollbar {
+  height: 8px;
+}
+
+.container-secondary-images::-webkit-scrollbar-track {
+  background: var(--PaletaCor02); 
+  border-radius: 1px;
+}
+
+.container-secondary-images::-webkit-scrollbar-thumb {
+  background: var(--PaletaCor01);
+  border-radius: 1px;
+}
 }
